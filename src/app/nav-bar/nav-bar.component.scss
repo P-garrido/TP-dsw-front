@@ -1,0 +1,74 @@
+$navBg: #222;
+$navColor: #fff;
+
+.desktopMenu {
+  display: none;
+}
+
+.mainMenu {
+  display: flex;
+  justify-content: space-between;
+  background-color: $navBg;
+  color: $navColor;
+  padding: 1rem;
+  z-index: 50;
+  position: relative;
+  z-index: 50;
+}
+
+
+
+.optionsMenu {
+  transition: transform .5s ease-in-out;
+  background-color: #222;
+  position: relative;
+  z-index: 20;
+  color: #fff;
+
+  .options {
+    li {
+      padding: .5rem;
+    }
+  }
+}
+
+
+.show {
+  transform: translateY(0);
+}
+
+.hide {
+  transform: translateY(-1000px);
+}
+
+@media screen and (min-width: 768px) {
+  .mobileMenu {
+    display: none;
+  }
+
+  .desktopMenu {
+    display: flex;
+    background-color: $navBg;
+    color: $navColor;
+    justify-content: space-between;
+
+    .options {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        padding: 1rem;
+
+        p {
+          cursor: pointer;
+        }
+
+        p:hover {
+          color: #ccc;
+        }
+      }
+    }
+  }
+
+
+}

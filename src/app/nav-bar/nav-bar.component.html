@@ -1,0 +1,38 @@
+<nav>
+  <div class="mobileMenu">
+    <div class="mainMenu">
+      <img src="" alt="logo">
+      <i class="fas fa-bars" (click)="menuScroll()"></i>
+
+    </div>
+
+    <div [ngClass]="{'show':menu, 'hide':!menu}" class="optionsMenu">
+      <ul class="options">
+        <li>
+          <p>Inicio</p>
+        </li>
+        <li>
+          <p>Productos</p>
+        </li>
+        <li>
+          <p>Contacto</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="desktopMenu">
+    <img src="" alt="logo">
+    <ul class="options">
+      <li>
+        <p>Inicio</p>
+      </li>
+      <li>
+        <p>Productos</p>
+      </li>
+      <li>
+        <p>Contacto</p>
+      </li>
+    </ul>
+  </div>
+</nav>

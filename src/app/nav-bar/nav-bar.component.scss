@@ -1,74 +1,61 @@
-$navBg: #222;
-$navColor: #fff;
-
-.desktopMenu {
-  display: none;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
 }
 
-.mainMenu {
+.header{
+  background-color: #5dc1b9;
   display: flex;
   justify-content: space-between;
-  background-color: $navBg;
-  color: $navColor;
-  padding: 1rem;
-  z-index: 50;
-  position: relative;
-  z-index: 50;
+  align-items: center;
+  height: 85px;
+  padding: 5px 10%;
 }
 
-
-
-.optionsMenu {
-  transition: transform .5s ease-in-out;
-  background-color: #222;
-  position: relative;
-  z-index: 20;
-  color: #fff;
-
-  .options {
-    li {
-      padding: .5rem;
+.header{
+  .logo{
+    img{
+      height: 70px;
+      width: auto;
+    }
+    img:hover {
+      transform: scale(1.2);
     }
   }
 }
 
-
-.show {
-  transform: translateY(0);
-}
-
-.hide {
-  transform: translateY(-1000px);
-}
-
-@media screen and (min-width: 768px) {
-  .mobileMenu {
-    display: none;
+.header{
+  .logo{
+    cursor: pointer;
   }
+}
 
-  .desktopMenu {
-    display: flex;
-    background-color: $navBg;
-    color: $navColor;
-    justify-content: space-between;
-
-    .options {
-      list-style: none;
-
-      li {
-        display: inline-block;
-        padding: 1rem;
-
-        p {
-          cursor: pointer;
-        }
-
-        p:hover {
-          color: #ccc;
-        }
-      }
+.header{
+  .nav-links{
+    list-style: none;
+    li{
+      display: inline-block;
+      padding: 0 20px;
+      cursor: pointer;  
+    }
+    li:hover{
+      transform: scale(1.1);
     }
   }
+}
 
+.header .btn{
+  font-weight: 700;
+  padding: 9px 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color:rgb(254, 254, 254);
+}
 
+.header .btn:hover{
+  transform: scale(1.1);
 }

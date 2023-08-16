@@ -15,5 +15,6 @@ export class NavBarComponent {
     else {
       this.menu = false;
     }
+    console.log(this.menu)
   }
 }

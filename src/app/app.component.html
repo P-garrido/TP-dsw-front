@@ -1,2 +1,3 @@
-<app-nav-bar></app-nav-bar>
+<app-nav-bar [logInClick]="isLogged" (allowLogIn)="logUser()"></app-nav-bar>
+<app-log-in *ngIf="showLogForm" (loggedOk)="asignLogIn()"></app-log-in>
 <router-outlet></router-outlet>

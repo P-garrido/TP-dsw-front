@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,15 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
-  menu: boolean = false;
+  @Input() logInClick:boolean = false;
+  @Output() allowLogIn = new EventEmitter();
 
-  menuScroll() {
-    if (this.menu == false) {
-      this.menu = true;
+  logUser(){
+    if(!this.logInClick){
+      this.allowLogIn.emit();
     }
-    else {
-      this.menu = false;
-    }
-    console.log(this.menu)
   }
 }

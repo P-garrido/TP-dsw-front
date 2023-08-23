@@ -11,6 +11,9 @@
       <li routerLink="/Productos">Productos</li>
       <li>Mantenimiento</li>
       <button class="btn">Contacto</button>
+      <li (click)="logUser()">
+        {{ !logInClick ? "Log In" : "Bienvenido" }}
+      </li>
     </ul>
   </nav>
 </header>

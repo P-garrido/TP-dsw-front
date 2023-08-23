@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="log-in-box">
+    <img src="" alt="" />
+    <h1>Log In</h1>
+    <form [formGroup]="logInForm">
+      <div>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          placeholder="Ingrese nombre de usuario"
+          formControlName="username"
+        />
+      </div>
+      <div>
+        <label for="password">Password</label>
+        <input
+          type="text"
+          placeholder="Ingrese su contraseña"
+          formControlName="password"
+        />
+      </div>
+      <input
+        type="submit"
+        value="Log In"
+        class="log-in-btn"
+        (click)="[getOneEmployee()]"
+      />
+
+      <a href="">Olvido su contraseña?</a>
+      <a href="">No esta registrado?</a>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="logo">
+    <img
+      src="/Users/aguscaucino/Desktop/Angular/TP_Desarrollo/TP-dsw-front/logo.png"
+      alt="Page logo"
+    />
+  </div>
+  <nav>
+    <ul class="nav-links">
+      <li routerLink="/inicio">Inicio</li>
+      <li routerLink="/productos">Productos</li>
+      <li>Mantenimiento</li>
+      <button class="btn">Contacto</button>
+      <li (click)="logUser()" routerLink="/logIn">
+        {{ !logInClick ? "Log In" : "Bienvenido" }}
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,1 +1,12 @@
-<p>productos works!</p>
+<div *ngFor="let product of products" class="card product" style="width: 18rem">
+  <img src="" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="card-text">
+      {{ product.description }}
+    </p>
+    <a (click)="addToCart(product)" class="btn btn-primary"
+      >Agregar al carrito
+    </a>
+  </div>
+</div>

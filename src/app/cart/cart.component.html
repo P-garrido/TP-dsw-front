@@ -1,0 +1,18 @@
+<div
+  *ngFor="let product of cartService.cartProducts"
+  class="card product"
+  style="width: 18rem"
+>
+  <img src="" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <p class="card-text">
+      {{ product.description }}
+    </p>
+    <div class="btn-add-subs">
+      <a (click)="substractOne(product)" class="btn btn-primary"> - </a>
+      <p>{{ product.amount }}</p>
+      <a (click)="addOne(product)" class="btn btn-primary"> + </a>
+    </div>
+  </div>
+</div>

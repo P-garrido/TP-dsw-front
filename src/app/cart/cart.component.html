@@ -1,18 +1,36 @@
 <div
-  *ngFor="let product of cartService.cartProducts"
-  class="card product"
-  style="width: 18rem"
+  style="
+    display: flex;
+    height: 30vh;
+    background-image: url(./assets/fondo-agua.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    color: #222;
+    font-size: 1.5em;
+  "
 >
-  <img src="" class="card-img-top" alt="..." />
-  <div class="card-body">
-    <h5 class="card-title">{{ product.name }}</h5>
-    <p class="card-text">
-      {{ product.description }}
-    </p>
-    <div class="btn-add-subs">
-      <a (click)="substractOne(product)" class="btn btn-primary"> - </a>
-      <p>{{ product.amount }}</p>
-      <a (click)="addOne(product)" class="btn btn-primary"> + </a>
+  <h1>CARRITO</h1>
+</div>
+<div class="products-container">
+  <div
+    *ngFor="let product of cartService.cartProducts"
+    class="card product"
+    style="width: 18rem"
+  >
+    <img src="" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <p class="card-text">
+        {{ product.description }}
+      </p>
+      <div class="btn-add-subs">
+        <a (click)="substractOne(product)" class="btn btn-primary"> - </a>
+        <p>{{ product.amount }}</p>
+        <a (click)="addOne(product)" class="btn btn-primary"> + </a>
+        <a (click)="removeOne(product)" class="btn btn-danger">Eliminar</a>
+      </div>
     </div>
   </div>
 </div>

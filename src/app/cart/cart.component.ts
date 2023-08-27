@@ -18,7 +18,10 @@ export class CartComponent {
       pr.amount --;
     }
     console.log(pr)
-
+  }
+  removeOne(pr:any){
+    this.cartService.removeProduct(pr);
+    console.log(this.cartService.cartProducts)
   }
 }
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from '../cart.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-productos',
@@ -7,20 +8,31 @@ import { CartService } from '../cart.service';
   styleUrls: ['./productos.component.scss']
 })
 export class ProductosComponent {
-
-  constructor(private cartService: CartService){}
   products:any = [ {
-  image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcolombia.com.co%2Fproducto%2Fcloro-granulado%2F&psig=AOvVaw26O0p9nElJhoq4pkXqrekN&ust=1692925065837000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCKiC3ruL9IADFQAAAAAdAAAAABAE",
+  image: "./assets/cloro-granulado-multiaccion-x10kg-nataclor-20gr-cada-10-000lt-diariamente11-e85b8f8ec01e38f41a16210197797682-640-0.jpeg",
   name: "Cloro Granulado",
   description:"Cloro granulado precio x kg",
   price:"1000"
   },
   {
-  image: "",
+  image: "./assets/cloro-liquido.jpeg",
   name: "Cloro Liquido",
   description:"Cloro liquido precio por unidad",
   price:"2500"
-  }];
+  }
+];
+
+filteredProducts:any = this.products;
+
+
+searchForm = new FormControl();
+
+constructor(private cartService: CartService){
+  this.searchForm.valueChanges.subscribe(value => {
+    console.log(value);
+    this.filteredProducts = this.products.filter((p:any) => p.name.toLowerCase().includes(value.toLowerCase()))
+  })
+}
 
   addToCart(pr:any){
     this.cartService.addProduct(pr);

@@ -8,7 +8,10 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ProductosComponent } from './productos/productos.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,16 @@ import {HttpClientModule} from '@angular/common/http'
     NavBarComponent,
     InicioComponent,
     ProductosComponent,
-    LogInComponent
+    LogInComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    CarouselModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

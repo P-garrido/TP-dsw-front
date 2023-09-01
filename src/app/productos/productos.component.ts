@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FormControl } from '@angular/forms';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-productos',
@@ -8,29 +9,16 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./productos.component.scss']
 })
 export class ProductosComponent {
-  products:any = [ {
-  image: "./assets/cloro-granulado-multiaccion-x10kg-nataclor-20gr-cada-10-000lt-diariamente11-e85b8f8ec01e38f41a16210197797682-640-0.jpeg",
-  name: "Cloro Granulado",
-  description:"Cloro granulado precio x kg",
-  price:"1000"
-  },
-  {
-  image: "./assets/cloro-liquido.jpeg",
-  name: "Cloro Liquido",
-  description:"Cloro liquido precio por unidad",
-  price:"2500"
-  }
-];
 
-filteredProducts:any = this.products;
+filteredProducts:any = this.productService.products;
 
 
 searchForm = new FormControl();
 
-constructor(private cartService: CartService){
+constructor(private cartService: CartService, public productService: ProductsService){
   this.searchForm.valueChanges.subscribe(value => {
     console.log(value);
-    this.filteredProducts = this.products.filter((p:any) => p.name.toLowerCase().includes(value.toLowerCase()))
+    this.filteredProducts = this.productService.products.filter((p:any) => p.name.toLowerCase().includes(value.toLowerCase()))
   })
 }
 

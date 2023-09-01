@@ -7,6 +7,8 @@ import { CartService } from '../cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent {
+
+  
   constructor(public cartService: CartService){}
 
   addOne(pr:any){

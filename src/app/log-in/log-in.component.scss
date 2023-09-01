@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  padding: 100px;
 }
 .log-in-box{
   width: 350px;
@@ -37,6 +37,8 @@ form{
 
 }
 .log-in-btn{
-  background-color: black;
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  height: 50px;
+  width: 250px;
 }

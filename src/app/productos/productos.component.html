@@ -2,7 +2,7 @@
   style="
     display: flex;
     height: 30vh;
-    background-image: url(./assets/fondo-agua.jpeg);
+    background-image: url(/assets/fondo-agua.jpeg);
     background-size: cover;
     background-attachment: fixed;
     justify-content: center;
@@ -35,8 +35,8 @@
       <p class="card-text">
         {{ product.description }}
       </p>
-      <a (click)="addToCart(product)" class="btn btn-primary"
-        >Agregar al carrito
+      <a (click)="addToCart(product)" class="btn btn-primary" #button>
+        Agregar al carrito
       </a>
     </div>
   </div>

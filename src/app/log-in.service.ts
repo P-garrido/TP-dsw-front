@@ -5,6 +5,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LogInService {
 
+  obj:any = {
+    username: '',
+    password: ''
+  }
+
   constructor(private http: HttpClient) {}
   // async 
   getOne(user:string, pass:number){

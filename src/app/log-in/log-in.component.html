@@ -1,7 +1,7 @@
 <div class="container">
   <div class="log-in-box">
     <h1>Log In</h1>
-    <form [formGroup]="logInForm">
+    <form [formGroup]="logInForm" (ngSubmit)="getOneEmployee()">
       <div>
         <label for="username">Username</label>
         <input type="text" placeholder="Usuario" formControlName="username" />
@@ -14,33 +14,10 @@
           formControlName="password"
         />
       </div>
-      <input
-        type="submit"
-        value="Log In"
-        class="log-in-btn"
-        (click)="[getOneEmployee()]"
-      />
+      <input type="submit" value="Log In" class="log-in-btn" />
 
       <a href="">Olvido su contraseña?</a>
       <a href="">No esta registrado?</a>
     </form>
   </div>
 </div>
-<!-- <div class="container">
-  <div class="form-container">
-    <h1>Log In</h1>
-    <form action="" class="form">
-      <div class="user">
-        <label for="username">Usuario:</label>
-        <input type="text" placeholder="Username" />
-      </div>
-      <div class="password">
-        <label for="password">Contraseña: </label>
-        <input type="text" placeholder="Password" />
-      </div>
-      <input type="submit" value="LogIn" class="btn-submit" />
-      <a href="#">Olvidaste tu contraseña?</a>
-      <a href="#">No estas registrado?</a>
-    </form>
-  </div>
-</div> -->

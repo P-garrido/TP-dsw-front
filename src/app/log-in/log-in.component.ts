@@ -12,29 +12,14 @@ export class LogInComponent {
     username: new FormControl(),
     password:  new FormControl()
 });
-  obj:any;
+
   constructor(private logInService: LogInService){
 
   }
-  @Output() loggedOk = new EventEmitter<boolean>();
-  
-  // logIn(){
-  //   this.loggedOk.emit();
-  // }
-  // async 
+
   getOneEmployee(){
-    // await this.logInService.getOne().then((data) => {return data.json()})
-    //                                 .then((response) => this.obj = response);
-    // if(this.obj){
-    //   this.loggedOk.emit();
-    //   console.log(this.obj)
-    // }
-    this.logInService.getOne('pedrocapo', 123456).subscribe(resp => {
-      this.obj = resp;
-      if(this.obj){
-       this.loggedOk.emit();
-       console.log(this.obj)
-    }
-    })
+    this.logInService.obj.username = this.logInForm.value.username;
+    this.logInService.obj.password = this.logInForm.value.password;
+    console.log(this.logInService.obj);
   }
 }

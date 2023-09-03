@@ -1,9 +1,6 @@
 <header class="header">
   <div class="logo">
-    <img
-      src="/Users/aguscaucino/Desktop/Angular/TP_Desarrollo/TP-dsw-front/logo.png"
-      alt="Page logo"
-    />
+    <img src="./assets/logo.png" alt="Page logo" />
   </div>
   <nav>
     <ul class="nav-links">
@@ -11,9 +8,8 @@
       <li routerLink="/productos">Productos</li>
       <li>Mantenimiento</li>
       <button class="btn">Contacto</button>
-      <li (click)="logUser()" routerLink="/logIn">
-        {{ !logInClick ? "Log In" : "Bienvenido" }}
-      </li>
+      <li routerLink="/logIn">Log In</li>
+      <a class="cart-icon" routerLink="/cart"><i class="bi bi-cart"></i></a>
     </ul>
   </nav>
 </header>

@@ -8,7 +8,8 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ProductosComponent } from './productos/productos.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { CartComponent } from './cart/cart.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClientModule} from '@angular/common/http'
     NavBarComponent,
     InicioComponent,
     ProductosComponent,
-    LogInComponent
+    LogInComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

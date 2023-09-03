@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { LogInService } from '../log-in.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,12 +7,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
-  @Input() logInClick:boolean = false;
-  @Output() allowLogIn = new EventEmitter();
 
-  logUser(){
-    if(!this.logInClick){
-      this.allowLogIn.emit();
-    }
-  }
+  constructor(public logInService: LogInService){}
 }

@@ -1,0 +1,21 @@
+.product{
+  margin: 10px;
+}
+
+.btn-add-subs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-primary{
+  margin: 10px;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.products-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

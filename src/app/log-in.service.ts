@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { User } from './models/classes';
 @Injectable({
   providedIn: 'root'
 })
 export class LogInService {
 
-  obj:any = {
+  obj:User = {
     username: '',
-    password: ''
+    password: '',
+    firstName: '',
+    lastName: '',
+    adress: '',
+    phone: '',
+    type: 0
   }
 
   constructor(private http: HttpClient) {}

@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Product } from './models/classes';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  cartProducts:any = [];
+  cartProducts:Product [] = [];
   constructor() { }
 
-  addProduct(pr:any){
+  addProduct(pr:Product){
     if(!this.cartProducts.includes(pr)){
-      pr.amount = 1;
       this.cartProducts.push(pr);
       console.log(this.cartProducts)
     }
   }
-  removeProduct(pr:any){
-    this.cartProducts = this.cartProducts.filter((p:any) => p !== pr)
+  removeProduct(pr:Product){
+    this.cartProducts = this.cartProducts.filter((p:Product) => p !== pr)
   }
 }

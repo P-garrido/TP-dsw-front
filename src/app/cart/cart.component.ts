@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from '../cart.service';
+import { Product } from '../models/classes';
 
 @Component({
   selector: 'app-cart',
@@ -11,17 +12,17 @@ export class CartComponent {
   
   constructor(public cartService: CartService){}
 
-  addOne(pr:any){
+  addOne(pr:Product){
     pr.amount ++;
     console.log(pr)
   }
-  substractOne(pr:any){
+  substractOne(pr:Product){
     if(pr.amount > 1){
       pr.amount --;
     }
     console.log(pr)
   }
-  removeOne(pr:any){
+  removeOne(pr:Product){
     this.cartService.removeProduct(pr);
     console.log(this.cartService.cartProducts)
   }

@@ -1,0 +1,11 @@
+<div class="header">
+  <h1>SERVICIOS</h1>
+</div>
+
+
+<div *ngFor="let service of services">
+  <h2>{{service.name}}</h2>
+  <p>{{service.description}}</p>
+  <p><b>{{service.prize}}</b></p>
+  <a href="" class="btn btn-primary">Comprar</a>
+</div>

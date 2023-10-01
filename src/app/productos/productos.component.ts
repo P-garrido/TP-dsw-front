@@ -30,5 +30,5 @@ constructor(private cartService: CartService, public productService: ProductsSer
   addToCart(pr:Product){
     this.cartService.addProduct(pr);
   }
-
+  
 }

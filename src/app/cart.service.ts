@@ -11,6 +11,7 @@ export class CartService {
 
   addProduct(pr:Product){
     if(!this.cartProducts.includes(pr)){
+      pr.amount = 1;
       this.cartProducts.push(pr);
       console.log(this.cartProducts)
     }

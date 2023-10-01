@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FooterComponent } from './footer/footer.component';
 import { ServiciosComponent } from './servicios/servicios.component';
+import { NewServiceComponent } from './new-service/new-service.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ServiciosComponent } from './servicios/servicios.component';
     ProductosComponent,
     LogInComponent,
     FooterComponent,
-    ServiciosComponent
+    ServiciosComponent,
+    NewServiceComponent
   ],
   imports: [
     BrowserModule,

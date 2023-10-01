@@ -9,16 +9,16 @@ import { ServicesService } from '../services.service';
 })
 export class ServiciosComponent {
 
-  constructor(private servicesService: ServicesService) { }
+  constructor(private servicesService: ServicesService) {
+    this.getAllServices();
+  }
   /*  services: Service[] = [new Service("mantenimiento de piletas", "Limpiemos tu pileta las veces que quieras", 2500),
     new Service("pintado de piletas", "Pintamos tu pileta en menos de una semana", 50000),
     new Service("Jardinería", "Cortamos tu césped las veces que quieras", 6500)];*/
   services: Array<Service> = [];
 
 
-  ngOnInit() {
-    this.getAllServices();
-  }
+
 
 
   getAllServices() {

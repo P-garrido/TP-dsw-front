@@ -2,11 +2,12 @@
   <h1>SERVICIOS</h1>
 </div>
 
+
+
 <div class="service-container">
-  <div *ngFor="let service of services" class="service">
-    <h2>{{service.name}}</h2>
+  <div *ngFor="let service of this.services" class="service">
     <p>{{service.description}}</p>
-    <p><b>{{service.prize}}</b></p>
+    <p><b>{{service.price}}</b></p>
     <a href="" class="btn btn-primary">Contactanos Ya</a>
     <hr>
   </div>

@@ -16,14 +16,12 @@ export class Product {
 
 export class Service {
 
-  name: string;
   description: string;
-  prize: number;
+  price: number;
 
-  constructor(name: string, desc: string, pr: number) {
-    this.name = name;
+  constructor(desc: string, pr: number) {
     this.description = desc;
-    this.prize = pr;
+    this.price = pr;
   }
 }
 

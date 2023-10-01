@@ -5,26 +5,13 @@
     <form [formGroup]="logInForm">
       <div>
         <label for="username">Username</label>
-        <input
-          type="text"
-          placeholder="Ingrese nombre de usuario"
-          formControlName="username"
-        />
+        <input type="text" placeholder="Ingrese nombre de usuario" formControlName="username" />
       </div>
       <div>
         <label for="password">Password</label>
-        <input
-          type="text"
-          placeholder="Ingrese su contraseña"
-          formControlName="password"
-        />
+        <input type="text" placeholder="Ingrese su contraseña" formControlName="password" />
       </div>
-      <input
-        type="submit"
-        value="Log In"
-        class="log-in-btn"
-        (click)="[getOneEmployee()]"
-      />
+      <input type="submit" value="Log In" class="log-in-btn" (click)="[getOneEmployee()]" />
 
       <a href="">Olvido su contraseña?</a>
       <a href="">No esta registrado?</a>

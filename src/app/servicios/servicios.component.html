@@ -10,7 +10,8 @@
   <div *ngFor="let service of this.services" class="service">
     <p>{{service.description}}</p>
     <p><b>{{service.price}}</b></p>
-    <a href="" class="btn btn-primary">Contactanos Ya</a>
+    <a routerLink="" class="btn btn-primary">Contactanos Ya</a>
+    <button class="btn btn-danger btn-eliminar" (click)="deleteService()">Eliminar Servicio</button>
     <hr>
   </div>
 </div>

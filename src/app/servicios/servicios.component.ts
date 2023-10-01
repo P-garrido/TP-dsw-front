@@ -28,4 +28,8 @@ export class ServiciosComponent {
       });
     });
   }
+
+  deleteService() {
+
+  }
 }

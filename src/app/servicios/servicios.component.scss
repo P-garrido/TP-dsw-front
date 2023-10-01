@@ -17,9 +17,15 @@
 }
 
 .service-container {
-  margin: 2rem;
+  margin: 10rem;
 
   .service {
     margin: 1rem;
+    position: relative;
+
+    .btn-eliminar {
+      position: absolute;
+      right: 0;
+    }
   }
 }

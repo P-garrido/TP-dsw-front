@@ -26,4 +26,8 @@ export class ServicesService {
       hourValue: parseInt(fg.value.price)
     });
   }
+
+  deleteService() {
+    //this.http.delete()
+  }
 }

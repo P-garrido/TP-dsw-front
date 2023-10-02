@@ -1,0 +1,55 @@
+<accordion [isAnimated]="true">
+  <accordion-group 
+    heading="{{item.nombre + ' ' + item.apellido}}" 
+    *ngFor="let item of list"
+    class="user-flex-container">
+      <div class="user-flex-item">
+        <p class="user-flex-text">Nombre de Usuario: {{item.nombre_usuario}}</p>
+        <p class="user-flex-text">Correo: {{item.email}}</p>
+        <p class="user-flex-text">Teléfono: {{item.telefono}}</p>
+        <p class="user-flex-text">Dirección: {{item.direccion}}</p>
+        <p class="user-flex-text">Tipo de Usuario: {{item.tipo_usuario == 1? "Cliente" : "Empleado" }}</p>
+        <button (click)="deleteUser(item)">Eliminar Usuario</button>
+      </div>
+  </accordion-group>
+</accordion>
+
+<form 
+  [formGroup]="userForm" 
+  (ngSubmit)="addUser()">
+  <div class="input-container">
+      <div class="form-item">
+        <label for="username">Nombre de Usuario: </label>
+        <input type="text" placeholder="Usuario" formControlName="username" />
+      </div>
+      <div class="form-item">
+        <label for="password">Password</label>
+        <input type="text" placeholder="Contraseña" formControlName="password" />
+      </div>
+      <div class="form-item">
+        <label for="email">Correo Electrónico: </label>
+        <input type="text" placeholder="Email" formControlName="email" />
+      </div>
+      <div class="form-item">
+        <label for="phoneNumber">Número de Teléfono: </label>
+        <input type="text" placeholder="Teléfono" formControlName="phoneNumber" />
+      </div>
+      <div class="form-item">
+        <label for="firstName">Nombres: </label>
+        <input type="text" placeholder="Nombres" formControlName="firstName" />
+      </div>
+      <div class="form-item">
+        <label for="lastName">Apellido: </label>
+        <input type="text" placeholder="Apellido" formControlName="lastName" />
+      </div>
+      <div class="form-item">
+        <label for="address">Dirección: </label>
+        <input type="text" placeholder="Dirección" formControlName="address" />
+      </div>
+      <div class="form-item">
+        <label for="userType">Tipo de Usuario: </label>
+        <input type="text" placeholder="Tipo de Usuario" formControlName="userType" />
+      </div>
+      <input type="submit" value="Agregar" class="log-in-btn" />
+  </div>
+</form>

@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { NewServiceComponent } from './new-service/new-service.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { NewServiceComponent } from './new-service/new-service.component';
     LogInComponent,
     FooterComponent,
     ServiciosComponent,
-    NewServiceComponent
+    NewServiceComponent,
+
   ],
   imports: [
     BrowserModule,

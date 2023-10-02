@@ -31,11 +31,11 @@ export class ServicesService {
     return this.http.delete(url);
   }
 
-  editService(idServ: number, fg: FormGroup) {
-    const url = this.baseUrl + `/${idServ}`;
-    return this.http.patch<any>(url, {
-      description: fg.value.description,
-      hourValue: parseInt(fg.value.price)
-    });
-  }
+  // editService(idServ: number, fg: FormGroup) {
+  //   const url = this.baseUrl + `/${idServ}`;
+  //   return this.http.patch<any>(url, {
+  //     description: fg.value.description,
+  //     hourValue: parseInt(fg.value.price)
+  //   });
+  //}
 }

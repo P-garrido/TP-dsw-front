@@ -16,10 +16,12 @@ export class Product {
 
 export class Service {
 
+  id: number;
   description: string;
   price: number;
 
-  constructor(desc: string, pr: number) {
+  constructor(id: number, desc: string, pr: number) {
+    this.id = id;
     this.description = desc;
     this.price = pr;
   }

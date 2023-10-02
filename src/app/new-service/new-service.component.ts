@@ -19,6 +19,5 @@ export class NewServiceComponent {
   addService() {
     this.servicesService.addService(this.newServiceForm).subscribe();
     this.newServiceForm.reset();
-
   }
 }

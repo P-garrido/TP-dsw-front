@@ -21,11 +21,10 @@
 
   .service {
     margin: 1rem;
-    position: relative;
 
-    .btn-eliminar {
-      position: absolute;
-      right: 0;
+    .btns-container {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

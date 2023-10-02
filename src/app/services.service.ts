@@ -20,14 +20,22 @@ export class ServicesService {
   }
 
   addService(fg: FormGroup) {
-    const headers = new HttpHeaders().set('Content-type', `application/json`);
     return this.http.post<any>(this.baseUrl, {
       description: fg.value.description,
       hourValue: parseInt(fg.value.price)
     });
   }
 
-  deleteService() {
-    //this.http.delete()
+  deleteService(idServ: number) {
+    const url = this.baseUrl + `/${idServ}`;
+    return this.http.delete(url);
+  }
+
+  editService(idServ: number, fg: FormGroup) {
+    const url = this.baseUrl + `/${idServ}`;
+    return this.http.patch<any>(url, {
+      description: fg.value.description,
+      hourValue: parseInt(fg.value.price)
+    });
   }
 }

@@ -36,11 +36,11 @@
     class="card product"
     style="width: 18rem"
   >
-    <img [src]="product.image" class="card-img-top" alt="..." />
+    <img [src]="product.imagen" class="card-img-top" alt="..." />
     <div class="card-body">
-      <h5 class="card-title">{{ product.name }}</h5>
+      <h5 class="card-title">{{ product.nombre_producto }}</h5>
       <p class="card-text">
-        {{ product.description }}
+        {{ product.desc_producto }}
       </p>
       <a (click)="addToCart(product)" class="btn btn-primary" #button>
         Agregar al carrito

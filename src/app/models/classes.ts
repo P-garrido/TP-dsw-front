@@ -2,17 +2,17 @@ import { ArgumentOutOfRangeError } from "rxjs";
 
 export class Product {
 
-  image: any;
-  name: string;
-  description: string;
-  price: number;
+  imagen: any;
+  nombre_producto: string;
+  desc_producto: string;
+  precio: number;
   amount: number;
 
   constructor(img: any, name: string, desc: string, pr: number, am: number) {
-    this.image = img;
-    this.name = name;
-    this.description = desc;
-    this.price = pr;
+    this.imagen = img;
+    this.nombre_producto = name;
+    this.desc_producto = desc;
+    this.precio = pr;
     this.amount = am
   }
 }

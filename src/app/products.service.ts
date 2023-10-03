@@ -12,11 +12,7 @@ export class ProductsService {
   }
 
   loadProducts(){
-      this.http.get("http://localhost:1234/products").subscribe((resp: any) => {
-      console.log(resp.length);
-      this.products = resp;
-      console.log(this.products);
-    })
+      return this.http.get("http://localhost:1234/products")
   }
 
   createProduct(name:any, desc:string, stock: any, price:any, img:string){
@@ -28,6 +24,8 @@ export class ProductsService {
       precio: price,
       imagen: img
     })
-
+  }
+  deleteProduct(idProd:number){
+    return this.http.delete("http://localhost:1234/products/" + idProd.toString())
   }
 }

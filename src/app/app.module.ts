@@ -10,7 +10,10 @@ import { LogInComponent } from './log-in/log-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
-import { NewProductComponent } from './new-product/new-product.component'
+import { NewProductComponent } from './new-product/new-product.component';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [
@@ -20,13 +23,16 @@ import { NewProductComponent } from './new-product/new-product.component'
     ProductosComponent,
     LogInComponent,
     CartComponent,
-    NewProductComponent
+    NewProductComponent,
+    AdminProductsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AccordionModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

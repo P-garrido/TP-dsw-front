@@ -1,37 +1,22 @@
-<accordion [isAnimated]="true">
-  <accordion-group 
-    heading="{{item.nombre + ' ' + item.apellido}}" 
-    *ngFor="let item of list"
-    class="user-flex-container">
-      <div class="user-flex-item">
-        <p class="user-flex-text">Nombre de Usuario: {{item.nombre_usuario}}</p>
-        <p class="user-flex-text">Correo: {{item.email}}</p>
-        <p class="user-flex-text">Teléfono: {{item.telefono}}</p>
-        <p class="user-flex-text">Dirección: {{item.direccion}}</p>
-        <p class="user-flex-text">Tipo de Usuario: {{item.tipo_usuario == 1? "Cliente" : "Empleado" }}</p>
-        <button (click)="deleteUser(item)">Eliminar Usuario</button>
-      </div>
-  </accordion-group>
-</accordion>
-
-<form 
-  [formGroup]="userForm" 
-  (ngSubmit)="addUser()">
-  <div class="input-container">
+<div class="form-container">
+  <form *ngIf="edit == true || add == true" [formGroup]="userForm" (ngSubmit)="edit == true? editUser() : addUser()" class="form-group">
+    <button (click)="edit = false; add = false" class="close-button">X</button>
+    <div class="input-container">
+      <h4>{{edit == true ? 'Editar Usuario' : 'Agregar nuevo Usuario'}}</h4>
       <div class="form-item">
         <label for="username">Nombre de Usuario: </label>
         <input type="text" placeholder="Usuario" formControlName="username" />
       </div>
       <div class="form-item">
         <label for="password">Password</label>
-        <input type="text" placeholder="Contraseña" formControlName="password" />
+        <input type="password" placeholder="Contraseña" formControlName="password" />
       </div>
       <div class="form-item">
         <label for="email">Correo Electrónico: </label>
         <input type="text" placeholder="Email" formControlName="email" />
       </div>
       <div class="form-item">
-        <label for="phoneNumber">Número de Teléfono: </label>
+        <label for="phoneNumber">Teléfono: </label>
         <input type="text" placeholder="Teléfono" formControlName="phoneNumber" />
       </div>
       <div class="form-item">
@@ -47,9 +32,36 @@
         <input type="text" placeholder="Dirección" formControlName="address" />
       </div>
       <div class="form-item">
-        <label for="userType">Tipo de Usuario: </label>
-        <input type="text" placeholder="Tipo de Usuario" formControlName="userType" />
+        <label for="address">Tipo de Usuario: </label>
+        <label for="0">Empleado</label>
+        <input required type="radio" name="userType" value="0" formControlName="userType" (click)="userType = 0"/>
+        <label for="1">Cliente</label>
+        <input required type="radio" name="userType"  value="1" formControlName="userType" (click)="userType = 1"/>
       </div>
-      <input type="submit" value="Agregar" class="log-in-btn" />
-  </div>
-</form>
+
+
+      <input type="submit" value="Guardar" [disabled]="!userForm.valid" class="log-in-btn" />
+    </div>
+  </form>
+</div>
+  
+<button class="filter-button-empleados" (click)="employees = !employees">Empleados</button>
+<button class="filter-button-clientes" (click)="clients = !clients">Clientes</button>
+<button class="add-button" (click)="add = true">Agregar Usuario</button>
+
+  <accordion [isAnimated]="true">
+    <accordion-group heading="{{item.nombre + ' ' + item.apellido}}" *ngFor="let item of list"
+      class="user-flex-container">
+      <div class="user-flex-item">
+        <p class="user-flex-text">Nombre de Usuario: {{item.nombre_usuario}}</p>
+        <p class="user-flex-text">Correo: {{item.email}}</p>
+        <p class="user-flex-text">Teléfono: {{item.telefono}}</p>
+        <p class="user-flex-text">Dirección: {{item.direccion}}</p>
+        <p class="user-flex-text">Tipo de Usuario: {{item.tipo_usuario == 1? "Cliente" : "Empleado" }}</p>
+        <button (click)="allowEditing(item)">Editar Usuario</button>
+        <button (click)="deleteUser(item)">Eliminar Usuario</button>
+      </div>
+    </accordion-group>
+  </accordion>
+
+  

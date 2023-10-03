@@ -2,34 +2,120 @@
   display: inline;
 }
 
+accordion{
+  width: 100%;
+}
+
 .user-flex-item{
   display: flex;
   justify-content: space-between;
   padding: 1px 0;
+  min-width: min-content;
+  max-width: 100%;
+  width: 100vw;
 }
 
 .user-flex-container{
   padding: 2px 10px;
 }
 
+.form-container{
+  display: flex;
+}
+
 form{
+  margin: 10px auto;
+  background-color: #5dc1b9;
+  padding: 20px 10px;
+  border-radius: 15px;
   display: flex;
 }
 
-.input-container{
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-}
-
-.form-item{
-  
-  padding: 5px 0px;
-  align-items: left;
+form .form-item{
   display: flex;
   justify-content: space-between;
+  margin: 2px 5px;
+}
+form .form-item input{
+  margin: 2px;
+}
+.log-in-btn{
+  float: right;
+  padding: 2px 5px;
+  border-radius: 2px;
 }
 
-.form-item label{
-  padding-right: 5px;
+.log-in-btn:hover{
+  transform: scale(1.02);
+  background-color: #5dc1da;
+}
+
+.add-button{
+  position: fixed;
+  z-index: 2;
+  right: 20px;
+  bottom: 40px;
+  border-radius: 20px;
+  padding: 10px 25px;
+  border: none;
+  background-color: lightblue;
+}
+
+.add-button:hover {
+  transform: scale(1.1);
+  background-color: #5dc1da;
+  transition: transform 0.3s;
+}
+
+.filter-button-empleados{
+  position: fixed;
+    z-index: 2;
+    right: 200px;
+    bottom: 40px;
+    border-radius: 20px;
+    padding: 10px 25px;
+    border: none;
+    background-color: lightblue;
+}
+
+.filter-button-clientes {
+  position: fixed;
+  z-index: 2;
+  right: 345px;
+  bottom: 40px;
+  border-radius: 20px;
+  padding: 10px 25px;
+  border: none;
+  background-color: lightblue;
+}
+
+
+.filter-button-empleados:hover{
+  transform: scale(1.1);
+    background-color: #5dc1da;
+    transition: transform 0.3s;
+}
+
+.filter-button-clientes:hover {
+  transform: scale(1.1);
+  background-color: #5dc1da;
+  transition: transform 0.3s;
+}
+
+h4{
+  text-align: center;
+}
+
+input.ng-invalid{
+  border: solid 1px red;
+}
+
+.close-button{
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  border: none;
+  position: relative;
+  left: 93%;
+  top: -2%;
 }

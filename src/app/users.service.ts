@@ -15,13 +15,24 @@ export class UsersService {
 
   deleteUser(userId: number){
     const url = this.baseUrl + '/' + userId.toString()
-    console.log(url)
     return this.http.delete(url)
   }
 
   addUser(obj: object){
-    console.log(obj)
     const headers = { 'content-type': 'application/json'}
     return this.http.post(this.baseUrl, JSON.stringify(obj), {'headers':headers})
+  }
+
+  getUser(userId: number){
+    const url = '/' + userId.toString()
+    return this.http.get(this.baseUrl + url)
+  }
+
+  editUser(obj: Object, userId: number){
+    const headers = { 'content-type': 'application/json'}
+    const url = this.baseUrl + '/' + userId.toString()
+    console.log(obj)
+    console.log(url)
+    return this.http.patch(url, JSON.stringify(obj), {'headers':headers})
   }
 }

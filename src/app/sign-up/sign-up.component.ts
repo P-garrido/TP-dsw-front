@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -10,28 +10,28 @@ import { UsersService } from '../users.service';
 export class SignUpComponent {
   constructor(private service: UsersService) { }
   
-  userForm = new FormGroup({
-    username: new FormControl(),
-    password: new FormControl(),
-    email: new FormControl(),
-    phoneNumber: new FormControl(),
-    firstName: new FormControl(),
-    lastName: new FormControl(),
-    address: new FormControl(),
+  signUpForm = new FormGroup({
+    username: new FormControl('',[Validators.required]),
+    password: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$")]),
+    phoneNumber: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.maxLength(12)]),
+    firstName: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z ]*$")]),
+    lastName: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z ]*$")]),
+    address: new FormControl('', Validators.required),
     userType: new FormControl()
   })
 
   addUser(){
     const obj = {
-      nombre_usuario: this.userForm.value.username,
-      clave: this.userForm.value.password, 
-      email: this.userForm.value.email, 
-      telefono: this.userForm.value.phoneNumber,
-      nombre: this.userForm.value.firstName,
-      apellido: this.userForm.value.lastName,
-      direccion: this.userForm.value.address,
+      nombre_usuario: this.signUpForm.value.username,
+      clave: this.signUpForm.value.password, 
+      email: this.signUpForm.value.email, 
+      telefono: this.signUpForm.value.phoneNumber,
+      nombre: this.signUpForm.value.firstName,
+      apellido: this.signUpForm.value.lastName,
+      direccion: this.signUpForm.value.address,
       tipo_usuario: 1 //este numero corresponde a cliente, un empleado deberia ser registrado desde el componente users
     }
-    this.service.addUser(obj).subscribe(() => this.userForm.reset())
+    this.service.addUser(obj).subscribe(() => this.signUpForm.reset())
   }
 }

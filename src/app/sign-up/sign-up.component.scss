@@ -19,3 +19,7 @@ form {
 .form-item label {
   padding-right: 5px;
 }
+
+input.ng-invalid {
+  border: solid 1px red;
+}

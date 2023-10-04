@@ -13,6 +13,7 @@ export class ServicesService {
   }
 
   readonly baseUrl = "http://localhost:1234/services";
+  readonly buyBaseUrl = "http://localhost:1234/services-clients";
 
 
   getAllServices() {
@@ -37,5 +38,14 @@ export class ServicesService {
       description: serv.data.value.description,
       hourValue: parseInt(serv.data.value.price)
     });
+  }
+
+  buyService(idClient: number, idService: number, hourAm: number) {
+    const url = this.buyBaseUrl;
+    return this.http.post<any>(url, {
+      idCli: idClient,
+      idServ: idService,
+      hourAmmount: hourAm
+    })
   }
 }

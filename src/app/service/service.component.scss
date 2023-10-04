@@ -3,6 +3,13 @@
   position: relative;
   padding-bottom: 5rem;
 
+  .edit {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #5dc1b9;
+    border-radius: 0;
+  }
+
   .btn-aceptar {
     width: fit-content;
     position: absolute;

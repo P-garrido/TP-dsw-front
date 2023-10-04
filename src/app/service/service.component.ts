@@ -12,6 +12,7 @@ export class ServiceComponent {
 
   @Output() editServiceClick = new EventEmitter<EditServiceEvent>();
   @Output() deleteServiceClick = new EventEmitter<number>();
+  @Output() buyServiceClick = new EventEmitter<number>();
 
   onEdit: boolean = false;
 
@@ -39,5 +40,9 @@ export class ServiceComponent {
   sendEdit() {
     const newServ = new EditServiceEvent(this.service.id, this.editServiceForm);
     this.editServiceClick.emit(newServ);
+  }
+
+  buyService(idServ: number) {
+    this.buyServiceClick.emit(idServ);
   }
 }

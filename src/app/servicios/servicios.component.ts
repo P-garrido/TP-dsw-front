@@ -37,4 +37,10 @@ export class ServiciosComponent {
     this.servicesService.editService(serv).subscribe();
     window.location.reload(); //Arreglar esto para que quede mejor;
   }
+
+  buyService(idServ: number) { //OBTENER NRO CLIENTE Y CANT DE HORAS
+    this.servicesService.buyService(1, idServ, 2).subscribe(
+      response => console.log(response)
+    );
+  }
 }

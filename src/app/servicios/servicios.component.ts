@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Service } from '../models/classes';
+import { EditServiceEvent, Service } from '../models/classes';
 import { ServicesService } from '../services.service';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -32,9 +32,9 @@ export class ServiciosComponent {
     window.location.reload(); //Arreglar esto para que quede mejor;
   }
 
-  editService(idServ: number) {
+  editService(serv: EditServiceEvent) {
 
-    //   this.servicesService.editService(idServ, newServ).subscribe();
-    //   window.location.reload(); //Arreglar esto para que quede mejor;
+    this.servicesService.editService(serv).subscribe();
+    window.location.reload(); //Arreglar esto para que quede mejor;
   }
 }

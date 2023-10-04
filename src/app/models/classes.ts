@@ -1,3 +1,5 @@
+import { FormControl, FormGroup } from "@angular/forms";
+
 export class Product {
 
   image: any;
@@ -24,6 +26,16 @@ export class Service {
     this.id = id;
     this.description = desc;
     this.price = pr;
+  }
+}
+
+export class EditServiceEvent {
+  id: number;
+  data: FormGroup;
+
+  constructor(id: number, fc: FormGroup) {
+    this.id = id;
+    this.data = fc;
   }
 }
 

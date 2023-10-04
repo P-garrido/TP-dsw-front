@@ -6,16 +6,12 @@
   Agregar Servicio
 </a>
 
-<div class="service-container">
-  <div *ngFor="let service of this.services" class="service">
-    <p>{{service.description}}</p>
-    <p><b>{{service.price}}</b></p>
-    <div class="btns-container">
-      <a routerLink="" class="btn btn-primary">Contactanos Ya</a>
-      <button class="btn btn-secondary" (click)="editService(service.id)">Editar Servicio</button>
-      <button class="btn btn-danger" (click)="deleteService(service.id)">Eliminar Servicio</button>
-    </div>
-    <hr>
 
+
+<div class="service-container">
+  <div *ngFor="let serv of this.services" class="service">
+    <app-service [service]="serv" (editServiceClick)="editService($event)"
+      (deleteServiceClick)="deleteService($event)"></app-service>
+    <hr>
   </div>
 </div>

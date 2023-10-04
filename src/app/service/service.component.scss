@@ -1,0 +1,17 @@
+.edit-serv {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 5rem;
+
+  .btn-aceptar {
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.btns-container {
+  display: flex;
+  justify-content: space-between;
+}

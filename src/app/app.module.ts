@@ -14,6 +14,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FooterComponent } from './footer/footer.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { NewServiceComponent } from './new-service/new-service.component';
+import { ServiceComponent } from './service/service.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { NewServiceComponent } from './new-service/new-service.component';
     FooterComponent,
     ServiciosComponent,
     NewServiceComponent,
+    ServiceComponent,
 
   ],
   imports: [

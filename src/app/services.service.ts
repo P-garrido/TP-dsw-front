@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Service } from './models/classes';
+import { EditServiceEvent, Service } from './models/classes';
 import { FormGroup } from '@angular/forms';
 
 @Injectable({
@@ -31,11 +31,11 @@ export class ServicesService {
     return this.http.delete(url);
   }
 
-  // editService(idServ: number, fg: FormGroup) {
-  //   const url = this.baseUrl + `/${idServ}`;
-  //   return this.http.patch<any>(url, {
-  //     description: fg.value.description,
-  //     hourValue: parseInt(fg.value.price)
-  //   });
-  //}
+  editService(serv: EditServiceEvent) {
+    const url = this.baseUrl + `/${serv.id}`;
+    return this.http.patch<any>(url, {
+      description: serv.data.value.description,
+      hourValue: parseInt(serv.data.value.price)
+    });
+  }
 }

@@ -14,6 +14,12 @@
       <p class="user-flex-text">Cantidad en stock: {{ item.stock }}</p>
       <p class="user-flex-text">Precio: ${{ item.precio }}</p>
       <a [href]="item.imagen"> Imagen</a>
+      <a
+        class="btn btn-primary btn-editProd"
+        routerLink="/addProduct"
+        (click)="editProduct(item)"
+        >Editar Producto</a
+      >
       <a class="btn btn-danger btn-deleteProd" (click)="deleteProduct(item)"
         >Eliminar Producto</a
       >

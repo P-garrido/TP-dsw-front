@@ -8,7 +8,29 @@ import { HttpClient } from '@angular/common/http';
 export class ProductsService {
 
   products:Product []= [];
+
+  productToEdit: Product = {
+    id_producto: 0,
+    imagen: '',
+    nombre_producto: '',
+    desc_producto: '',
+    precio: 0,
+    amount: 0,
+    stock: 0
+  };
   constructor(private http: HttpClient) {
+  }
+
+  editProduct(id: number, name:any, desc:string, stock: any, price:any, img:string){
+    return this.http.patch("http://localhost:1234/products", 
+    {
+      id_producto: id,
+      nombre_producto: name,
+      desc_producto: desc,
+      stock: stock,
+      precio: price,
+      imagen: img
+    })
   }
 
   loadProducts(){

@@ -11,7 +11,21 @@ export class AdminProductsComponent implements OnInit{
 
   productsList:any =[];
 
-  constructor(private prodService: ProductsService){}
+  constructor(private prodService: ProductsService){
+    this.prodService.productToEdit = {
+    id_producto: 0,
+    imagen: '',
+    nombre_producto: '',
+    desc_producto: '',
+    precio: 0,
+    amount: 0,
+    stock: 0
+  };
+  }
+
+ editProduct(prod:Product){
+  this.prodService.productToEdit = prod;
+ }
 
   deleteProduct(product:Product){
     this.prodService.deleteProduct(product.id_producto).subscribe();

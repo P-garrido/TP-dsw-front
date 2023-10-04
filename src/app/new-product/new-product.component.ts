@@ -10,7 +10,7 @@ import { ProductsService } from '../products.service';
 })
 export class NewProductComponent {
   proximo_id:Number | undefined
-  constructor(private productService: ProductsService){}
+  
   newProductForm = new FormGroup({
     productName: new FormControl('', [Validators.required]),
     productDesc:  new FormControl(),
@@ -19,6 +19,16 @@ export class NewProductComponent {
     productPrice: new FormControl(0, [Validators.required]),
     productImg:  new FormControl()
 });
+
+  constructor(private productService: ProductsService){
+    if(this.productService.productToEdit.nombre_producto != ''){
+      this.newProductForm.controls.productName.patchValue(this.productService.productToEdit.nombre_producto);
+      this.newProductForm.controls.productDesc.patchValue(this.productService.productToEdit.desc_producto);
+      this.newProductForm.controls.productImg.patchValue(this.productService.productToEdit.imagen);
+      this.newProductForm.controls.productPrice.patchValue(this.productService.productToEdit.precio);
+      this.newProductForm.controls.productStock.patchValue(this.productService.productToEdit.stock);
+    }
+  }
 
   addProduct(){
     // this.http.get("http://localhost:1234/products").subscribe((resp:any) => {
@@ -36,11 +46,20 @@ export class NewProductComponent {
     //   precio: this.newProductForm.value.productPrice,
     //   imagen: this.newProductForm.value.productImg,
     // })
+
+    if(this.productService.productToEdit.nombre_producto != ''){
+      this.productService.editProduct(this.productService.productToEdit.id_producto , this.newProductForm.value.productName, 
+      this.newProductForm.value.productDesc, 
+      this.newProductForm.value.productStock,  
+      this.newProductForm.value.productPrice, 
+      this.newProductForm.value.productImg).subscribe(resp => console.log(resp));
+    }else{
     this.productService.createProduct(this.newProductForm.value.productName, 
       this.newProductForm.value.productDesc, 
       this.newProductForm.value.productStock,  
       this.newProductForm.value.productPrice, 
       this.newProductForm.value.productImg).subscribe(resp => console.log(resp));
     this.newProductForm.reset();
+    }
   }
 }

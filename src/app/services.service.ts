@@ -40,12 +40,13 @@ export class ServicesService {
     });
   }
 
-  buyService(idClient: number, idService: number, hourAm: number) {
+  buyService(serv: EditServiceEvent) {
     const url = this.buyBaseUrl;
     return this.http.post<any>(url, {
-      idCli: idClient,
-      idServ: idService,
-      hourAmmount: hourAm
+      idCli: 1,
+      idServ: serv.id,
+      date: serv.data.value.date,
+      hourAmmount: null
     })
   }
 }

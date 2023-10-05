@@ -15,6 +15,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { NewServiceComponent } from './new-service/new-service.component';
 import { ServiceComponent } from './service/service.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { ServiceComponent } from './service/service.component';
     HttpClientModule,
     BrowserAnimationsModule,
     CarouselModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

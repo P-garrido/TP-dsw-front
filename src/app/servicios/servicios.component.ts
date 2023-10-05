@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { EditServiceEvent, Service } from '../models/classes';
 import { ServicesService } from '../services.service';
-import { FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-servicios',
@@ -38,8 +38,8 @@ export class ServiciosComponent {
     window.location.reload(); //Arreglar esto para que quede mejor;
   }
 
-  buyService(idServ: number) { //OBTENER NRO CLIENTE Y CANT DE HORAS
-    this.servicesService.buyService(1, idServ, 2).subscribe(
+  buyService(serv: EditServiceEvent) { //OBTENER NRO CLIENTE
+    this.servicesService.buyService(serv).subscribe(
       response => console.log(response)
     );
   }

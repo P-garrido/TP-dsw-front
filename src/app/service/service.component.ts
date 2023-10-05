@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { EditServiceEvent, Service } from '../models/classes';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-service',
@@ -12,14 +13,29 @@ export class ServiceComponent {
 
   @Output() editServiceClick = new EventEmitter<EditServiceEvent>();
   @Output() deleteServiceClick = new EventEmitter<number>();
-  @Output() buyServiceClick = new EventEmitter<number>();
+  @Output() buyServiceClick = new EventEmitter<EditServiceEvent>();
 
   onEdit: boolean = false;
+  minDate: Date = new Date();
+  disabledDates: Date[] = [new Date(2023, 11, 5)];
+  modalRef?: BsModalRef;
+  message?: string;
+  config = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
+
+  constructor(private modalService: BsModalService) { }
 
 
   editServiceForm = new FormGroup({
-    description: new FormControl('', [Validators.required]),
-    price: new FormControl('', [Validators.required])
+    description: new FormControl('', Validators.required),
+    price: new FormControl('', Validators.required)
+  });
+
+  serviceBuyForm = new FormGroup({
+    date: new FormControl('', Validators.required),
+    msg: new FormControl('', Validators.maxLength(100))
   });
 
 
@@ -43,6 +59,17 @@ export class ServiceComponent {
   }
 
   buyService(idServ: number) {
-    this.buyServiceClick.emit(idServ);
+    const buyServ = new EditServiceEvent(this.service.id, this.serviceBuyForm);
+    this.buyServiceClick.emit(buyServ);
+    this.modalRef?.hide();
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.config);
+  }
+
+  decline(): void {
+    this.message = 'Declined!';
+    this.modalRef?.hide();
   }
 }

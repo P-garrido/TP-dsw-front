@@ -22,3 +22,18 @@
   display: flex;
   justify-content: space-between;
 }
+
+textarea {
+  resize: none;
+  overflow-y: auto;
+}
+
+.btn-modal-container {
+  text-align: right;
+
+  .btn-modal {
+    width: fit-content;
+    margin: .2rem;
+  }
+
+}

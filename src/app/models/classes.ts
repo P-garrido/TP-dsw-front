@@ -36,6 +36,7 @@ export class Service {
 }
 
 export class User {
+  id_usuario: number;
   username: string;
   password: string;
   firstName: string;
@@ -44,7 +45,8 @@ export class User {
   phone: string;
   type: number;
 
-  constructor(usNam: string, pass: string, fNam: string, lNam: string, ad: string, ph: string, type: number) {
+  constructor(idUs: number, usNam: string, pass: string, fNam: string, lNam: string, ad: string, ph: string, type: number) {
+    this.id_usuario = idUs;
     this.username = usNam;
     this.password = pass;
     this.firstName = fNam;

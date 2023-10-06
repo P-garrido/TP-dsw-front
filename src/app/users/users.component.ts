@@ -1,7 +1,8 @@
-import { Component, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, DoCheck, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { UsersService } from '../users.service';
 import { OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { User } from '../models/classes';
 
 @Component({
   selector: 'app-users',
@@ -9,13 +10,13 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements  OnInit {
-  list: any = [];
+  list: User[] = [];
   edit: boolean = false;
-  editId: number = 0;
   add: boolean = false;
-  userType: number = 0;
   clients: boolean = false;
-  employees: boolean = false; //banderas para filtrar por empleados o clientes
+  employees: boolean = false;
+  editId: number = 0;
+  userType: number = 0;
 
   userForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
@@ -31,12 +32,41 @@ export class UsersComponent implements  OnInit {
   constructor(private service: UsersService) {} 
 
   ngOnInit(): void {
-    this.getAllUsers()
+    if(this.employees){
+      this.getAllEmployees()
+    }
+    else if (this.clients){
+      this.getAllClients()
+    }
+    else{
+      this.getAllUsers()
+    }
+  }
+
+  showOnlyEmployees(){
+    this.clients = false
+    if(!this.employees){
+      this.employees = true
+    }
+    else{
+      this.employees = false
+    }
+    this.ngOnInit()
+  }
+
+  showOnlyClients(){
+    this.employees = false
+    if(!this.clients){
+      this.clients = true
+    }
+    else{
+      this.clients = false
+    }
+    this.ngOnInit()
   }
 
   allowEditing(item: any){
     this.edit = true
-    console.log(item.nombre_usuario)
     this.userForm.patchValue({username: item.nombre_usuario, password: item.clave, 
       email: item.email, phoneNumber: item.telefono, firstName: item.nombre, lastName: item.apellido,
       address: item.direccion, userType: item.tipo_usuario == 1? 'Cliente' : 'Empleado'  }) 
@@ -80,15 +110,40 @@ export class UsersComponent implements  OnInit {
 
   getAllUsers(): any{
     this.list = []
-    this.service.getAllUsers().subscribe(response => this.list = response)
-    console.log(this.list)
+    this.service.getAllUsers().subscribe((resp: any)=> {
+      resp.forEach((user: any) => {
+        const obj = new User(user.id_usuario, user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
+        this.list.push(obj)
+      })
+    })
   }
 
   deleteUser(item: any): void{
-    const userId = item.id_usuario
-    console.log(userId)
-    this.service.deleteUser(userId).subscribe()
-    //this.getAllUsers()
-    window.location.reload();
+    const userId = item.id
+    this.service.deleteUser(userId).subscribe(() => this.ngOnInit())
+  }
+
+  getAllClients(){
+    this.list = []
+    this.service.getAllUsers().subscribe((resp: any)=> {
+      resp.forEach((user: any) => {
+        const obj = new User(user.id_usuario, user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
+        this.list.push(obj)
+        console.log(obj.type)
+      })
+      this.list = this.list.filter(user => user.type === 1)
+    })
+  }
+
+  getAllEmployees(){
+    this.list = []
+    this.service.getAllUsers().subscribe((resp: any)=> {
+      resp.forEach((user: any) => {
+        const obj = new User(user.id_usuario,user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
+        this.list.push(obj)
+        console.log(obj.type)
+      })
+      this.list = this.list.filter(user => user.type === 0)
+    })
   }
 }

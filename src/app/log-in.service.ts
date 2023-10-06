@@ -7,13 +7,15 @@ import { User } from './models/classes';
 export class LogInService {
 
   obj:User = {
+    id: 0,
     username: '',
     password: '',
     firstName: '',
     lastName: '',
     adress: '',
     phone: '',
-    type: 0
+    type: 0,
+    email: ''
   }
 
   constructor(private http: HttpClient) {}

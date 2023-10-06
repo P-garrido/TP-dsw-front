@@ -45,23 +45,31 @@
   </form>
 </div>
   
-<button class="filter-button-empleados" (click)="employees = !employees">Empleados</button>
-<button class="filter-button-clientes" (click)="clients = !clients">Clientes</button>
-<button class="add-button" (click)="add = true">Agregar Usuario</button>
+<button 
+  class="filter-button-empleados"
+  (click)="showOnlyEmployees()"
+  [class.seleccionado]="employees">Empleados</button>
+<button 
+  class="filter-button-clientes" 
+  (click)="showOnlyClients()"
+  [class.seleccionado]="clients">Clientes</button>
+<button href="#top" class="add-button" (click)="add = true">Agregar Usuario</button>
 
-  <accordion [isAnimated]="true">
-    <accordion-group heading="{{item.nombre + ' ' + item.apellido}}" *ngFor="let item of list"
-      class="user-flex-container">
-      <div class="user-flex-item">
-        <p class="user-flex-text">Nombre de Usuario: {{item.nombre_usuario}}</p>
-        <p class="user-flex-text">Correo: {{item.email}}</p>
-        <p class="user-flex-text">Teléfono: {{item.telefono}}</p>
-        <p class="user-flex-text">Dirección: {{item.direccion}}</p>
-        <p class="user-flex-text">Tipo de Usuario: {{item.tipo_usuario == 1? "Cliente" : "Empleado" }}</p>
-        <button (click)="allowEditing(item)">Editar Usuario</button>
-        <button (click)="deleteUser(item)">Eliminar Usuario</button>
-      </div>
-    </accordion-group>
-  </accordion>
+<accordion [isAnimated]="true">
+  <accordion-group heading="{{item.firstName+ ' ' + item.lastName}}" *ngFor="let item of list" 
+    class="user-flex-container">
+    <div class="user-flex-item" >
+      <p class="user-flex-text">Nombre de Usuario: {{item.firstName}}</p>
+      <p class="user-flex-text">Correo: {{item.email}}</p>
+      <p class="user-flex-text">Teléfono: {{item.phone}}</p>
+      <p class="user-flex-text">Dirección: {{item.adress}}</p>
+      <p class="user-flex-text">Tipo de Usuario: {{item.type == 1? "Cliente" : "Empleado" }}</p>
+      <button (click)="allowEditing(item)">Editar Usuario</button>
+      <button (click)="deleteUser(item)">Eliminar Usuario</button>
+    </div>
+  </accordion-group>
+</accordion>
 
   
+
+   <!-- [ngClass]="item.type == 1 ? 'client' : 'employee'" -->

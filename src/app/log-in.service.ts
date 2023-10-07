@@ -8,7 +8,7 @@ export class LogInService {
 
   obj:User = {
     id_usuario: 1,
-    username: '',
+    username: 's',
     password: '',
     firstName: '',
     lastName: '',

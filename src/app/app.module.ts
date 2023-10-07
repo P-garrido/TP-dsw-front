@@ -13,7 +13,9 @@ import { CartComponent } from './cart/cart.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { CartProductComponent } from './cart-product/cart-product.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     LogInComponent,
     CartComponent,
     NewProductComponent,
-    AdminProductsComponent
+    AdminProductsComponent,
+    ProductItemComponent,
+    CartProductComponent
   ],
   imports: [
     BrowserModule,

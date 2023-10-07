@@ -31,20 +31,10 @@
   </a>
 </div>
 <div class="products-container">
-  <div
+  <app-product-item
     *ngFor="let product of filteredProducts"
-    class="card product"
-    style="width: 18rem"
+    [product]="product"
+    (addToCart)="addToCart($event)"
   >
-    <img [src]="product.imagen" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{ product.nombre_producto }}</h5>
-      <p class="card-text">
-        {{ product.desc_producto }}
-      </p>
-      <a (click)="addToCart(product)" class="btn btn-primary" #button>
-        Agregar al carrito
-      </a>
-    </div>
-  </div>
+  </app-product-item>
 </div>

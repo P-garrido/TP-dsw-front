@@ -13,18 +13,30 @@
 >
   <h1>CARRITO</h1>
 </div>
-
-<button
-  *ngIf="cartService.cartProducts.length > 0"
-  class="btn btn-primary"
-  type="button"
-  data-bs-toggle="offcanvas"
-  data-bs-target="#offcanvasWithBothOptions"
-  aria-controls="offcanvasWithBothOptions"
->
-  Check Out
-</button>
-
+<div class="message-container">
+  <a class="notLogged" *ngIf="logInService.obj.username === ''"
+    >Debe iniciar sesion para comprar productos</a
+  >
+  <a
+    class="empty-cart"
+    *ngIf="
+      cartService.cartProducts.length === 0 && logInService.obj.username != ''
+    "
+    >Carrito Vacio</a
+  >
+  <button
+    *ngIf="
+      cartService.cartProducts.length > 0 && logInService.obj.username != ''
+    "
+    class="btn btn-success btn-lg"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasWithBothOptions"
+    aria-controls="offcanvasWithBothOptions"
+  >
+    Check Out
+  </button>
+</div>
 <div
   class="offcanvas offcanvas-start"
   data-bs-scroll="true"
@@ -51,8 +63,12 @@
         <li>X{{ product.amount }}</li>
       </ul>
     </div>
-    <h1>Total: ${{ total }}</h1>
+    <p class="finished-order" *ngIf="finishedOrder">
+      Compra realizada con exito!
+    </p>
+    <h1 *ngIf="!finishedOrder">Total: ${{ total }}</h1>
     <button
+      *ngIf="!finishedOrder"
       type="button"
       class="btn btn-danger"
       data-bs-dismiss="offcanvas"
@@ -61,30 +77,24 @@
     >
       Vaciar
     </button>
-    <button type="button" class="btn btn-primary" (click)="checkOut()">
+    <button
+      *ngIf="!finishedOrder"
+      type="button"
+      class="btn btn-primary"
+      (click)="checkOut()"
+    >
       Comprar
     </button>
   </div>
 </div>
 
 <div class="products-container">
-  <div
+  <app-cart-product
     *ngFor="let product of cartService.cartProducts"
-    class="card product"
-    style="width: 18rem"
+    [product]="product"
+    (remove)="removeOne($event)"
+    (add)="addOne($event)"
+    (substract)="substractOne($event)"
   >
-    <img [src]="product.imagen" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{ product.nombre_producto }}</h5>
-      <p class="card-text">
-        {{ product.desc_producto }}
-      </p>
-      <div class="btn-add-subs">
-        <a (click)="substractOne(product)" class="btn btn-primary"> - </a>
-        <p>{{ product.amount }}</p>
-        <a (click)="addOne(product)" class="btn btn-primary"> + </a>
-        <a (click)="removeOne(product)" class="btn btn-danger">Eliminar</a>
-      </div>
-    </div>
-  </div>
+  </app-cart-product>
 </div>

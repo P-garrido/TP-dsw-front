@@ -13,8 +13,10 @@ export class CartComponent {
 
   total:number = 0;
   orderId: number = 0;
-  constructor(public cartService: CartService, private logInService: LogInService){
+  finishedOrder:Boolean;
+  constructor(public cartService: CartService, public logInService: LogInService){
     this.updateTotal();
+    this.finishedOrder = false;
   }
 
   addOne(pr:Product){
@@ -61,7 +63,8 @@ export class CartComponent {
       });
     }catch(e){
       console.log(e);
-    }               
+    }  
+    this.finishedOrder = true;             
   }
 }
 

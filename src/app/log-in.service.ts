@@ -7,7 +7,7 @@ import { User } from './models/classes';
 export class LogInService {
 
   obj:User = {
-    id_usuario: 0,
+    id_usuario: 1,
     username: '',
     password: '',
     firstName: '',

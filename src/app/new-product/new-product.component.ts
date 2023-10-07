@@ -15,7 +15,6 @@ export class NewProductComponent {
     productName: new FormControl('', [Validators.required]),
     productDesc:  new FormControl(),
     productStock: new FormControl(0, [Validators.required]),
-    productCat:  new FormControl(),
     productPrice: new FormControl(0, [Validators.required]),
     productImg:  new FormControl()
 });

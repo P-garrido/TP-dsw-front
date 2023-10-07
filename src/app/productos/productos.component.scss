@@ -3,27 +3,37 @@
 }
 .products-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
+
 h1{
   font-size: 2em;
   margin: 0.67em 0;
 }
+
+.searchbox-container {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+    
+.searchbox {
+  width: auto;
+  margin: 10px;
+ }
+
 @media (min-width: 768px) {
     .products-container {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
     }
-}
-.searchbox-container{
-  margin: 10px;
-  display: flex;
-  justify-content: center;
-}
-.searchbox{
-  width: auto;
-  margin-left: 10px;
+    .searchbox-container{
+      flex-direction: row;
+    }
+
 }
 
 .btn-add-prod{

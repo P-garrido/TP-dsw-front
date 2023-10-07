@@ -22,19 +22,19 @@ export class CartService {
   }
 
   addToOrder(orderId:number, idProd: number, cant: number){
-    return this.http.post('productos_pedidos',
-    {
-      id_producto: idProd,
+    return this.http.post('http://localhost:1234/order/products',
+    {      
       id_pedido: orderId,
+      id_producto: idProd,
       cantidad: cant
     }
     );
   }
 
   createOrder(idUs: number, tot: number){
-    return this.http.post('pedidos',
+    return this.http.post('http://localhost:1234/orders',
     {
-      id_usuario: idUs,
+      id_cliente: idUs,
       total: tot
     }
     );

@@ -13,7 +13,7 @@ export class CartComponent {
 
   total:number = 0;
   orderId: number = 0;
-  constructor(public cartService: CartService, private logInServie: LogInService){
+  constructor(public cartService: CartService, private logInService: LogInService){
     this.updateTotal();
   }
 
@@ -49,14 +49,19 @@ export class CartComponent {
   checkOut(){
 
     try{
-    this.cartService.createOrder(this.logInServie.obj.id_usuario, this.total).subscribe((resp:any) => this.orderId = resp.id_pedido);
-
-    for (let prod of this.cartService.cartProducts){
-      this.cartService.addToOrder(this.orderId, prod.id_producto, prod.amount).subscribe();
-    }
+      this.cartService.createOrder(this.logInService.obj.id_usuario, this.total)
+      .subscribe((resp:any) => {
+        this.orderId = resp[resp.length-1].id_pedido;
+        for (let prod of this.cartService.cartProducts){
+          this.cartService.addToOrder(this.orderId, prod.id_producto, prod.amount).
+          subscribe();
+        }
+        this.total = 0;
+        this.cartService.cartProducts = [];
+      });
     }catch(e){
       console.log(e);
-    }
+    }               
   }
 }
 

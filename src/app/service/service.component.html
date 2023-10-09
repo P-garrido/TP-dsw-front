@@ -11,8 +11,9 @@
 </div>
 <div class="btns-container">
   <button class="btn btn-primary" (click)="openModal(template)">Contactanos Ya</button>
-  <button class="btn btn-secondary" (click)="editService()">{{onEdit?'Cancelar':'Editar Servicio'}}</button>
-  <button class="btn btn-danger" (click)="deleteService(service.id)">Eliminar Servicio</button>
+  <button *ngIf="admin" class="btn btn-secondary" (click)="editService()">{{onEdit?'Cancelar':'Editar
+    Servicio'}}</button>
+  <button *ngIf="admin" class="btn btn-danger" (click)="deleteService(service.id)">Eliminar Servicio</button>
 </div>
 
 

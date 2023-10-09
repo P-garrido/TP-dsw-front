@@ -10,14 +10,27 @@
   font-size: 1.5em;
 }
 
-.btn-addServ {
-  position: absolute;
-  right: 0;
-  margin: 1rem;
+.searchbox-container {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+
+  .searchbox {
+    max-width: 80vw;
+    align-self: center;
+  }
+
+  .btn-addServ {
+    align-self: flex-end;
+    width: fit-content;
+    margin: 1rem;
+  }
 }
+
 
 .service-container {
   margin: 10rem;
+  margin-top: 0;
 
   .service {
     margin: 1rem;

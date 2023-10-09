@@ -10,6 +10,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 })
 export class ServiceComponent {
   @Input() service: Service = new Service(-1, "No disponible", 0);
+  @Input() admin: boolean | undefined;
 
   @Output() editServiceClick = new EventEmitter<EditServiceEvent>();
   @Output() deleteServiceClick = new EventEmitter<number>();

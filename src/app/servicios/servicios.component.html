@@ -4,16 +4,21 @@
 
 
 
-<a class="btn btn-primary btn-addServ" routerLink="/addService">
-  Agregar Servicio
-</a>
+
+<div class="mb-3 searchbox-container">
+  <h2>Buscar Servicios:</h2>
+  <input class="form-control searchbox" id="exampleFormControlInput1" placeholder="Buscar" [formControl]="searchForm" />
+  <a *ngIf="admin" class="btn btn-primary btn-addServ" routerLink="/addService">
+    Agregar Servicio
+  </a>
+</div>
 
 
 
 <div class="service-container">
-  <div *ngFor="let serv of this.services" class="service">
-    <app-service [service]="serv" (editServiceClick)="editService($event)" (deleteServiceClick)="deleteService($event)"
-      (buyServiceClick)="buyService($event)"></app-service>
+  <div *ngFor="let serv of this.filteredServices" class="service">
+    <app-service [admin]="this.admin" [service]="serv" (editServiceClick)="editService($event)"
+      (deleteServiceClick)="deleteService($event)" (buyServiceClick)="buyService($event)"></app-service>
     <hr>
   </div>
 </div>

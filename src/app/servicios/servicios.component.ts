@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EditServiceEvent, Service } from '../models/classes';
 import { ServicesService } from '../services.service';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -12,8 +13,19 @@ export class ServiciosComponent {
 
   constructor(private servicesService: ServicesService) {
     this.getAllServices();
+
+    this.searchForm.valueChanges.subscribe(value => {
+      this.filteredServices = this.services.filter((s: Service) => s.description.toLowerCase().includes(value.toLowerCase()))
+    });
   }
   services: Array<Service> = [];
+  filteredServices: Array<Service> = [];
+
+  admin: boolean = true;
+
+  searchForm = new FormControl();
+
+
 
 
 
@@ -23,6 +35,7 @@ export class ServiciosComponent {
     this.servicesService.getAllServices().subscribe(response => {
       response.forEach((serv: any) => {
         this.services.push(new Service(serv.id_servicio, serv.desc_servicio, serv.precio_por_hora))
+        this.filteredServices.push(new Service(serv.id_servicio, serv.desc_servicio, serv.precio_por_hora))
       });
     });
   }

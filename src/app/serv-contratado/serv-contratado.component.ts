@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { BoughtService } from '../models/classes';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-serv-contratado',
@@ -12,6 +13,24 @@ export class ServContratadoComponent {
 
   servName: string = "";
   userName: string = "";
+  onEdit: boolean = false;
+
+  hourAmmountEdit = new FormControl('', Validators.min(0))
+
+
+  edit() {
+    if (this.onEdit) {
+      this.onEdit = false;
+    }
+    else {
+      this.onEdit = true;
+      this.hourAmmountEdit.setValue(`${this.boughtService.hourAmmount}`);
+    }
+  }
+
+  sendEdit() {
+
+  }
 
 
 

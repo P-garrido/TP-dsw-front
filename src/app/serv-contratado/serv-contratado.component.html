@@ -1,2 +1,13 @@
-<h2>Fecha: {{boughtService.serviceDate}}</h2>
-<h3>Cant Horas: {{boughtService.hourAmmount || 'A realizar'}}</h3>
+<div *ngIf="onEdit==false">
+  <p>Fecha: {{boughtService.serviceDate}}</p>
+  <p>Cantidad de Horas:<b>{{boughtService.hourAmmount || 'A realizar'}}</b></p>
+</div>
+
+
+<div *ngIf="onEdit==true">
+  <p>Fecha: {{boughtService.serviceDate}}</p>
+  <p class="editInput">Cantidad de Horas: </p><input class="editInput" type="text" [formControl]="hourAmmountEdit">
+  <button class="btn btn-primary" (click)="sendEdit()">Aceptar</button>
+</div>
+
+<button class="btn btn-secondary" (click)="edit()">{{onEdit?'Cancelar':'Editar'}}</button>

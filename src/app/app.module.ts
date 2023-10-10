@@ -17,6 +17,8 @@ import { NewServiceComponent } from './new-service/new-service.component';
 import { ServiceComponent } from './service/service.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ServiciosContratadosComponent } from './servicios-contratados/servicios-contratados.component';
+import { ServContratadoComponent } from './serv-contratado/serv-contratado.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ServiciosComponent,
     NewServiceComponent,
     ServiceComponent,
+    ServiciosContratadosComponent,
+    ServContratadoComponent,
 
   ],
   imports: [

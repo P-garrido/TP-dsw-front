@@ -39,6 +39,20 @@ export class EditServiceEvent {
   }
 }
 
+export class BoughtService {
+  idService: number;
+  idUser: number;
+  serviceDate: Date;
+  hourAmmount: number;
+
+  constructor(idServ: number, idUs: number, servDate: Date, hourAm: number) {
+    this.idService = idServ;
+    this.idUser = idUs;
+    this.serviceDate = servDate;
+    this.hourAmmount = hourAm;
+  }
+}
+
 
 
 export class User {

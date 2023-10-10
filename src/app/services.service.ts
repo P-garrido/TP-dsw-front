@@ -19,6 +19,9 @@ export class ServicesService {
   getAllServices() {
     return this.http.get<any>(this.baseUrl);
   }
+  getAllBoughtServices() {
+    return this.http.get<any>(this.buyBaseUrl);
+  }
 
   addService(fg: FormGroup) {
     return this.http.post<any>(this.baseUrl, {

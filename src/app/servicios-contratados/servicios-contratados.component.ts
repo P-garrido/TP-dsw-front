@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BoughtService } from '../models/classes';
+import { BoughtService, EditBoughtService } from '../models/classes';
 import { ServicesService } from '../services.service';
 
 @Component({
@@ -24,6 +24,11 @@ export class ServiciosContratadosComponent {
       })
     }
     )
+  }
+
+  editeServiceCient(servCli: EditBoughtService) {
+    this.serviceSerice.editServiceClient(servCli).subscribe();
+    window.location.reload();
   }
 
 }

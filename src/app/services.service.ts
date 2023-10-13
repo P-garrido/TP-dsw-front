@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EditServiceEvent, Service } from './models/classes';
+import { BoughtService, EditBoughtService, EditServiceEvent, Service } from './models/classes';
 import { FormGroup } from '@angular/forms';
 
 @Injectable({
@@ -51,5 +51,12 @@ export class ServicesService {
       date: serv.data.value.date,
       hourAmmount: null
     })
+  }
+
+  editServiceClient(servCli: EditBoughtService) {
+    const url = this.buyBaseUrl + `/${servCli.idService}/${servCli.idUser}/${servCli.serviceDate}`;
+    return this.http.patch<any>(url, {
+      hourAmmount: parseInt(servCli.hourAmmount.value)
+    });
   }
 }

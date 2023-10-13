@@ -1,6 +1,7 @@
 <div class="bought-services-container">
   <div *ngFor="let boughtServ of boughtServices" class="bought-service">
-    <app-serv-contratado [boughtService]="boughtServ"></app-serv-contratado>
+    <app-serv-contratado (editServiceClientClick)="editeServiceCient($event)"
+      [boughtService]="boughtServ"></app-serv-contratado>
     <hr>
   </div>
 </div>

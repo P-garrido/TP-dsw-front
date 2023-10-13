@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { BoughtService } from '../models/classes';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { BoughtService, EditBoughtService } from '../models/classes';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -11,11 +11,13 @@ export class ServContratadoComponent {
 
   @Input() boughtService: BoughtService = new BoughtService(-1, -1, new Date(), -1);
 
+  @Output() editServiceClientClick = new EventEmitter<EditBoughtService>();
+
   servName: string = "";
   userName: string = "";
   onEdit: boolean = false;
 
-  hourAmmountEdit = new FormControl('', Validators.min(0))
+  hourAmmountEdit = new FormControl('', Validators.min(0));
 
 
   edit() {
@@ -29,7 +31,8 @@ export class ServContratadoComponent {
   }
 
   sendEdit() {
-
+    const newServClli = new EditBoughtService(this.boughtService.idService, this.boughtService.idUser, this.boughtService.serviceDate, this.hourAmmountEdit);
+    this.editServiceClientClick.emit(newServClli);
   }
 
 

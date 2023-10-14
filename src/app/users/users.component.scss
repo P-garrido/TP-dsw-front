@@ -1,116 +1,87 @@
-.user-flex-text{
-  display: inline;
-}
-
-accordion{
+accordion {
   width: 100%;
 }
 
-.user-flex-item{
+//styles for fixed buttons
+
+.fixed-button{
+  position: fixed;
+  z-index: 2;
+  border-radius: 20px;
+  padding: 4px 10px;
+  border: none;
+  background-color: lightblue;
+}
+.filter-button-empleados {
+  right: 10px;
+  bottom: 50px;
+}
+
+.filter-button-clientes {
+  right: 10px;
+  bottom: 90px;
+}
+
+.add-button {
+  right: 10px;
+  bottom: 10px;
+}
+
+.seleccionado {
+  background-color: aqua;
+  border: solid 1px black;
+}
+
+.filter-button-empleados:active {
+  transform: scale(1.1);
+  background-color: #5dc1da;
+  transition: transform 0.3s;
+}
+
+.filter-button-clientes:active {
+  transform: scale(1.1);
+  background-color: #5dc1da;
+  transition: transform 0.3s;
+}
+
+.add-button:active {
+  transform: scale(1.1);
+  background-color: #5dc1da;
+  transition: transform 0.3s;
+}
+
+//styles for add/edit user form
+
+.form-container {
   display: flex;
-  justify-content: space-between;
-  padding: 1px 0;
-  min-width: min-content;
-  max-width: 100%;
-  width: 100vw;
 }
 
-.user-flex-container{
-  padding: 2px 10px;
-}
-
-.form-container{
-  display: flex;
-}
-
-form{
-  margin: 10px auto;
+form {
+  margin: 6px auto;
   background-color: #5dc1b9;
   padding: 20px 10px;
   border-radius: 15px;
   display: flex;
 }
 
-form .form-item{
+form .form-item {
   display: flex;
   justify-content: space-between;
   margin: 2px 5px;
+  font-size: 0.82em;
 }
-form .form-item input{
+
+form .form-item input {
   margin: 2px;
 }
-.log-in-btn{
+
+.log-in-btn {
   float: right;
   padding: 2px 5px;
   border-radius: 2px;
 }
 
-.log-in-btn:hover{
-  transform: scale(1.02);
-  background-color: #5dc1da;
-}
-
-.add-button{
-  position: fixed;
-  z-index: 2;
-  right: 20px;
-  bottom: 40px;
-  border-radius: 20px;
-  padding: 10px 25px;
-  border: none;
-  background-color: lightblue;
-}
-
-.add-button:hover {
-  transform: scale(1.1);
-  background-color: #5dc1da;
-  transition: transform 0.3s;
-}
-
-.filter-button-empleados{
-  position: fixed;
-    z-index: 2;
-    right: 200px;
-    bottom: 40px;
-    border-radius: 20px;
-    padding: 10px 25px;
-    border: none;
-    background-color: lightblue;
-}
-
-.filter-button-clientes {
-  position: fixed;
-  z-index: 2;
-  right: 345px;
-  bottom: 40px;
-  border-radius: 20px;
-  padding: 10px 25px;
-  border: none;
-  background-color: lightblue;
-}
-
-
-.filter-button-empleados:hover{
-  transform: scale(1.1);
-    background-color: #5dc1da;
-    transition: transform 0.3s;
-}
-
-.filter-button-clientes:hover {
-  transform: scale(1.1);
-  background-color: #5dc1da;
-  transition: transform 0.3s;
-}
-
-h4{
-  text-align: center;
-}
-
-input.ng-invalid{
-  border: solid 1px red;
-}
-
-.close-button{
+.close-button {
   width: 8%;
   height: 8%;
   border-radius: 50%;
@@ -120,7 +91,116 @@ input.ng-invalid{
   top: -2%;
 }
 
-.seleccionado{
-  background-color: aqua;
-  border: solid 1px black;
+.log-in-btn:active {
+  transform: scale(1.02);
+  background-color: #5dc1da;
+}
+
+input.ng-invalid {
+  border: solid 1px red;
+}
+
+.change-button {
+  display: block;
+  margin: 6px 0;
+}
+
+//styles for user items
+ .user-flex-container {
+   padding: 2px 5px;
+ }
+
+ //Tablet screens only
+ @media only screen and (min-width: 600px) {
+   .fixed-button{
+    padding: 10px 25px;
+    bottom: 20px;
+   }
+
+   .add-button{
+    right: 40px;
+   }
+
+   .filter-button-empleados{
+    right: 214px;
+   }
+
+   .filter-button-clientes{
+    right: 350px
+   }
+ }
+
+// Computer screens only
+@media only screen and (min-width: 800px){
+  .user-flex-text {
+      display: inline;
+    }
+
+   .user-flex-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 0;
+    min-width: min-content;
+    max-width: 100%;
+    width: 100vw;
+   }
+
+    .user-flex-container {
+      padding: 2px 10px;
+    }
+  
+    form {
+      margin: 10px auto;
+    }
+  
+    form .form-item {
+      font-size: 1em;
+    }
+  
+    .log-in-btn:hover {
+      transform: scale(1.02);
+      background-color: #5dc1da;
+    }
+  
+    .add-button {
+      right: 20px;
+      bottom: 40px;
+      padding: 10px 25px;
+    }
+  
+    .add-button:hover {
+      transform: scale(1.1);
+      background-color: #5dc1da;
+      transition: transform 0.3s;
+    }
+
+    .fixed-button{
+      padding: 10px 25px
+    }
+
+    .filter-button-empleados {
+      right: 200px;
+      bottom: 40px;
+    }
+  
+    .filter-button-clientes {
+      right: 345px;
+      bottom: 40px;
+    }
+  
+    .filter-button-empleados:hover {
+      transform: scale(1.1);
+      background-color: #5dc1da;
+      transition: transform 0.3s;
+    }
+  
+    .filter-button-clientes:hover {
+      transform: scale(1.1);
+      background-color: #5dc1da;
+      transition: transform 0.3s;
+    }
+  
+    h4 {
+      text-align: center;
+    }
 }

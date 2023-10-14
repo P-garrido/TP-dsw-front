@@ -46,14 +46,14 @@
 </div>
   
 <button 
-  class="filter-button-empleados"
+  class="fixed-button filter-button-empleados"
   (click)="showOnlyEmployees()"
   [class.seleccionado]="employees">Empleados</button>
 <button 
-  class="filter-button-clientes" 
+  class="fixed-button filter-button-clientes" 
   (click)="showOnlyClients()"
   [class.seleccionado]="clients">Clientes</button>
-<button href="#top" class="add-button" (click)="add = true">Agregar Usuario</button>
+<button href="#top" class="fixed-button add-button" (click)="add = true">Agregar Usuario</button>
 
 <accordion [isAnimated]="true">
   <accordion-group heading="{{item.firstName+ ' ' + item.lastName}}" *ngFor="let item of list" 
@@ -64,11 +64,17 @@
       <p class="user-flex-text">Teléfono: {{item.phone}}</p>
       <p class="user-flex-text">Dirección: {{item.adress}}</p>
       <p class="user-flex-text">Tipo de Usuario: {{item.type == 1? "Cliente" : "Empleado" }}</p>
-      <button (click)="allowEditing(item)">Editar Usuario</button>
-      <button (click)="deleteUser(item)">Eliminar Usuario</button>
+      <button class="change-button" (click)="allowEditing(item)">Editar Usuario</button>
+      <button class="change-button" (click)="deleteUser(item)">Eliminar Usuario</button>
     </div>
   </accordion-group>
 </accordion>
+<div>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
 
   
 

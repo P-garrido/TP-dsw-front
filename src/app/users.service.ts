@@ -31,6 +31,8 @@ export class UsersService {
   editUser(obj: Object, userId: number){
     const headers = { 'content-type': 'application/json'}
     const url = this.baseUrl + '/' + userId.toString()
+    console.log(obj)
+    console.log(url)
     return this.http.patch(url, JSON.stringify(obj), {'headers':headers})
   }
 }

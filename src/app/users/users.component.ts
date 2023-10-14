@@ -67,9 +67,9 @@ export class UsersComponent implements  OnInit {
 
   allowEditing(item: any){
     this.edit = true
-    this.userForm.patchValue({username: item.nombre_usuario, password: item.clave, 
-      email: item.email, phoneNumber: item.telefono, firstName: item.nombre, lastName: item.apellido,
-      address: item.direccion, userType: item.tipo_usuario == 1? 'Cliente' : 'Empleado'  }) 
+    this.userForm.patchValue({username: item.username, password: item.password, 
+      email: item.email, phoneNumber: item.phone, firstName: item.firstName, lastName: item.lastName,
+      address: item.adress, userType: item.type == 1? 'Cliente' : 'Empleado'  }) 
     this.editId = item.id_usuario
     //this.userForm.value.username = user.nombre_usuario
   }

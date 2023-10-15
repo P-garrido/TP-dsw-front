@@ -15,24 +15,51 @@
   margin-top: 1rem;
   flex-direction: column;
 
+  .serv-title {
+    align-self: center;
+    width: 80vw;
+  }
+
   .searchbox {
     max-width: 80vw;
     align-self: center;
   }
 
   .btn-addServ {
-    align-self: flex-end;
-    width: fit-content;
+    align-self: center;
+    width: 80vw;
     margin: 1rem;
   }
 }
 
-
 .service-container {
-  margin: 10rem;
-  margin-top: 0;
-
   .service {
-    margin: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (min-width:1000px) {
+  .searchbox-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: .5rem;
+
+    .serv-title {
+      grid-column: 1 / 4;
+      width: 100%;
+    }
+
+    .searchbox {
+      grid-column: 1/3;
+    }
+
+    .btn-addServ {
+      grid-column: 3;
+      width: 90%;
+      margin: 0;
+      margin-left: 1rem;
+    }
   }
 }

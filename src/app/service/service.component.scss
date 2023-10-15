@@ -18,10 +18,19 @@
   }
 }
 
-.btns-container {
-  display: flex;
-  justify-content: space-between;
+.btn-container {
+  width: 80vw;
+
+  .btn {
+    margin-bottom: .5rem;
+    border-radius: .5rem;
+    display: block;
+    width: 100%;
+  }
 }
+
+
+
 
 textarea {
   resize: none;
@@ -34,6 +43,22 @@ textarea {
   .btn-modal {
     width: fit-content;
     margin: .2rem;
+  }
+
+}
+
+
+@media screen and (min-width:1000px) {
+  .btn-container {
+    width: 80vw;
+    display: flex;
+    justify-content: flex-end;
+
+    .btn {
+      display: inline-block;
+      width: max-content;
+      margin-left: .5rem;
+    }
   }
 
 }

@@ -1,3 +1,17 @@
 .editInput {
   display: inline;
 }
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  .btn {
+    margin-right: .5rem;
+  }
+
+  .btn-aceptar {
+    align-self: flex-end;
+  }
+}

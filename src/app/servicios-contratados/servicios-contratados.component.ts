@@ -9,7 +9,7 @@ import { ServicesService } from '../services.service';
 })
 export class ServiciosContratadosComponent {
 
-  constructor(private serviceSerice: ServicesService) {
+  constructor(private serviceService: ServicesService) {
     this.getAllBoughtServices();
   }
 
@@ -18,7 +18,7 @@ export class ServiciosContratadosComponent {
 
 
   getAllBoughtServices() {
-    this.serviceSerice.getAllBoughtServices().subscribe(response => {
+    this.serviceService.getAllBoughtServices().subscribe(response => {
       response.forEach((bs: any) => {
         this.boughtServices.push(new BoughtService(bs.id_servicio, bs.id_usuario, bs.fecha_servicio, bs.cant_horas))
       })
@@ -27,7 +27,12 @@ export class ServiciosContratadosComponent {
   }
 
   editeServiceCient(servCli: EditBoughtService) {
-    this.serviceSerice.editServiceClient(servCli).subscribe();
+    this.serviceService.editServiceClient(servCli).subscribe();
+    window.location.reload();
+  }
+
+  deleteServiceClient(idServCli: any) {
+    this.serviceService.deleteServiceClient(idServCli.idServ, idServCli.idCli, idServCli.servDate).subscribe();
     window.location.reload();
   }
 

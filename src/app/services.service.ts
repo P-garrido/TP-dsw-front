@@ -59,4 +59,10 @@ export class ServicesService {
       hourAmmount: parseInt(servCli.hourAmmount.value)
     });
   }
+
+  deleteServiceClient(idServ: number, idCli: number, servDate: Date) {
+    const url = this.buyBaseUrl + `/${idServ}/${idCli}/${servDate}`;
+    return this.http.delete(url);
+
+  }
 }

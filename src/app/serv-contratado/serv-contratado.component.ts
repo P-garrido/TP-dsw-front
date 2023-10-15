@@ -12,6 +12,7 @@ export class ServContratadoComponent {
   @Input() boughtService: BoughtService = new BoughtService(-1, -1, new Date(), -1);
 
   @Output() editServiceClientClick = new EventEmitter<EditBoughtService>();
+  @Output() deleteServiceClientClick = new EventEmitter<any>();
 
   servName: string = "";
   userName: string = "";
@@ -33,6 +34,10 @@ export class ServContratadoComponent {
   sendEdit() {
     const newServClli = new EditBoughtService(this.boughtService.idService, this.boughtService.idUser, this.boughtService.serviceDate, this.hourAmmountEdit);
     this.editServiceClientClick.emit(newServClli);
+  }
+
+  deleteServClient(idServ: number, idCli: number, servDate: Date) {
+    this.deleteServiceClientClick.emit({ idServ, idCli, servDate });
   }
 
 

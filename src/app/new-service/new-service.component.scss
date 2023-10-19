@@ -11,4 +11,8 @@
   width: 500px;
   border: 2px solid black;
   border-radius: 20px;
+
+  .ng-invalid.ng-touched {
+    outline: .2rem solid #f00;
+  }
 }

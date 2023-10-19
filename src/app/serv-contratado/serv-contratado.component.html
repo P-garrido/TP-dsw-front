@@ -6,7 +6,8 @@
 
 <div *ngIf="onEdit==true" class="edit-container">
   <p>Fecha: {{boughtService.serviceDate | date: 'dd/MM/yyy HH:mm'}}</p>
-  <p class="editInput">Cantidad de Horas: </p><input class="editInput" type="text" [formControl]="hourAmmountEdit">
+  <p class="editInput">Cantidad de Horas: </p><input class="editInput" type="number" pattern="[0-9]"
+    [formControl]="hourAmmountEdit">
 </div>
 
 <div class="btn-container">

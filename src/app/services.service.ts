@@ -49,7 +49,8 @@ export class ServicesService {
       idCli: 1,
       idServ: serv.id,
       date: serv.data.value.date,
-      hourAmmount: null
+      hourAmmount: null,
+      clientMsg: serv.data.value.message
     })
   }
 

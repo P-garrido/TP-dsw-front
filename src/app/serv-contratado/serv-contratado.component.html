@@ -1,6 +1,7 @@
 <div *ngIf="onEdit==false">
   <p>Fecha: {{boughtService.serviceDate | date: 'dd/MM/yyy HH:mm'}}</p>
   <p>Cantidad de Horas:<b>{{boughtService.hourAmmount || 'A realizar'}}</b></p>
+  <p>Mensaje del cliente: {{boughtService.clientMsj}}</p>
 </div>
 
 

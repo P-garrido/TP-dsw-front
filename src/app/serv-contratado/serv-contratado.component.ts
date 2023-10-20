@@ -9,7 +9,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class ServContratadoComponent {
 
-  @Input() boughtService: BoughtService = new BoughtService(-1, -1, new Date(), -1);
+  @Input() boughtService: BoughtService = new BoughtService(-1, -1, new Date(), -1, "");
 
   @Output() editServiceClientClick = new EventEmitter<EditBoughtService>();
   @Output() deleteServiceClientClick = new EventEmitter<any>();

@@ -44,12 +44,14 @@ export class BoughtService {
   idUser: number;
   serviceDate: Date;
   hourAmmount: number;
+  clientMsj: string;
 
-  constructor(idServ: number, idUs: number, servDate: Date, hourAm: number) {
+  constructor(idServ: number, idUs: number, servDate: Date, hourAm: number, cliMsj: string) {
     this.idService = idServ;
     this.idUser = idUs;
     this.serviceDate = servDate;
     this.hourAmmount = hourAm;
+    this.clientMsj = cliMsj;
   }
 }
 

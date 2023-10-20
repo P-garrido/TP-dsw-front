@@ -20,7 +20,7 @@ export class ServiciosContratadosComponent {
   getAllBoughtServices() {
     this.serviceService.getAllBoughtServices().subscribe(response => {
       response.forEach((bs: any) => {
-        this.boughtServices.push(new BoughtService(bs.id_servicio, bs.id_usuario, bs.fecha_servicio, bs.cant_horas))
+        this.boughtServices.push(new BoughtService(bs.id_servicio, bs.id_usuario, bs.fecha_servicio, bs.cant_horas, bs.mensaje_cliente))
       })
     }
     )

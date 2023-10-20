@@ -36,7 +36,7 @@ export class ServiceComponent {
 
   serviceBuyForm = new FormGroup({
     date: new FormControl('', Validators.required),
-    msg: new FormControl('', Validators.maxLength(100))
+    message: new FormControl('', Validators.maxLength(100))
   });
 
 

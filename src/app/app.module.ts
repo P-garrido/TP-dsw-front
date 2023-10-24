@@ -19,6 +19,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ServiciosContratadosComponent } from './servicios-contratados/servicios-contratados.component';
 import { ServContratadoComponent } from './serv-contratado/serv-contratado.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { ServContratadoComponent } from './serv-contratado/serv-contratado.compo
     CarouselModule.forRoot(),
     BsDatepickerModule.forRoot(),
     ModalModule.forRoot(),
+    AccordionModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

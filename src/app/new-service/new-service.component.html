@@ -2,12 +2,14 @@
 
 <div class="new-service-form-container">
   <form [formGroup]="newServiceForm" class="row g-3 form-new-serv" (ngSubmit)="addService()">
-    <label class="form-label"> Descripción: </label><input class="form-control" type="text" placeholder=""
-      formControlName="description">
+    <label class="form-label"> Nombre: </label><input class="form-control" type="text" formControlName="description">
 
 
     <label class="form-label"> Precio por hora: </label><input class="form-control" type="number" pattern="[0-9]+"
-      placeholder="" formControlName="price">
+      formControlName="price">
+
+    <label class="form-label"> Descripción: </label><input class="form-control" type="text"
+      formControlName="longDescription">
 
 
     <button type="submit" class="btn btn-primary">Cargar Servicio</button>

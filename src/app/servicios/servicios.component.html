@@ -19,6 +19,5 @@
   <div *ngFor="let serv of this.filteredServices" class="service">
     <app-service [admin]="this.admin" [service]="serv" (editServiceClick)="editService($event)"
       (deleteServiceClick)="deleteService($event)" (buyServiceClick)="buyService($event)"></app-service>
-    <hr>
   </div>
 </div>

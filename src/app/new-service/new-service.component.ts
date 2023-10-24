@@ -13,8 +13,9 @@ export class NewServiceComponent {
 
 
   newServiceForm = new FormGroup({
-    description: new FormControl('', [Validators.required]),
-    price: new FormControl('', [Validators.required, Validators.min(0)])
+    description: new FormControl('', Validators.required),
+    price: new FormControl('', [Validators.required, Validators.min(0)]),
+    longDescription: new FormControl('', Validators.required)
   });
 
   addService() {

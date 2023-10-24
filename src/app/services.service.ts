@@ -26,7 +26,8 @@ export class ServicesService {
   addService(fg: FormGroup) {
     return this.http.post<any>(this.baseUrl, {
       description: fg.value.description,
-      hourValue: parseInt(fg.value.price)
+      hourValue: parseInt(fg.value.price),
+      longDescription: fg.value.longDescription
     });
   }
 
@@ -39,7 +40,8 @@ export class ServicesService {
     const url = this.baseUrl + `/${serv.id}`;
     return this.http.patch<any>(url, {
       description: serv.data.value.description,
-      hourValue: parseInt(serv.data.value.price)
+      hourValue: parseInt(serv.data.value.price),
+      longDescription: serv.data.value.longDescription
     });
   }
 

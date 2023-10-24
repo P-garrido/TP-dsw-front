@@ -9,7 +9,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
   styleUrls: ['./service.component.scss']
 })
 export class ServiceComponent {
-  @Input() service: Service = new Service(-1, "No disponible", 0);
+  @Input() service: Service = new Service(-1, "No disponible", 0, "No dispponible");
   @Input() admin: boolean | undefined;
 
   @Output() editServiceClick = new EventEmitter<EditServiceEvent>();

@@ -34,8 +34,8 @@ export class ServiciosComponent {
   getAllServices() {
     this.servicesService.getAllServices().subscribe(response => {
       response.forEach((serv: any) => {
-        this.services.push(new Service(serv.id_servicio, serv.desc_servicio, serv.precio_por_hora))
-        this.filteredServices.push(new Service(serv.id_servicio, serv.desc_servicio, serv.precio_por_hora))
+        this.services.push(new Service(serv.id_servicio, serv.desc_servicio, serv.precio_por_hora, serv.descripcion))
+        this.filteredServices.push(new Service(serv.id_servicio, serv.desc_servicio, serv.precio_por_hora, serv.descripcion))
       });
     });
   }

@@ -1,6 +1,10 @@
 <div *ngIf="onEdit==false">
-  <p>{{service.description}}</p>
-  <p><b>{{service.price}}</b></p>
+  <accordion [isAnimated]="true" class="accordion">
+    <accordion-group heading="{{service.description}}" class="accordion-item">
+      <p><b>${{service.price}}</b></p>
+      <p>{{service.longDescription}}</p>
+    </accordion-group>
+  </accordion>
 </div>
 <div *ngIf="onEdit==true" class="edit-serv">
   <form [formGroup]="editServiceForm" class="row g-3" (ngSubmit)="sendEdit()">
@@ -15,6 +19,8 @@
     Servicio'}}</button>
   <button *ngIf="admin" class="btn btn-danger" (click)="deleteService(service.id)">Eliminar Servicio</button>
 </div>
+
+
 
 
 <ng-template #template>

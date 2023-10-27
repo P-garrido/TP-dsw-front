@@ -12,12 +12,17 @@ export class ServicesService {
 
   }
 
+
+
   readonly baseUrl = "http://localhost:1234/services";
   readonly buyBaseUrl = "http://localhost:1234/services-clients";
-
+  token: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imp1YW4yMyIsInBhc3N3b3JkIjoiMTIzNCIsImlhdCI6MTY5ODQzMTY5NCwiZXhwIjoxNjk4NDMyMjk0fQ.DukxkiUJs2aSMmRuKBcd3eDY-ikiVjgmpzA1bHdS3nM";
+  //Este token lo tengo que conseguir con el login service
 
   getAllServices() {
-    return this.http.get<any>(this.baseUrl);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
+    return this.http.get<any>(this.baseUrl,
+      { headers });
   }
   getAllBoughtServices() {
     return this.http.get<any>(this.buyBaseUrl);

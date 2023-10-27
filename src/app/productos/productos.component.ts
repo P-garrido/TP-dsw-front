@@ -40,7 +40,7 @@ constructor(private cartService: CartService, public productService: ProductsSer
     this.productService.loadProducts().subscribe((resp : any) => {
       this.filteredProducts = resp;
       this.products = resp;
-      console.log(this.products);
+      console.log(this.products)
     });
   }
 

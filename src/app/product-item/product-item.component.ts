@@ -8,6 +8,7 @@ import { Product } from '../models/classes';
 })
 export class ProductItemComponent {
 
+
   @Input() product: Product = {
     id_producto: 0,
     imagen: undefined,
@@ -21,6 +22,7 @@ export class ProductItemComponent {
 
   addButton(pr:Product){
     this.addToCart.emit(pr);
+
   }
 
 }

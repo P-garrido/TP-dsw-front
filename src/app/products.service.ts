@@ -47,6 +47,7 @@ export class ProductsService {
       imagen: img
     })
   }
+
   deleteProduct(idProd:number){
     return this.http.delete("http://localhost:1234/products/" + idProd.toString())
   }

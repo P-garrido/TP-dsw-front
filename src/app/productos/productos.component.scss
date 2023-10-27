@@ -19,7 +19,8 @@ h1{
     
 .searchbox {
   width: auto;
-  margin: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
  }
 
 @media (min-width: 768px) {
@@ -30,6 +31,9 @@ h1{
     }
     .searchbox-container{
       flex-direction: row;
+    }
+    .searchbox{
+      margin-bottom: 0;
     }
 
 }

@@ -15,7 +15,10 @@ import { AdminProductsComponent } from './admin-products/admin-products.componen
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductItemComponent } from './product-item/product-item.component';
-import { CartProductComponent } from './cart-product/cart-product.component'
+import { CartProductComponent } from './cart-product/cart-product.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderItemComponent } from './order-item/order-item.component';
+import { AdminProductItemComponent } from './admin-product-item/admin-product-item.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { CartProductComponent } from './cart-product/cart-product.component'
     NewProductComponent,
     AdminProductsComponent,
     ProductItemComponent,
-    CartProductComponent
+    CartProductComponent,
+    OrdersComponent,
+    OrderItemComponent,
+    AdminProductItemComponent
   ],
   imports: [
     BrowserModule,

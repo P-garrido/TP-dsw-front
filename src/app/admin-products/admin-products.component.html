@@ -1,33 +1,12 @@
-<accordion [isAnimated]="true">
-  <accordion-group
-    heading="{{
-      item.nombre_producto.toUpperCase() + '. ' + item.desc_producto
-    }}"
+<div class="product-container">
+  <a class="btn btn-primary btn-add-prod" routerLink="/addProduct">
+    Agregar Producto
+  </a>
+  <app-admin-product-item
     *ngFor="let item of productsList"
-    class="user-flex-container"
+    [product]="item"
+    (edit)="editProduct($event)"
+    (delete)="deleteProduct($event)"
   >
-    <div class="user-flex-item">
-      <p class="user-flex-text">
-        Nombre de Producto: {{ item.nombre_producto }}
-      </p>
-      <p class="user-flex-text">Descripcion: {{ item.desc_producto }}</p>
-      <p class="user-flex-text">Cantidad en stock: {{ item.stock }}</p>
-      <p class="user-flex-text">Precio: ${{ item.precio }}</p>
-      <a [href]="item.imagen"> Imagen</a>
-      <div class="btn-container">
-        <a
-          class="btn btn-primary btn-editProd"
-          routerLink="/addProduct"
-          (click)="editProduct(item)"
-          >Editar Producto</a
-        >
-        <a class="btn btn-danger btn-deleteProd" (click)="deleteProduct(item)"
-          >Eliminar Producto</a
-        >
-      </div>
-    </div>
-  </accordion-group>
-</accordion>
-<a class="btn btn-primary btn-add-prod" routerLink="/addProduct">
-  Agregar Producto
-</a>
+  </app-admin-product-item>
+</div>

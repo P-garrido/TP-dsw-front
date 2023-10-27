@@ -31,3 +31,12 @@ h1 {
   color: green;
   font-size: x-large;
 }
+.btn-checkout{
+  position: absolute;
+  background-color:#42aaa2 ;
+  border-color: #5dc1b9;
+  margin-top: 200px;
+}
+.btn-checkout:hover{
+  background-color: #5dc1b9;
+}

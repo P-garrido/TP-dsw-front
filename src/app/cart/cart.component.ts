@@ -53,10 +53,11 @@ export class CartComponent {
     try{
       this.cartService.createOrder(this.logInService.obj.id_usuario, this.total)
       .subscribe((resp:any) => {
-        this.orderId = resp[resp.length-1].id_pedido;
+        this.orderId = resp.id_pedido;
         for (let prod of this.cartService.cartProducts){
           this.cartService.addToOrder(this.orderId, prod.id_producto, prod.amount).
           subscribe();
+          this.cartService.updateStock(prod.id_producto, prod.amount).subscribe();
         }
         this.total = 0;
         this.cartService.cartProducts = [];

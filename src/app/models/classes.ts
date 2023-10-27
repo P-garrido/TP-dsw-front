@@ -91,4 +91,4 @@ export class User {
     this.phone = ph;
     this.type = type;
   }
-}
+} 

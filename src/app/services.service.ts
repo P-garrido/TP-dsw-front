@@ -2,13 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BoughtService, EditBoughtService, EditServiceEvent, Service } from './models/classes';
 import { FormGroup } from '@angular/forms';
+import { LogInService } from './log-in.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicesService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private loginService: LogInService) {
 
   }
 
@@ -16,24 +17,24 @@ export class ServicesService {
 
   readonly baseUrl = "http://localhost:1234/services";
   readonly buyBaseUrl = "http://localhost:1234/services-clients";
-  token: string = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imp1YW4yMyIsInBhc3N3b3JkIjoiMTIzNCIsImlhdCI6MTY5ODQzMTY5NCwiZXhwIjoxNjk4NDMyMjk0fQ.DukxkiUJs2aSMmRuKBcd3eDY-ikiVjgmpzA1bHdS3nM";
   //Este token lo tengo que conseguir con el login service
 
   getAllServices() {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
-    return this.http.get<any>(this.baseUrl,
-      { headers });
+    return this.http.get<any>(this.baseUrl);
   }
   getAllBoughtServices() {
     return this.http.get<any>(this.buyBaseUrl);
   }
 
   addService(fg: FormGroup) {
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.post<any>(this.baseUrl, {
       description: fg.value.description,
       hourValue: parseInt(fg.value.price),
       longDescription: fg.value.longDescription
-    });
+    },
+      { headers });
   }
 
   deleteService(idServ: number) {

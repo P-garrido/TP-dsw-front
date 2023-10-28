@@ -12,7 +12,7 @@ export class LogInService {
   readonly baseUrl = "http://localhost:1234/login";
 
   token: any = "";
-  user: User | undefined;
+  user: User = new User(-1, "", "", "", "", "", "", -1);
 
 
 
@@ -23,15 +23,8 @@ export class LogInService {
     }).subscribe(res => {
       if (res.token) {
         this.token = res.token;
-        this.user = new User(res.user.nombre_usuario, res.user.clave, res.user.nombre, res.user.apellido, res.user.email, res.user.telefono, res.user.tipo_usuario);
+        this.user = new User(res.user.id_usuario, res.user.nombre_usuario, res.user.clave, res.user.nombre, res.user.apellido, res.user.email, res.user.telefono, res.user.tipo_usuario);
       }
     })
-
-    if (this.token) {
-      return true
-    }
-    else {
-      return false
-    }
   }
 }

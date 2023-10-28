@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BoughtService, EditBoughtService } from '../models/classes';
 import { ServicesService } from '../services.service';
+import { LogInService } from '../log-in.service';
 
 @Component({
   selector: 'app-servicios-contratados',
@@ -9,12 +10,17 @@ import { ServicesService } from '../services.service';
 })
 export class ServiciosContratadosComponent {
 
-  constructor(private serviceService: ServicesService) {
+  constructor(private serviceService: ServicesService, private loginService: LogInService) {
     this.getAllBoughtServices();
+
+    if (loginService.user.type == 1) {
+      this.admin = true
+    }
   }
 
 
   boughtServices: BoughtService[] = [];
+  admin: boolean = false;
 
 
   getAllBoughtServices() {

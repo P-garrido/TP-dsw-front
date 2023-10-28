@@ -23,7 +23,9 @@ export class ServicesService {
     return this.http.get<any>(this.baseUrl);
   }
   getAllBoughtServices() {
-    return this.http.get<any>(this.buyBaseUrl);
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get<any>(this.buyBaseUrl, { headers });
   }
 
   addService(fg: FormGroup) {
@@ -33,45 +35,55 @@ export class ServicesService {
       description: fg.value.description,
       hourValue: parseInt(fg.value.price),
       longDescription: fg.value.longDescription
-    },
-      { headers });
+    }, { headers });
   }
 
   deleteService(idServ: number) {
     const url = this.baseUrl + `/${idServ}`;
-    return this.http.delete(url);
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.delete(url, { headers });
   }
 
   editService(serv: EditServiceEvent) {
     const url = this.baseUrl + `/${serv.id}`;
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.patch<any>(url, {
       description: serv.data.value.description,
       hourValue: parseInt(serv.data.value.price),
       longDescription: serv.data.value.longDescription
-    });
+    }, { headers });
   }
 
-  buyService(serv: EditServiceEvent) {
+  buyService(serv: EditServiceEvent, idUser: number) {
     const url = this.buyBaseUrl;
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.post<any>(url, {
-      idCli: 1,
+      idCli: idUser,
       idServ: serv.id,
       date: serv.data.value.date,
       hourAmmount: null,
       clientMsg: serv.data.value.message
-    })
+    },
+      { headers })
   }
 
   editServiceClient(servCli: EditBoughtService) {
     const url = this.buyBaseUrl + `/${servCli.idService}/${servCli.idUser}/${servCli.serviceDate}`;
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.patch<any>(url, {
       hourAmmount: parseInt(servCli.hourAmmount.value)
-    });
+    }, { headers });
   }
 
   deleteServiceClient(idServ: number, idCli: number, servDate: Date) {
     const url = this.buyBaseUrl + `/${idServ}/${idCli}/${servDate}`;
-    return this.http.delete(url);
+    const token = this.loginService.token;
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.delete(url, { headers });
 
   }
 }

@@ -1,4 +1,4 @@
-<div class="bought-services-container">
+<div class="bought-services-container" *ngIf="admin">
   <div *ngFor="let boughtServ of boughtServices" class="bought-service">
     <app-serv-contratado (editServiceClientClick)="editeServiceCient($event)"
       (deleteServiceClientClick)="deleteServiceClient($event)" [boughtService]="boughtServ"></app-serv-contratado>

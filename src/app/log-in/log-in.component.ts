@@ -18,14 +18,10 @@ export class LogInComponent {
 
   }
 
-  logged: boolean = false;
 
 
 
   getOneEmployee() {
-    const result = this.logInService.getOne(this.logInForm.value.username, this.logInForm.value.password);
-    if (result) {
-      this.logged = true
-    }
+    this.logInService.getOne(this.logInForm.value.username, this.logInForm.value.password);
   }
 }

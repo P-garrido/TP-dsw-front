@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { EditServiceEvent, Service } from '../models/classes';
 import { ServicesService } from '../services.service';
 import { FormControl } from '@angular/forms';
+import { LogInService } from '../log-in.service';
 
 
 @Component({
@@ -11,17 +12,23 @@ import { FormControl } from '@angular/forms';
 })
 export class ServiciosComponent {
 
-  constructor(private servicesService: ServicesService) {
+  constructor(private servicesService: ServicesService, private loginService: LogInService) {
     this.getAllServices();
 
     this.searchForm.valueChanges.subscribe(value => {
       this.filteredServices = this.services.filter((s: Service) => s.description.toLowerCase().includes(value.toLowerCase()))
     });
+    if (loginService.user.type == 1) {
+      this.admin = true
+    }
+    else {
+      this.admin = false
+    }
   }
   services: Array<Service> = [];
   filteredServices: Array<Service> = [];
 
-  admin: boolean = true;
+  admin: boolean = false;
 
   searchForm = new FormControl();
 
@@ -42,17 +49,17 @@ export class ServiciosComponent {
 
   deleteService(idServ: number) {
     this.servicesService.deleteService(idServ).subscribe();
-    window.location.reload(); //Arreglar esto para que quede mejor;
+    window.location.reload();
   }
 
   editService(serv: EditServiceEvent) {
 
     this.servicesService.editService(serv).subscribe();
-    window.location.reload(); //Arreglar esto para que quede mejor;
+    window.location.reload();
   }
 
   buyService(serv: EditServiceEvent) { //OBTENER NRO CLIENTE
-    this.servicesService.buyService(serv).subscribe(
+    this.servicesService.buyService(serv, this.loginService.user.idUser).subscribe(
       response => console.log(response)
     );
   }

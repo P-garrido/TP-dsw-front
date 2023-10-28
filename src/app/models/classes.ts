@@ -74,6 +74,7 @@ export class EditBoughtService {
 
 
 export class User {
+  idUser: number;
   userName: string;
   password: string;
   firstName: string;
@@ -82,7 +83,8 @@ export class User {
   phone: string;
   type: number;
 
-  constructor(usNam: string, pass: string, fNam: string, lNam: string, ad: string, ph: string, type: number) {
+  constructor(idUs: number, usNam: string, pass: string, fNam: string, lNam: string, ad: string, ph: string, type: number) {
+    this.idUser = idUs;
     this.userName = usNam;
     this.password = pass;
     this.firstName = fNam;

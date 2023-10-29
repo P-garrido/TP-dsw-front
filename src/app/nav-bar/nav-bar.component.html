@@ -7,11 +7,9 @@
       <li routerLink="/inicio">Inicio</li>
       <li routerLink="/productos">Productos</li>
       <li routerLink="/servicios">Mantenimiento</li>
-      <li routerLink="/servicios-contratados">Servicios Contratados</li>
+      <li *ngIf="loginService.user.type==1" routerLink="/servicios-contratados">Servicios Contratados</li>
       <button class="btn">Contacto</button>
-      <li (click)="logUser()" routerLink="/logIn">
-        {{ !logInClick ? "Log In" : "Bienvenido" }}
-      </li>
+      <li routerLink="/logIn">Login</li>
     </ul>
   </nav>
 </header>

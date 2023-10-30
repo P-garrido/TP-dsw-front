@@ -22,23 +22,36 @@
     placeholder="Buscar"
     [formControl]="searchForm"
   />
-  <a *ngIf="admin" class="btn btn-primary btn-add-prod"> Agregar Productos </a>
+  <a
+    *ngIf="admin"
+    class="btn btn-primary btn-add-prod"
+    routerLink="/adminProducts"
+  >
+    Administrar Productos
+  </a>
 </div>
 <div class="products-container">
-  <div
+  <!-- <div
     *ngFor="let product of filteredProducts"
     class="card product"
     style="width: 18rem"
   >
-    <img [src]="product.image" class="card-img-top" alt="..." />
+    <img [src]="product.imagen" class="card-img-top" alt="..." />
     <div class="card-body">
-      <h5 class="card-title">{{ product.name }}</h5>
+      <h5 class="card-title">{{ product.nombre_producto }}</h5>
       <p class="card-text">
-        {{ product.description }}
+        {{ product.desc_producto }}
       </p>
       <a (click)="addToCart(product)" class="btn btn-primary" #button>
         Agregar al carrito
       </a>
     </div>
-  </div>
+  </div> -->
+
+  <app-product-item
+    *ngFor="let product of filteredProducts"
+    [product]="product"
+    (addToCart)="addToCart($event)"
+  >
+  </app-product-item>
 </div>

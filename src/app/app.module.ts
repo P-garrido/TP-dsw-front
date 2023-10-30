@@ -8,8 +8,17 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ProductosComponent } from './productos/productos.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
+import { NewProductComponent } from './new-product/new-product.component';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { CartProductComponent } from './cart-product/cart-product.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderItemComponent } from './order-item/order-item.component';
+import { AdminProductItemComponent } from './admin-product-item/admin-product-item.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FooterComponent } from './footer/footer.component';
 import { ServiciosComponent } from './servicios/servicios.component';
@@ -19,8 +28,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ServiciosContratadosComponent } from './servicios-contratados/servicios-contratados.component';
 import { ServContratadoComponent } from './serv-contratado/serv-contratado.component';
-import { AccordionModule } from 'ngx-bootstrap/accordion';
-import { CartComponent } from './cart/cart.component'
+
 
 
 @NgModule({
@@ -30,14 +38,20 @@ import { CartComponent } from './cart/cart.component'
     InicioComponent,
     ProductosComponent,
     LogInComponent,
+    CartComponent,
+    NewProductComponent,
+    AdminProductsComponent,
+    ProductItemComponent,
+    CartProductComponent,
+    OrdersComponent,
+    OrderItemComponent,
+    AdminProductItemComponent,
     FooterComponent,
     ServiciosComponent,
     NewServiceComponent,
     ServiceComponent,
     ServiciosContratadosComponent,
     ServContratadoComponent,
-    CartComponent
-
   ],
   imports: [
     BrowserModule,

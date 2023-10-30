@@ -4,17 +4,21 @@ import { ArgumentOutOfRangeError } from "rxjs";
 
 export class Product {
 
-  image: any;
-  name: string;
-  description: string;
-  price: number;
+  id_producto: number;
+  imagen: any;
+  nombre_producto: string;
+  desc_producto: string;
+  precio: number;
   amount: number;
+  stock: number;
 
-  constructor(img: any, name: string, desc: string, pr: number, am: number) {
-    this.image = img;
-    this.name = name;
-    this.description = desc;
-    this.price = pr;
+  constructor(img: any, name: string, desc: string, pr: number, am: number, stock:number, id_producto:number) {
+    this.id_producto = id_producto;
+    this.imagen = img;
+    this.nombre_producto = name;
+    this.desc_producto = desc;
+    this.precio = pr;
+    this.stock = stock
     this.amount = am
   }
 }
@@ -78,6 +82,7 @@ export class EditBoughtService {
 
 
 export class User {
+
   idUser: number;
   userName: string;
   password: string;
@@ -89,7 +94,6 @@ export class User {
   constructor(idUs: number, usNam: string, pass: string, fNam: string, lNam: string, ad: string, ph: string, type: number) {
     this.idUser = idUs;
     this.userName = usNam;
-
     this.password = pass;
     this.firstName = fNam;
     this.lastName = lNam;

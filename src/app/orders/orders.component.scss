@@ -1,0 +1,33 @@
+.order-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ .searchbox-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+ }
+.btn-searchAll {
+  margin-left: 0;
+  margin-top: 10px;
+}
+.searchbox {
+  width: auto;
+  margin-bottom: 10px;
+}
+@media (min-width: 768px){
+  .searchbox-container {
+    flex-direction: row;
+  }
+  .searchbox{
+    margin-right: 10px;
+    margin-bottom: 0;
+  }
+  .btn-searchAll{
+    margin-left: 10px;
+    margin-top: 0;
+  }
+}

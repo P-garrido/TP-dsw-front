@@ -1,0 +1,13 @@
+.user-flex-container {
+  width: 320px;
+  margin: 15px;
+  box-shadow: 10px 10px 20px 0px rgba(43, 43, 43, 0.6);
+}
+
+@media (min-width: 768px) {
+  .user-flex-container {
+    width: 768px;
+    margin: 15px;
+    box-shadow: 10px 10px 20px 0px rgba(43, 43, 43, 0.6);
+  }
+}

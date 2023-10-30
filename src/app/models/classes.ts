@@ -1,38 +1,88 @@
+import { FormControl, FormGroup } from "@angular/forms";
 import { ArgumentOutOfRangeError } from "rxjs";
+
 
 export class Product {
 
-  image: any;
-  name: string;
-  description: string;
-  price: number;
+  id_producto: number;
+  imagen: any;
+  nombre_producto: string;
+  desc_producto: string;
+  precio: number;
   amount: number;
+  stock: number;
 
-  constructor(img: any, name: string, desc: string, pr: number, am: number) {
-    this.image = img;
-    this.name = name;
-    this.description = desc;
-    this.price = pr;
+  constructor(img: any, name: string, desc: string, pr: number, am: number, stock:number, id_producto:number) {
+    this.id_producto = id_producto;
+    this.imagen = img;
+    this.nombre_producto = name;
+    this.desc_producto = desc;
+    this.precio = pr;
+    this.stock = stock
     this.amount = am
   }
 }
 
 export class Service {
 
-  name: string;
+  id: number;
   description: string;
-  prize: number;
+  price: number;
+  longDescription: string;
 
-  constructor(name: string, desc: string, pr: number) {
-    this.name = name;
+  constructor(id: number, desc: string, pr: number, longDesc: string) {
+    this.id = id;
     this.description = desc;
-    this.prize = pr;
+    this.price = pr;
+    this.longDescription = longDesc;
   }
 }
 
-export class User {
+export class EditServiceEvent {
   id: number;
-  username: string;
+  data: FormGroup;
+
+  constructor(id: number, fc: FormGroup) {
+    this.id = id;
+    this.data = fc;
+  }
+}
+
+export class BoughtService {
+  idService: number;
+  idUser: number;
+  serviceDate: Date;
+  hourAmmount: number;
+  clientMsj: string;
+
+  constructor(idServ: number, idUs: number, servDate: Date, hourAm: number, cliMsj: string) {
+    this.idService = idServ;
+    this.idUser = idUs;
+    this.serviceDate = servDate;
+    this.hourAmmount = hourAm;
+    this.clientMsj = cliMsj;
+  }
+}
+
+export class EditBoughtService {
+  idService: number;
+  idUser: number;
+  serviceDate: Date;
+  hourAmmount: FormControl;
+
+  constructor(idServ: number, idUs: number, servDate: Date, hourAm: FormControl) {
+    this.idService = idServ;
+    this.idUser = idUs;
+    this.serviceDate = servDate;
+    this.hourAmmount = hourAm;
+  }
+}
+
+
+
+export class User {
+  idUser: number;
+  userName: string;
   password: string;
   firstName: string;
   lastName: string;
@@ -41,9 +91,10 @@ export class User {
   type: number;
   email: string;
 
-  constructor(id: number,usNam: string, pass: string, fNam: string, lNam: string, ad: string, ph: string, type: number, em: string) {
-    this.id = id;
-    this.username = usNam;
+
+  constructor(idUs: number, usNam: string, pass: string, fNam: string, lNam: string, ad: string, ph: string, type: number, em: string) {
+    this.idUser = idUs;
+    this.userName = usNam;
     this.password = pass;
     this.firstName = fNam;
     this.lastName = lNam;
@@ -52,4 +103,6 @@ export class User {
     this.type = type;
     this.email = em;
   }
-}
+
+} 
+

@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  height: 30vh;
+  background-image: url(/assets/fondo-agua.jpeg);
+  background-size: cover;
+  background-attachment: fixed;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+  font-size: 1.5em;
+}
+
+.searchbox-container {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+
+  .serv-title {
+    align-self: center;
+    width: 80vw;
+  }
+
+  .searchbox {
+    max-width: 80vw;
+    align-self: center;
+  }
+
+  .btn-addServ {
+    align-self: center;
+    width: 80vw;
+    margin: 1rem;
+  }
+}
+
+.service-container {
+  .service {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+}
+
+
+@media screen and (min-width:1000px) {
+  .searchbox-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: .5rem;
+
+    .serv-title {
+      grid-column: 1 / 4;
+      width: 100%;
+    }
+
+    .searchbox {
+      grid-column: 1/3;
+    }
+
+    .btn-addServ {
+      grid-column: 3;
+      width: 90%;
+      margin: 0;
+      margin-left: 1rem;
+    }
+  }
+}

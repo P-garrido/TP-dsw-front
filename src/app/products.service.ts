@@ -1,25 +1,54 @@
 import { Injectable } from '@angular/core';
 import { Product } from './models/classes';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  products:Product []= [ {
-  image: "assets/cloro-granulado-multiaccion-x10kg-nataclor-20gr-cada-10-000lt-diariamente11-e85b8f8ec01e38f41a16210197797682-640-0.jpeg",
-  name: "Cloro Granulado",
-  description:"Cloro granulado precio x kg",
-  price:1000,
-  amount: 1
-  },
-  {
-  image: "assets/cloro-liquido.jpeg",
-  name: "Cloro Liquido",
-  description:"Cloro liquido precio por unidad",
-  price:2500,
-  amount: 1
+  products:Product []= [];
+
+  productToEdit: Product = {
+    id_producto: 0,
+    imagen: '',
+    nombre_producto: '',
+    desc_producto: '',
+    precio: 0,
+    amount: 0,
+    stock: 0
+  };
+  constructor(private http: HttpClient) {
   }
-];
-  constructor() { }
+
+  editProduct(id: number, name:any, desc:string, stock: any, price:any, img:string){
+    return this.http.patch("http://localhost:1234/products", 
+    {
+      id_producto: id,
+      nombre_producto: name,
+      desc_producto: desc,
+      stock: stock,
+      precio: price,
+      imagen: img
+    })
+  }
+
+  loadProducts(){
+      return this.http.get("http://localhost:1234/products")
+  }
+
+  createProduct(name:any, desc:string, stock: any, price:any, img:string){
+      return  this.http.post("http://localhost:1234/products", 
+    {
+      nombre_producto: name,
+      desc_producto: desc,
+      stock: stock,
+      precio: price,
+      imagen: img
+    })
+  }
+
+  deleteProduct(idProd:number){
+    return this.http.delete("http://localhost:1234/products/" + idProd.toString())
+  }
 }

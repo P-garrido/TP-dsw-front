@@ -10,6 +10,8 @@ import { LogInComponent } from './log-in/log-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
+import { UsersComponent } from './users/users.component';
+import { SignUpComponent } from './sign-up/sign-up.component'
 import { NewProductComponent } from './new-product/new-product.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
@@ -30,7 +32,6 @@ import { ServiciosContratadosComponent } from './servicios-contratados/servicios
 import { ServContratadoComponent } from './serv-contratado/serv-contratado.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,8 @@ import { ServContratadoComponent } from './serv-contratado/serv-contratado.compo
     ProductosComponent,
     LogInComponent,
     CartComponent,
+    UsersComponent,
+    SignUpComponent
     NewProductComponent,
     AdminProductsComponent,
     ProductItemComponent,

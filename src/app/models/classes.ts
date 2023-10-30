@@ -23,7 +23,6 @@ export class Product {
   }
 }
 
-
 export class Service {
 
   id: number;
@@ -82,7 +81,6 @@ export class EditBoughtService {
 
 
 export class User {
-
   idUser: number;
   userName: string;
   password: string;
@@ -91,7 +89,10 @@ export class User {
   adress: string;
   phone: string;
   type: number;
-  constructor(idUs: number, usNam: string, pass: string, fNam: string, lNam: string, ad: string, ph: string, type: number) {
+  email: string;
+
+
+  constructor(idUs: number, usNam: string, pass: string, fNam: string, lNam: string, ad: string, ph: string, type: number, em: string) {
     this.idUser = idUs;
     this.userName = usNam;
     this.password = pass;
@@ -100,6 +101,7 @@ export class User {
     this.adress = ad;
     this.phone = ph;
     this.type = type;
+    this.email = em;
   }
 
 } 

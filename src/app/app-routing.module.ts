@@ -3,13 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
 import { ProductosComponent } from './productos/productos.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { ServiciosComponent } from './servicios/servicios.component';
+import { NewServiceComponent } from './new-service/new-service.component';
+import { ServiciosContratadosComponent } from './servicios-contratados/servicios-contratados.component';
 import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
-  {path: 'inicio', component: InicioComponent},
-  {path: 'productos', component: ProductosComponent},
-  {path: 'logIn', component: LogInComponent},
+  { path: 'inicio', component: InicioComponent },
+  { path: 'productos', component: ProductosComponent },
+  { path: 'logIn', component: LogInComponent },
+  { path: 'servicios', component: ServiciosComponent },
+  { path: 'addService', component: NewServiceComponent },
+  { path: 'servicios-contratados', component: ServiciosContratadosComponent },
   {path: 'cart', component: CartComponent}
+
 ];
 
 @NgModule({

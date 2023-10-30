@@ -15,18 +15,19 @@ import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
 
-  {path: 'inicio', component: InicioComponent},
-  {path: 'productos', component: ProductosComponent},
-  {path: 'logIn', component: LogInComponent},
-  {path: 'cart', component: CartComponent},
-  {path: 'usuarios', component: UsersComponent},
-  {path: 'registrarse', component: SignUpComponent},
-  {path: 'addProduct', component: NewProductComponent},
-  {path: 'adminProducts', component: AdminProductsComponent},
-  {path: 'orders', component: OrdersComponent},
+  { path: 'inicio', component: InicioComponent },
+  { path: 'productos', component: ProductosComponent },
+  { path: 'logIn', component: LogInComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'usuarios', component: UsersComponent },
+  { path: 'registrarse', component: SignUpComponent },
+  { path: 'addProduct', component: NewProductComponent },
+  { path: 'adminProducts', component: AdminProductsComponent },
+  { path: 'orders', component: OrdersComponent },
   { path: 'servicios', component: ServiciosComponent },
   { path: 'addService', component: NewServiceComponent },
-  { path: 'servicios-contratados', component: ServiciosContratadosComponent }
+  { path: 'servicios-contratados', component: ServiciosContratadosComponent },
+  { path: '', component: InicioComponent }
 ];
 
 @NgModule({

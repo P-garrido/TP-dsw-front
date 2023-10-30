@@ -1,13 +1,13 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
-  background-color: #5dc1b9;
-  align-items: center;
-  padding: .5rem;
-}
-
-footer h2 {
-  color: #222;
+  // display: flex;
+  // justify-content: space-between;
+  // background-color: #5dc1b9;
+  // align-items: center;
+  padding: 0;
+  position: absolute;
+  bottom: 0px;
+  min-width: 100vw;
+  margin-bottom: 0px;
 }
 
 .logo {

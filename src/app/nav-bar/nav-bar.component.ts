@@ -8,6 +8,7 @@ import { LogInService } from '../log-in.service';
 })
 export class NavBarComponent {
 
+
   constructor(public loginService: LogInService) {
 
 

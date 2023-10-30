@@ -23,5 +23,6 @@ export class LogInComponent {
 
   getOneEmployee() {
     this.logInService.getOne(this.logInForm.value.username, this.logInForm.value.password);
+
   }
 }

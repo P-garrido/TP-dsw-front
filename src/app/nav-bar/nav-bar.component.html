@@ -9,7 +9,9 @@
       <li routerLink="/servicios">Mantenimiento</li>
       <li *ngIf="loginService.user.type==1" routerLink="/servicios-contratados">Servicios Contratados</li>
       <button class="btn">Contacto</button>
-      <li routerLink="/logIn">Login</li>
+
+      <li routerLink="/logIn">Log In</li>
+      <a class="cart-icon" routerLink="/cart"><i class="bi bi-cart"></i></a>
     </ul>
   </nav>
 </header>

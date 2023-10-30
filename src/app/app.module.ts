@@ -20,7 +20,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { ServiciosContratadosComponent } from './servicios-contratados/servicios-contratados.component';
 import { ServContratadoComponent } from './serv-contratado/serv-contratado.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
-
+import { CartComponent } from './cart/cart.component'
 
 
 @NgModule({
@@ -36,6 +36,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
     ServiceComponent,
     ServiciosContratadosComponent,
     ServContratadoComponent,
+    CartComponent
 
   ],
   imports: [

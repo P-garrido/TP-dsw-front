@@ -6,7 +6,9 @@ import { User } from './models/classes';
 })
 export class LogInService {
 
+
   constructor(private http: HttpClient) { }
+
   // async 
 
   readonly baseUrl = "http://localhost:1234/login";

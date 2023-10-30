@@ -60,3 +60,10 @@
 .header .btn:hover{
   transform: scale(1.1);
 }
+
+.cart-icon{
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}

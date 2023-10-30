@@ -1,20 +1,24 @@
 import { FormControl, FormGroup } from "@angular/forms";
+import { ArgumentOutOfRangeError } from "rxjs";
+
 
 export class Product {
 
   image: any;
   name: string;
   description: string;
-  prize: number;
+  price: number;
+  amount: number;
 
-
-  constructor(img: any, name: string, desc: string, pr: number) {
+  constructor(img: any, name: string, desc: string, pr: number, am: number) {
     this.image = img;
     this.name = name;
     this.description = desc;
-    this.prize = pr;
+    this.price = pr;
+    this.amount = am
   }
 }
+
 
 export class Service {
 
@@ -82,10 +86,10 @@ export class User {
   adress: string;
   phone: string;
   type: number;
-
   constructor(idUs: number, usNam: string, pass: string, fNam: string, lNam: string, ad: string, ph: string, type: number) {
     this.idUser = idUs;
     this.userName = usNam;
+
     this.password = pass;
     this.firstName = fNam;
     this.lastName = lNam;
@@ -93,4 +97,6 @@ export class User {
     this.phone = ph;
     this.type = type;
   }
+
 } 
+

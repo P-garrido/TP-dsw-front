@@ -1,5 +1,4 @@
-<div
-  style="
+<div style="
     display: flex;
     height: 30vh;
     background-image: url(./assets/fondo-agua.jpeg);
@@ -9,51 +8,28 @@
     align-items: center;
     color: #222;
     font-size: 1.5em;
-  "
->
+  ">
   <h1>CARRITO</h1>
-  <button
-    *ngIf="
-      cartService.cartProducts.length > 0 && logInService.obj.username != ''
-    "
-    class="btn btn-success btn-lg btn-checkout"
-    type="button"
-    data-bs-toggle="offcanvas"
-    data-bs-target="#offcanvasWithBothOptions"
-    aria-controls="offcanvasWithBothOptions"
-  >
+  <button *ngIf="
+      cartService.cartProducts.length > 0 && logInService.user.userName != ''
+    " class="btn btn-success btn-lg btn-checkout" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
     Check Out
   </button>
 </div>
 <div class="message-container">
-  <a class="notLogged" *ngIf="logInService.obj.username === ''"
-    >Debe iniciar sesion para comprar productos</a
-  >
-  <a
-    class="empty-cart"
-    *ngIf="
-      cartService.cartProducts.length === 0 && logInService.obj.username != ''
-    "
-    >Carrito Vacio</a
-  >
+  <a class="notLogged" *ngIf="logInService.user.userName === ''">Debe iniciar sesion para comprar productos</a>
+  <a class="empty-cart" *ngIf="
+      cartService.cartProducts.length === 0 && logInService.user.userName != ''
+    ">Carrito Vacio</a>
 </div>
-<div
-  class="offcanvas offcanvas-start"
-  data-bs-scroll="true"
-  tabindex="-1"
-  id="offcanvasWithBothOptions"
-  aria-labelledby="offcanvasWithBothOptionsLabel"
->
+<div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+  aria-labelledby="offcanvasWithBothOptionsLabel">
   <div class="offcanvas-header">
     <h1 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
       Carrito de compras
     </h1>
-    <button
-      type="button"
-      class="btn-close"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-    ></button>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
     <div *ngFor="let product of cartService.cartProducts">
@@ -67,34 +43,18 @@
       Compra realizada con exito!
     </p>
     <h1 *ngIf="!finishedOrder">Total: ${{ total }}</h1>
-    <button
-      *ngIf="!finishedOrder"
-      type="button"
-      class="btn btn-danger"
-      data-bs-dismiss="offcanvas"
-      aria-label="Close"
-      (click)="clearCart()"
-    >
+    <button *ngIf="!finishedOrder" type="button" class="btn btn-danger" data-bs-dismiss="offcanvas" aria-label="Close"
+      (click)="clearCart()">
       Vaciar
     </button>
-    <button
-      *ngIf="!finishedOrder"
-      type="button"
-      class="btn btn-primary"
-      (click)="checkOut()"
-    >
+    <button *ngIf="!finishedOrder" type="button" class="btn btn-primary" (click)="checkOut()">
       Comprar
     </button>
   </div>
 </div>
 
 <div class="products-container">
-  <app-cart-product
-    *ngFor="let product of cartService.cartProducts"
-    [product]="product"
-    (remove)="removeOne($event)"
-    (add)="addOne($event)"
-    (substract)="substractOne($event)"
-  >
+  <app-cart-product *ngFor="let product of cartService.cartProducts" [product]="product" (remove)="removeOne($event)"
+    (add)="addOne($event)" (substract)="substractOne($event)">
   </app-cart-product>
 </div>

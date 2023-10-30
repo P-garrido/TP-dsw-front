@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #5dc1b9;
+  align-items: center;
+  padding: .5rem;
+}
+
+footer h2 {
+  color: #222;
+}
+
+.logo {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+}
+
+.logo-img {
+  height: 4rem;
+}

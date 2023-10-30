@@ -10,16 +10,19 @@ import { LogInService } from '../log-in.service';
 export class LogInComponent {
   logInForm = new FormGroup({
     username: new FormControl(),
-    password:  new FormControl()
-});
+    password: new FormControl()
+  });
 
-  constructor(private logInService: LogInService){
+
+  constructor(private logInService: LogInService) {
 
   }
 
-  getOneEmployee(){
-    this.logInService.obj.username = this.logInForm.value.username;
-    this.logInService.obj.password = this.logInForm.value.password;
-    console.log(this.logInService.obj);
+
+
+
+  getOneEmployee() {
+    this.logInService.getOne(this.logInForm.value.username, this.logInForm.value.password);
+
   }
 }

@@ -1,0 +1,25 @@
+form {
+  display: flex;
+}
+
+.input-container {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+.form-item {
+
+  padding: 5px 0px;
+  align-items: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-item label {
+  padding-right: 5px;
+}
+
+input.ng-invalid {
+  border: solid 1px red;
+}

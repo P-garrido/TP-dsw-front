@@ -6,20 +6,27 @@ import { User } from './models/classes';
 })
 export class LogInService {
 
-  obj:User = {
-    id_usuario: 1,
-    username: 's',
-    password: '',
-    firstName: '',
-    lastName: '',
-    adress: '',
-    phone: '',
-    type: 0
-  }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
+
   // async 
-  getOne(user:string, pass:number){
-    return this.http.get(`http://localhost:3000/api/employees/${user}/${pass}`)
+
+  readonly baseUrl = "http://localhost:1234/login";
+
+  token: any = "";
+  user: User = new User(-1, "", "", "", "", "", "", -1, "");
+
+
+
+  getOne(user: string, pass: number) {
+    this.http.post<any>(this.baseUrl, {
+      nombre_usuario: user,
+      clave: pass
+    }).subscribe(res => {
+      if (res.token) {
+        this.token = res.token;
+        this.user = new User(res.user.id_usuario, res.user.nombre_usuario, res.user.clave, res.user.nombre, res.user.apellido, res.user.direccion, res.user.telefono, res.user.tipo_usuario, res.user.email);
+      }
+    })
   }
 }

@@ -23,4 +23,13 @@ export class OrdersComponent implements OnInit {
       this.filteredOrders = resp;
     });
   }
+  getOrderByProduct(){
+    this.ordersService.getProductByName(this.searchForm.value).subscribe((resp:any) => {
+      this.filteredOrders = this.orders.filter((o:any) => {
+        for (let prod of o.productos_pedidos){
+          if(prod.id_producto === resp.id_producto) return prod
+        }
+      })
+    });
+  }
 }

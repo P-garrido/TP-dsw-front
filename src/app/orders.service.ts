@@ -11,5 +11,10 @@ export class OrdersService {
   loadAllOrders(){
     return this.http.get('http://localhost:1234/orders')
   }
-
+  getProductById(idProd:number){
+    return this.http.get(`http://localhost:1234/products/${idProd}`)
+  }
+  getProductByName(prodName:string){
+    return this.http.get(`http://localhost:1234/products/nombre_producto/${prodName}`)
+  }
 }

@@ -1,3 +1,4 @@
+import { NonNullableFormBuilder } from "@angular/forms";
 import { ArgumentOutOfRangeError } from "rxjs";
 
 export class Product {
@@ -54,5 +55,21 @@ export class User {
     this.adress = ad;
     this.phone = ph;
     this.type = type;
+  }
+}
+
+export class Order {
+  id_pedido: number;
+  fecha: string;
+  id_cliente: number;
+  total: number;
+  productos_pedidos: Product[] ;
+
+  constructor(idUs: number, fecha: string, tot: number, idCli: number) {
+    this.id_pedido = idUs;
+    this.fecha = fecha;
+    this.total = tot;
+    this.productos_pedidos = [];
+    this.id_cliente = idCli;
   }
 }

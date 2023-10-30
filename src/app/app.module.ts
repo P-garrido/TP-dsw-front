@@ -18,7 +18,18 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { CartProductComponent } from './cart-product/cart-product.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderItemComponent } from './order-item/order-item.component';
-import { AdminProductItemComponent } from './admin-product-item/admin-product-item.component'
+import { AdminProductItemComponent } from './admin-product-item/admin-product-item.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FooterComponent } from './footer/footer.component';
+import { ServiciosComponent } from './servicios/servicios.component';
+import { NewServiceComponent } from './new-service/new-service.component';
+import { ServiceComponent } from './service/service.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ServiciosContratadosComponent } from './servicios-contratados/servicios-contratados.component';
+import { ServContratadoComponent } from './serv-contratado/serv-contratado.component';
+
+
 
 @NgModule({
   declarations: [
@@ -34,15 +45,24 @@ import { AdminProductItemComponent } from './admin-product-item/admin-product-it
     CartProductComponent,
     OrdersComponent,
     OrderItemComponent,
-    AdminProductItemComponent
+    AdminProductItemComponent,
+    FooterComponent,
+    ServiciosComponent,
+    NewServiceComponent,
+    ServiceComponent,
+    ServiciosContratadosComponent,
+    ServContratadoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AccordionModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CarouselModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    ModalModule.forRoot(),
+    AccordionModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,56 @@
+<div *ngIf="onEdit==false">
+  <accordion [isAnimated]="true" class="accordion">
+    <accordion-group heading="{{service.description}}" class="accordion-item">
+      <p><b>${{service.price}}</b></p>
+      <p>{{service.longDescription}}</p>
+    </accordion-group>
+  </accordion>
+</div>
+<div *ngIf="onEdit==true" class="edit-serv">
+  <form [formGroup]="editServiceForm" class="row g-3" (ngSubmit)="sendEdit()">
+    <input class="edit" type="text" formControlName="description">
+    <input class="edit" type="text" formControlName="price">
+    <button type="submit" class="btn btn-primary btn-aceptar">Aceptar</button>
+  </form>
+</div>
+<div class="btn-container">
+  <button class="btn btn-primary" (click)="openModal(template)">Contactanos Ya</button>
+  <button *ngIf="admin" class="btn btn-secondary" (click)="editService()">{{onEdit?'Cancelar':'Editar
+    Servicio'}}</button>
+  <button *ngIf="admin" class="btn btn-danger" (click)="deleteService(service.id)">Eliminar Servicio</button>
+</div>
+
+
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Contratar Servicio</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="serviceBuyForm" (ngSubmit)="buyService(service.id)">
+      <label>Elegí la fecha y hora en la que se realizará el servicio:</label>
+      <div class="row">
+        <div class="col-xs-12 col-12 col-md-4 form-group mb-3">
+          <input type="text" placeholder="Datepicker" class="form-control" formControlName="date" bsDatepicker
+            [minDate]="minDate" [datesDisabled]="disabledDates"
+            [bsConfig]="{ isAnimated: true, dateInputFormat: 'DD/MM/YYYY, hh:mm A', containerClass: 'theme-blue', withTimepicker: true, keepDatepickerOpened: true }">
+        </div>
+        <label>Mensaje (opcional):</label>
+        <textarea id="serviceMessage" cols="30" rows="10" formControlName="message"></textarea>
+        <div class="btn-modal-container">
+
+          <button type="button" class="btn btn-secondary btn-modal" (click)="decline()">Cancelar</button>
+          <button type="submit" class="btn btn-primary btn-modal" [disabled]="!serviceBuyForm.valid">Contratar
+            Servicio</button>
+        </div>
+      </div>
+
+    </form>
+
+
+  </div>
+</ng-template>

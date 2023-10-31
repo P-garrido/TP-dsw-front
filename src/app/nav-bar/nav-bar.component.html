@@ -15,12 +15,11 @@
       >
         Servicios Contratados
       </li>
-      <button class="btn">Contacto</button>
 
       <li routerLink="/logIn" *ngIf="loginService.user.userName === ''">
-        Log In
+        <button class="btn">Log In</button>
       </li>
-      <li routerLink="" *ngIf="loginService.user.userName != ''">Cuenta</li>
+      <li *ngIf="loginService.user.userName != ''">Cerrar Sesion</li>
       <a class="cart-icon" routerLink="/cart"><i class="bi bi-cart"></i></a>
     </ul>
   </nav>

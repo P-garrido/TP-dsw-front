@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Form } from '@angular/forms';
 import { LogInService } from '../log-in.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -14,12 +15,9 @@ export class LogInComponent {
   });
 
 
-  constructor(private logInService: LogInService) {
+  constructor(private logInService: LogInService, private router: Router) {
 
   }
-
-
-
 
   getOneEmployee() {
     this.logInService.getOne(this.logInForm.value.username, this.logInForm.value.password);

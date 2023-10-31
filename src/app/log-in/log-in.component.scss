@@ -17,7 +17,8 @@
 
 }
 h1{
-  margin-bottom:50px;
+  margin-bottom: 40px;
+  margin-top: 20px;
 }
 label{
   font-size: xx-large;
@@ -26,6 +27,7 @@ label{
 input{
   height: 30px;
   border-radius: 5px;
+  width: 100%;
 }
 
 form{
@@ -37,8 +39,8 @@ form{
 
 }
 .log-in-btn{
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   color: black;
-  height: 50px;
-  width: 250px;
+  height: 30px;
+  width: 100%;
 }

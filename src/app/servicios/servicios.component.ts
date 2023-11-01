@@ -60,7 +60,8 @@ export class ServiciosComponent {
 
   buyService(serv: EditServiceEvent) { //OBTENER NRO CLIENTE
     this.servicesService.buyService(serv, this.loginService.user.idUser).subscribe(
-      response => console.log(response)
+      response => alert("Servivicio contratado"),
+      error => console.error(error)
     );
   }
 }

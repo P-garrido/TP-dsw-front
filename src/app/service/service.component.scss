@@ -39,7 +39,9 @@
 }
 
 
-
+.d-picker {
+  width: 12rem;
+}
 
 textarea {
   resize: none;
@@ -68,6 +70,10 @@ textarea {
       width: max-content;
       margin-left: .5rem;
     }
+  }
+
+  .d-picker {
+    width: fit-content;
   }
 
 }

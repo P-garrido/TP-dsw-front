@@ -1,8 +1,9 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BoughtService, EditBoughtService, EditServiceEvent, Service } from './models/classes';
 import { FormGroup } from '@angular/forms';
 import { LogInService } from './log-in.service';
+import { catchError, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -67,7 +68,7 @@ export class ServicesService {
       hourAmmount: null,
       clientMsg: serv.data.value.message
     },
-      { headers })
+      { headers }).pipe(catchError(this.handleError))
   }
 
   editServiceClient(servCli: EditBoughtService) {
@@ -85,5 +86,15 @@ export class ServicesService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.delete(url, { headers });
 
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 401) {
+      alert('Inicia sesión');
+    } else {
+      console.error('Ocurrió un error inesperado:', error.message);
+    }
+
+    return throwError('Algo salió mal, inténtalo de nuevo más tarde.');
   }
 }

@@ -65,7 +65,7 @@ import { ServContratadoComponent } from './serv-contratado/serv-contratado.compo
     CarouselModule.forRoot(),
     BsDatepickerModule.forRoot(),
     ModalModule.forRoot(),
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -19,14 +19,9 @@ export class LogInService {
 
 
   getOne(user: string, pass: number) {
-    this.http.post<any>(this.baseUrl, {
+    return this.http.post<any>(this.baseUrl, {
       nombre_usuario: user,
       clave: pass
-    }).subscribe(res => {
-      if (res.token) {
-        this.token = res.token;
-        this.user = new User(res.user.id_usuario, res.user.nombre_usuario, res.user.clave, res.user.nombre, res.user.apellido, res.user.direccion, res.user.telefono, res.user.tipo_usuario, res.user.email);
-      }
     })
   }
 }

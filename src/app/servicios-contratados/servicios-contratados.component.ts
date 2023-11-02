@@ -28,7 +28,6 @@ export class ServiciosContratadosComponent {
       response.forEach((bs: any) => {
         this.boughtServices.push(new BoughtService(new Service(bs.Servicio.id_servicio, bs.Servicio.desc_servicio, bs.Servicio.precio_por_hora, bs.Servicio.descripcion), new User(bs.Usuario.id_usuario, bs.Usuario.nombre_usuario, bs.Usuario.clave, bs.Usuario.nombre, bs.Usuario.apellido, bs.Usuario.direccion, bs.Usuario.telefono, bs.Usuario.tipo_usuario, bs.Usuario.email), bs.fecha_servicio, bs.cant_horas, bs.mensaje_cliente))
       });
-      console.log(response);
     }
     )
   }

@@ -39,6 +39,8 @@ export class ServiciosComponent {
 
 
   getAllServices() {
+    this.services.splice(0, this.services.length);
+    this.filteredServices.splice(0, this.filteredServices.length);
     this.servicesService.getAllServices().subscribe(response => {
       response.forEach((serv: any) => {
         this.services.push(new Service(serv.id_servicio, serv.desc_servicio, serv.precio_por_hora, serv.descripcion))
@@ -48,17 +50,24 @@ export class ServiciosComponent {
   }
 
   deleteService(idServ: number) {
-    this.servicesService.deleteService(idServ).subscribe();
-    window.location.reload();
+    this.servicesService.deleteService(idServ).subscribe(res => {
+      if (res) {
+        this.getAllServices();
+      }
+    });
+
   }
 
   editService(serv: EditServiceEvent) {
 
-    this.servicesService.editService(serv).subscribe();
-    window.location.reload();
+    this.servicesService.editService(serv).subscribe(res => {
+      if (res) {
+        this.getAllServices();
+      }
+    });
   }
 
-  buyService(serv: EditServiceEvent) { //OBTENER NRO CLIENTE
+  buyService(serv: EditServiceEvent) {
     this.servicesService.buyService(serv, this.loginService.user.idUser).subscribe(
       response => alert("Servivicio contratado"),
       error => console.error(error)

@@ -16,17 +16,18 @@ export class NavBarComponent {
     backdrop: true,
     ignoreBackdropClick: true
   };
-  constructor(public loginService: LogInService, private modalService: BsModalService, private router: Router) {}
+  constructor(public loginService: LogInService, private modalService: BsModalService, private router: Router) { }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);
   }
-  closeModal(){
+  closeModal() {
     this.modalRef?.hide();
   }
-  logOut(){
+  logOut() {
     this.loginService.user = new User(-1, "", "", "", "", "", "", -1, "");
     this.closeModal();
     this.router.navigate(['/inicio']);
+
   }
 }

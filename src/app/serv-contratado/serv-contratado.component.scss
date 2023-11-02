@@ -1,5 +1,6 @@
 .editInput {
   display: inline;
+  margin-bottom: .9rem;
 }
 
 .btn-container {
@@ -18,4 +19,8 @@
 
 .ng-invalid.ng-touched {
   outline: .2rem solid #f00;
+}
+
+.no-contratado {
+  border: solid .2rem #b2ffff;
 }

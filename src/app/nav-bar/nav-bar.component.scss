@@ -71,6 +71,7 @@
   align-items: center;
   li{
     margin: 5px;
+    cursor: pointer;
   }
 }
 .hamburguer-menu:has(input:checked) + .hamburguer-nav-bar{

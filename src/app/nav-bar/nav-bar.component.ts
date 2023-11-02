@@ -27,6 +27,7 @@ export class NavBarComponent {
   logOut() {
     this.loginService.user = new User(-1, "", "", "", "", "", "", -1, "");
     this.closeModal();
-    this.router.navigate(['inicio']);
+    this.router.navigate(['/inicio']);
+
   }
 }

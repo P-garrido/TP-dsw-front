@@ -14,7 +14,7 @@ export class Product {
   amount: number;
   stock: number;
 
-  constructor(img: any, name: string, desc: string, pr: number, am: number, stock:number, id_producto:number) {
+  constructor(img: any, name: string, desc: string, pr: number, am: number, stock: number, id_producto: number) {
     this.id_producto = id_producto;
     this.imagen = img;
     this.nombre_producto = name;
@@ -51,15 +51,15 @@ export class EditServiceEvent {
 }
 
 export class BoughtService {
-  idService: number;
-  idUser: number;
+  service: Service
+  user: User;
   serviceDate: Date;
   hourAmmount: number;
   clientMsj: string;
 
-  constructor(idServ: number, idUs: number, servDate: Date, hourAm: number, cliMsj: string) {
-    this.idService = idServ;
-    this.idUser = idUs;
+  constructor(serv: Service, us: User, servDate: Date, hourAm: number, cliMsj: string) {
+    this.service = serv;
+    this.user = us;
     this.serviceDate = servDate;
     this.hourAmmount = hourAm;
     this.clientMsj = cliMsj;
@@ -113,7 +113,7 @@ export class Order {
   fecha: string;
   id_cliente: number;
   total: number;
-  productos_pedidos: Product[] ;
+  productos_pedidos: Product[];
 
   constructor(idUs: number, fecha: string, tot: number, idCli: number) {
     this.id_pedido = idUs;

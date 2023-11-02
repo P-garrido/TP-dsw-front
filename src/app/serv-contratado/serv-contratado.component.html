@@ -1,22 +1,26 @@
 <div *ngIf="onEdit==false">
   <p>Fecha: {{boughtService.serviceDate | date: 'dd/MM/yyy HH:mm'}}</p>
+  <p>Servicio: {{boughtService.service.description}}</p>
   <p>Cantidad de Horas:<b>{{boughtService.hourAmmount || 'A realizar'}}</b></p>
-  <p>Id Cliente: {{boughtService.idUser}}</p>
+  <p>Cliente: {{boughtService.user.userName}}</p>
   <p>Mensaje del cliente: {{boughtService.clientMsj}}</p>
 </div>
 
 
 <div *ngIf="onEdit==true" class="edit-container">
   <p>Fecha: {{boughtService.serviceDate | date: 'dd/MM/yyy HH:mm'}}</p>
+  <p>Servicio: {{boughtService.service.description}}</p>
   <p class="editInput">Cantidad de Horas: </p><input class="editInput" type="number" pattern="[0-9]"
     [formControl]="hourAmmountEdit">
+  <p>Cliente: {{boughtService.user.userName}}</p>
+  <p>Mensaje del cliente: {{boughtService.clientMsj}}</p>
 </div>
 
 <div class="btn-container">
   <div>
     <button class="btn btn-secondary" (click)="edit()">{{onEdit?'Cancelar':'Editar'}}</button>
     <button class="btn btn-danger"
-      (click)="deleteServClient(boughtService.idService, boughtService.idUser, boughtService.serviceDate)">Eliminar</button>
+      (click)="deleteServClient(boughtService.service.id, boughtService.user.idUser, boughtService.serviceDate)">Eliminar</button>
   </div>
 
   <button *ngIf="onEdit==true" class="btn btn-primary btn-aceptar" (click)="sendEdit()">Aceptar</button>

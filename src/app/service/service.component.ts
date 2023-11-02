@@ -31,7 +31,8 @@ export class ServiceComponent {
 
   editServiceForm = new FormGroup({
     description: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required)
+    price: new FormControl('', Validators.required),
+    longDesc: new FormControl('')
   });
 
   serviceBuyForm = new FormGroup({
@@ -46,7 +47,7 @@ export class ServiceComponent {
     }
     else {
       this.onEdit = true;
-      this.editServiceForm.patchValue({ description: this.service.description, price: `${this.service.price}` });
+      this.editServiceForm.patchValue({ description: this.service.description, price: `${this.service.price}`, longDesc: this.service.longDescription });
     }
   }
 

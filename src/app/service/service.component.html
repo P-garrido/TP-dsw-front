@@ -8,8 +8,9 @@
 </div>
 <div *ngIf="onEdit==true" class="edit-serv">
   <form [formGroup]="editServiceForm" class="row g-3" (ngSubmit)="sendEdit()">
-    <input class="edit" type="text" formControlName="description">
-    <input class="edit" type="text" formControlName="price">
+    <input class="edit" type="text" formControlName="description" placeholder="Nombre">
+    <input class="edit" type="text" formControlName="price" placeholder="Precio">
+    <input class="edit" type="text" formControlName="longDesc" placeholder="Descripción">
     <button type="submit" class="btn btn-primary btn-aceptar">Aceptar</button>
   </form>
 </div>

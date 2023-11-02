@@ -1,11 +1,17 @@
 <div *ngIf="onEdit==false" [ngClass]="{'no-contratado': boughtService.hourAmmount === null}">
-  <p>Fecha: {{boughtService.serviceDate | date: 'dd/MM/yyy HH:mm'}}</p>
-  <p>Servicio: {{boughtService.service.description}}</p>
-  <p>Cantidad de Horas:<b>{{boughtService.hourAmmount || 'A realizar'}}</b></p>
-  <p>Cliente: {{boughtService.user.userName}}</p>
-  <p>Dirección: {{boughtService.user.adress}}</p>
-  <p>Teléfono: {{boughtService.user.phone}}</p>
-  <p>Mensaje del cliente: {{boughtService.clientMsj}}</p>
+
+
+  <accordion [isAnimated]="true" class="accordion">
+    <accordion-group
+      heading="{{boughtService.user.userName}} contrató {{boughtService.service.description }} el {{boughtService.serviceDate | date: 'dd/MM/yyy HH:mm'}}"
+      class="accordion-item">
+      <p>Cantidad de Horas:<b>{{boughtService.hourAmmount || 'A realizar'}}</b></p>
+      <p>Dirección: {{boughtService.user.adress}}</p>
+      <p>Teléfono: {{boughtService.user.phone}}</p>
+      <p>Mensaje del cliente: {{boughtService.clientMsj}}</p>
+    </accordion-group>
+  </accordion>
+
 </div>
 
 
@@ -19,6 +25,38 @@
   <p>Teléfono: {{boughtService.user.phone}}</p>
   <p>Mensaje del cliente: {{boughtService.clientMsj}}</p>
 </div>
+
+
+
+<!-- <div *ngIf="onEdit==false">
+  <accordion [isAnimated]="true" class="accordion">
+    <accordion-group heading="{{service.description}}" class="accordion-item">
+      <p><b>${{service.price}}</b></p>
+      <p>{{service.longDescription}}</p>
+    </accordion-group>
+  </accordion>
+</div>
+<div *ngIf="onEdit==true" class="edit-serv">
+  <form [formGroup]="editServiceForm" class="row g-3" (ngSubmit)="sendEdit()">
+    <input class="edit" type="text" formControlName="description" placeholder="Nombre">
+    <input class="edit" type="text" formControlName="price" placeholder="Precio">
+    <input class="edit" type="text" formControlName="longDesc" placeholder="Descripción">
+    <button type="submit" class="btn btn-primary btn-aceptar">Aceptar</button>
+  </form>
+</div>
+<div class="btn-container">
+  <button class="btn btn-primary" (click)="openModal(template)">Contactanos Ya</button>
+  <button *ngIf="admin" class="btn btn-secondary" (click)="editService()">{{onEdit?'Cancelar':'Editar
+    Servicio'}}</button>
+  <button *ngIf="admin" class="btn btn-danger" (click)="deleteService(service.id)">Eliminar Servicio</button>
+</div> -->
+
+
+
+
+
+
+
 
 <div class="btn-container">
   <div>

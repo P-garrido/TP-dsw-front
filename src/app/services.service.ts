@@ -53,7 +53,7 @@ export class ServicesService {
     return this.http.patch<any>(url, {
       description: serv.data.value.description,
       hourValue: parseInt(serv.data.value.price),
-      longDescription: serv.data.value.longDescription
+      longDescription: serv.data.value.longDesc
     }, { headers });
   }
 
@@ -77,7 +77,7 @@ export class ServicesService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.patch<any>(url, {
       hourAmmount: parseInt(servCli.hourAmmount.value)
-    }, { headers });
+    }, { headers }).pipe(catchError(this.handleError));
   }
 
   deleteServiceClient(idServ: number, idCli: number, servDate: Date) {

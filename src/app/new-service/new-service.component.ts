@@ -20,8 +20,12 @@ export class NewServiceComponent {
 
   addService() {
     if (this.newServiceForm.valid) {
-      this.servicesService.addService(this.newServiceForm).subscribe();
-      this.router.navigate(['servicios']);
+      this.servicesService.addService(this.newServiceForm).subscribe(res => {
+        if (res) {
+          this.router.navigate(['servicios']);
+        }
+      });
+
     }
   }
 }

@@ -4,11 +4,19 @@
   flex-direction: column;
 
   .flex-child:nth-child(2) {
-    align-self: center;
+    // align-self: center;
     margin: 1rem;
   }
 }
-
+.card{
+  width: 500px;
+  align-self: center;
+}
+.card-product-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .carousel {
   img {
     height: 50vh;

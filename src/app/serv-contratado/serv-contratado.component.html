@@ -1,8 +1,10 @@
-<div *ngIf="onEdit==false">
+<div *ngIf="onEdit==false" [ngClass]="{'no-contratado': boughtService.hourAmmount === null}">
   <p>Fecha: {{boughtService.serviceDate | date: 'dd/MM/yyy HH:mm'}}</p>
   <p>Servicio: {{boughtService.service.description}}</p>
   <p>Cantidad de Horas:<b>{{boughtService.hourAmmount || 'A realizar'}}</b></p>
   <p>Cliente: {{boughtService.user.userName}}</p>
+  <p>Dirección: {{boughtService.user.adress}}</p>
+  <p>Teléfono: {{boughtService.user.phone}}</p>
   <p>Mensaje del cliente: {{boughtService.clientMsj}}</p>
 </div>
 
@@ -13,6 +15,8 @@
   <p class="editInput">Cantidad de Horas: </p><input class="editInput" type="number" pattern="[0-9]"
     [formControl]="hourAmmountEdit">
   <p>Cliente: {{boughtService.user.userName}}</p>
+  <p>Dirección: {{boughtService.user.adress}}</p>
+  <p>Teléfono: {{boughtService.user.phone}}</p>
   <p>Mensaje del cliente: {{boughtService.clientMsj}}</p>
 </div>
 

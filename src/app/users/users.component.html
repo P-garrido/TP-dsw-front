@@ -34,9 +34,9 @@
       <div class="form-item">
         <label for="address">Tipo de Usuario: </label>
         <label for="0">Empleado</label>
-        <input required type="radio" name="userType" value="0" formControlName="userType" (click)="userType = 0"/>
+        <input required type="radio" name="userType" value="1" formControlName="userType" (click)="userType = 1"/>
         <label for="1">Cliente</label>
-        <input required type="radio" name="userType"  value="1" formControlName="userType" (click)="userType = 1"/>
+        <input required type="radio" name="userType"  value="0" formControlName="userType" (click)="userType = 0"/>
       </div>
 
 
@@ -53,7 +53,7 @@
   class="fixed-button filter-button-clientes" 
   (click)="showOnlyClients()"
   [class.seleccionado]="clients">Clientes</button>
-<button href="#top" class="fixed-button add-button" (click)="add = true">Agregar Usuario</button>
+<button href="#top" class="fixed-button add-button" (click)="add = true; cleanForm()">Agregar Usuario</button>
 
 <accordion [isAnimated]="true">
   <accordion-group heading="{{item.firstName+ ' ' + item.lastName}}" *ngFor="let item of list" 
@@ -63,7 +63,7 @@
       <p class="user-flex-text">Correo: {{item.email}}</p>
       <p class="user-flex-text">Teléfono: {{item.phone}}</p>
       <p class="user-flex-text">Dirección: {{item.adress}}</p>
-      <p class="user-flex-text">Tipo de Usuario: {{item.type == 1? "Cliente" : "Empleado" }}</p>
+      <p class="user-flex-text">Tipo de Usuario: {{item.type == 1? "Empleado" : "Cliente" }}</p>
       <button class="change-button" (click)="allowEditing(item)">Editar Usuario</button>
       <button class="change-button" (click)="deleteUser(item)">Eliminar Usuario</button>
     </div>
@@ -77,5 +77,3 @@
 </div>
 
   
-
-   <!-- [ngClass]="item.type == 1 ? 'client' : 'employee'" -->

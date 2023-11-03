@@ -30,7 +30,7 @@ export class SignUpComponent {
       nombre: this.signUpForm.value.firstName,
       apellido: this.signUpForm.value.lastName,
       direccion: this.signUpForm.value.address,
-      tipo_usuario: 1 //este numero corresponde a cliente, un empleado deberia ser registrado desde el componente users
+      tipo_usuario: 0 
     }
     this.service.addUser(obj).subscribe(() => this.signUpForm.reset())
   }

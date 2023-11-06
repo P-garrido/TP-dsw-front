@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">{{action}} Sucursal</h5>
+</div>
+
+<div class="modal-body">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="mb-4">
+      <mdb-form-control>
+        <input mdbInput type="text" id="branch-name" class="form-control" formControlName="name" />
+        <label mdbLabel class="form-label" for="branch-name">Nombre</label>
+      </mdb-form-control>
+      <div *ngIf="form.controls.name.invalid && form.controls.name.touched">
+        <p class="text-danger font-italic">Ingrese un nombre válido.</p>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <mdb-form-control>
+        <input mdbInput type="text" id="branch-address" class="form-control" formControlName="address" />
+        <label mdbLabel class="form-label" for="branch-address">Direccion</label>
+      </mdb-form-control>
+      <div *ngIf="form.controls.address.invalid && form.controls.address.touched">
+        <p class="text-danger font-italic">Ingrese una dirección válida.</p>
+      </div>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-primary btn-block">{{action}}</button>
+    </div>
+  </form>
+</div>

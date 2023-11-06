@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ProductosComponent } from './productos/productos.component';
+import { SucursalesComponent } from './sucursales/sucursales.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +16,7 @@ import { SignUpComponent } from './sign-up/sign-up.component'
 import { NewProductComponent } from './new-product/new-product.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductItemComponent } from './product-item/product-item.component';
 import { CartProductComponent } from './cart-product/cart-product.component';
 import { OrdersComponent } from './orders/orders.component';
@@ -30,6 +31,22 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ServiciosContratadosComponent } from './servicios-contratados/servicios-contratados.component';
 import { ServContratadoComponent } from './serv-contratado/serv-contratado.component';
+import { SucursalModalComponent } from './sucursal-modal/sucursal-modal.component';
+import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { MdbModalModule } from 'mdb-angular-ui-kit/modal';
+import { MdbPopoverModule } from 'mdb-angular-ui-kit/popover';
+import { MdbRadioModule } from 'mdb-angular-ui-kit/radio';
+import { MdbRangeModule } from 'mdb-angular-ui-kit/range';
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
+import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
+import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
+import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
+import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 
 @NgModule({
@@ -55,6 +72,8 @@ import { ServContratadoComponent } from './serv-contratado/serv-contratado.compo
     ServiceComponent,
     ServiciosContratadosComponent,
     ServContratadoComponent,
+    SucursalesComponent,
+    SucursalModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +85,22 @@ import { ServContratadoComponent } from './serv-contratado/serv-contratado.compo
     BsDatepickerModule.forRoot(),
     ModalModule.forRoot(),
     AccordionModule.forRoot(),
+    MdbAccordionModule,
+    MdbCarouselModule,
+    MdbCheckboxModule,
+    MdbCollapseModule,
+    MdbDropdownModule,
+    MdbFormsModule,
+    MdbModalModule,
+    MdbPopoverModule,
+    MdbRadioModule,
+    MdbRangeModule,
+    MdbRippleModule,
+    MdbScrollspyModule,
+    MdbTabsModule,
+    MdbTooltipModule,
+    MdbValidationModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,6 +12,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { NewProductComponent } from './new-product/new-product.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { OrdersComponent } from './orders/orders.component';
+import { SucursalesComponent } from './sucursales/sucursales.component';
 
 const routes: Routes = [
 
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'servicios', component: ServiciosComponent },
   { path: 'addService', component: NewServiceComponent },
   { path: 'servicios-contratados', component: ServiciosContratadosComponent },
-  { path: '', component: InicioComponent }
+  { path: '', component: InicioComponent },
+  { path: 'sucursales', component: SucursalesComponent},
 ];
 
 @NgModule({

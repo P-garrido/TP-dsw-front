@@ -8,23 +8,28 @@
     margin: 1rem;
   }
 }
-.card{
+
+.card {
   width: 500px;
+  max-width: 90vw;
   align-self: center;
 }
-.card-product-container{
+
+.card-product-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .carousel {
   img {
     height: 50vh;
     object-fit: cover;
   }
 }
-@media (min-width:768px){
-  .flex-container{
+
+@media (min-width:768px) {
+  .flex-container {
     padding-top: 0;
   }
 }

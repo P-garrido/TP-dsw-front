@@ -7,17 +7,14 @@
       <li routerLink="/orders" *ngIf="loginService.user.type === 1">
         Ver Pedidos
       </li>
-      <li
-        *ngIf="loginService.user.type == 1"
-        routerLink="/servicios-contratados"
-      >
+      <li *ngIf="loginService.user.type == 1" routerLink="/servicios-contratados">
         Servicios Contratados
       </li>
       <li routerLink="/inicio">Inicio</li>
       <li routerLink="/productos">Productos</li>
-      <li routerLink="/usuarios">Usuarios</li>
+      <li *ngIf="loginService.user.type == 1" routerLink="/usuarios">Usuarios</li>
       <li routerLink="/servicios">Mantenimiento</li>
-      <li routerLink="/sucursales">Sucursales</li>
+      <li *ngIf="loginService.user.type == 1" routerLink="/sucursales">Sucursales</li>
 
       <li routerLink="/logIn" *ngIf="loginService.user.userName === ''">
         <button class="btn-log-in">Log In</button>
@@ -29,18 +26,10 @@
           <div class="modal-body text-center">
             <p>Esta seguro que quiere cerrar sesion?</p>
             <div class="modal-btn-container">
-              <button
-                type="button"
-                class="btn btn-danger btn-open-modal"
-                (click)="logOut()"
-              >
+              <button type="button" class="btn btn-danger btn-open-modal" (click)="logOut()">
                 si
               </button>
-              <button
-                type="button"
-                class="btn btn-primary btn-close-modal"
-                (click)="closeModal()"
-              >
+              <button type="button" class="btn btn-primary btn-close-modal" (click)="closeModal()">
                 No
               </button>
             </div>
@@ -59,10 +48,7 @@
       <li routerLink="/orders" *ngIf="loginService.user.type === 1">
         Ver Pedidos
       </li>
-      <li
-        *ngIf="loginService.user.type == 1"
-        routerLink="/servicios-contratados"
-      >
+      <li *ngIf="loginService.user.type == 1" routerLink="/servicios-contratados">
         Servicios Contratados
       </li>
       <li routerLink="/inicio">Inicio</li>
@@ -80,18 +66,10 @@
           <div class="modal-body text-center">
             <p>Esta seguro que quiere cerrar sesion?</p>
             <div class="modal-btn-container">
-              <button
-                type="button"
-                class="btn btn-danger btn-log-out"
-                (click)="logOut()"
-              >
+              <button type="button" class="btn btn-danger btn-log-out" (click)="logOut()">
                 si
               </button>
-              <button
-                type="button"
-                class="btn btn-primary btn-close-modal"
-                (click)="closeModal()"
-              >
+              <button type="button" class="btn btn-primary btn-close-modal" (click)="closeModal()">
                 No
               </button>
             </div>

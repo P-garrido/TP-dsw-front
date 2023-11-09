@@ -35,14 +35,16 @@ export class LogInComponent {
   }
 
 
-  togglePassword() {
+  togglePassword(pass: HTMLInputElement) {
     if (this.visible) {
       this.visible = false;
       //Aca se oculta la contra
+      pass.type = "password";
     }
     else {
       this.visible = true;
       //Aca se muestra la contra
+      pass.type = "text";
     }
   }
 }

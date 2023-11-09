@@ -8,8 +8,9 @@
       </div>
       <div>
         <label for="password">Password</label>
-        <input type="password" placeholder="Contraseña" formControlName="password" class="form-input" />
-        <button (click)="togglePassword()">Mostrar Contraseña</button>
+        <input type="password" placeholder="Contraseña" formControlName="password" class="form-input" #pass />
+        <button class="btn btn-light" type="button" (click)="togglePassword(pass)">{{this.visible? 'Ocultar':'Mostrar'}}
+          Contraseña</button>
       </div>
       <input type="submit" value="Log In" class="log-in-btn" />
 

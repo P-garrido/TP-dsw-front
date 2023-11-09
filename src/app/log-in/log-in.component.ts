@@ -20,6 +20,9 @@ export class LogInComponent {
 
   }
 
+  visible: boolean = false;
+
+
   getOneEmployee() {
     this.logInService.getOne(this.logInForm.value.username, this.logInForm.value.password).subscribe(res => {
       if (res.token) {
@@ -29,6 +32,17 @@ export class LogInComponent {
       }
     });
     this.logInForm.reset();
+  }
 
+
+  togglePassword() {
+    if (this.visible) {
+      this.visible = false;
+      //Aca se oculta la contra
+    }
+    else {
+      this.visible = true;
+      //Aca se muestra la contra
+    }
   }
 }

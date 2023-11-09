@@ -4,21 +4,12 @@
     <form [formGroup]="logInForm" (ngSubmit)="getOneEmployee()">
       <div>
         <label for="username">Username</label>
-        <input
-          type="text"
-          placeholder="Usuario"
-          formControlName="username"
-          class="form-input"
-        />
+        <input type="text" placeholder="Usuario" formControlName="username" class="form-input" />
       </div>
       <div>
         <label for="password">Password</label>
-        <input
-          type="text"
-          placeholder="Contraseña"
-          formControlName="password"
-          class="form-input"
-        />
+        <input type="password" placeholder="Contraseña" formControlName="password" class="form-input" />
+        <button (click)="togglePassword()">Mostrar Contraseña</button>
       </div>
       <input type="submit" value="Log In" class="log-in-btn" />
 

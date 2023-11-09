@@ -20,6 +20,7 @@ export class ServiciosContratadosComponent {
 
 
   boughtServices: BoughtService[] = [];
+  filteredBoughtServices: BoughtService[] = [];
   admin: boolean = false;
 
 
@@ -27,9 +28,9 @@ export class ServiciosContratadosComponent {
     this.boughtServices.splice(0, this.boughtServices.length);
     this.serviceService.getAllBoughtServices().subscribe(response => {
       response.forEach((bs: any) => {
-        this.boughtServices.push(new BoughtService(new Service(bs.Servicio.id_servicio, bs.Servicio.desc_servicio, bs.Servicio.precio_por_hora, bs.Servicio.descripcion), new User(bs.Usuario.id_usuario, bs.Usuario.nombre_usuario, bs.Usuario.clave, bs.Usuario.nombre, bs.Usuario.apellido, bs.Usuario.direccion, bs.Usuario.telefono, bs.Usuario.tipo_usuario, bs.Usuario.email), bs.fecha_servicio, bs.cant_horas, bs.mensaje_cliente))
+        this.boughtServices.push(new BoughtService(new Service(bs.Servicio.id_servicio, bs.Servicio.desc_servicio, bs.Servicio.precio_por_hora, bs.Servicio.descripcion), new User(bs.Usuario.id_usuario, bs.Usuario.nombre_usuario, bs.Usuario.clave, bs.Usuario.nombre, bs.Usuario.apellido, bs.Usuario.direccion, bs.Usuario.telefono, bs.Usuario.tipo_usuario, bs.Usuario.email), bs.fecha_servicio, bs.cant_horas, bs.mensaje_cliente));
+        this.filteredBoughtServices.push(new BoughtService(new Service(bs.Servicio.id_servicio, bs.Servicio.desc_servicio, bs.Servicio.precio_por_hora, bs.Servicio.descripcion), new User(bs.Usuario.id_usuario, bs.Usuario.nombre_usuario, bs.Usuario.clave, bs.Usuario.nombre, bs.Usuario.apellido, bs.Usuario.direccion, bs.Usuario.telefono, bs.Usuario.tipo_usuario, bs.Usuario.email), bs.fecha_servicio, bs.cant_horas, bs.mensaje_cliente));
       });
-      this.boughtServices.sort(this.compararPorAt);
     }
     )
   }
@@ -51,14 +52,27 @@ export class ServiciosContratadosComponent {
   }
 
 
-  compararPorAt(a: BoughtService, b: BoughtService) {
+  compareByAt(a: BoughtService, b: BoughtService) {
     if (a.hourAmmount === null && b.hourAmmount !== null) {
-      return -1; // Coloca a antes que b
+      return -1; // pone a antes que b
     } else if (a.hourAmmount !== null && b.hourAmmount === null) {
-      return 1; // Coloca b antes que a
+      return 1; // pone b antes que a
     } else {
-      return 0; // Mantén el orden original
+      return 0; // Mantiene el orden original
     }
+  }
+
+  getMadeServices() {
+    this.filteredBoughtServices = this.boughtServices.filter((bs: BoughtService) => bs.hourAmmount != null);
+  }
+
+  getUnmadeServices() {
+    this.filteredBoughtServices = this.boughtServices.filter((bs: BoughtService) => bs.hourAmmount == null);
+  }
+
+
+  getJustBoughtServices() {
+    this.filteredBoughtServices = this.boughtServices;
   }
 
 }

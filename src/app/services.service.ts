@@ -5,6 +5,7 @@ import { FormGroup } from '@angular/forms';
 import { LogInService } from './log-in.service';
 import { catchError, throwError } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,7 +19,8 @@ export class ServicesService {
 
   readonly baseUrl = "http://localhost:1234/services";
   readonly buyBaseUrl = "http://localhost:1234/services-clients";
-  //Este token lo tengo que conseguir con el login service
+
+
 
   getAllServices() {
     return this.http.get<any>(this.baseUrl);
@@ -90,7 +92,7 @@ export class ServicesService {
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 401) {
-      alert('Inicia sesión');
+      return throwError("No Token");
     } else {
       console.error('Ocurrió un error inesperado:', error.message);
     }

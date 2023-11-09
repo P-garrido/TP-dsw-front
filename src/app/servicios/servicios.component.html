@@ -18,6 +18,35 @@
 <div class="service-container">
   <div *ngFor="let serv of this.filteredServices" class="service">
     <app-service [admin]="this.admin" [service]="serv" (editServiceClick)="editService($event)"
-      (deleteServiceClick)="deleteService($event)" (buyServiceClick)="buyService($event)"></app-service>
+      (deleteServiceClick)="deleteService($event)"
+      (buyServiceClick)="buyService($event, templateLogin, templateConfirmation)"></app-service>
   </div>
 </div>
+
+
+
+
+
+
+<!--MODAL PARA INICIO DE SESIÓN-->
+<ng-template #templateLogin>
+  <div class="modal-body text-center">
+    <p>Para contratar un servicio tenés que iniciar sesión</p>
+    <button type="button" class="btn btn-primary" (click)="confirm()">OK</button>
+  </div>
+</ng-template>
+
+
+
+<!-- MODAL PARA CONFIRMAR COMPRA -->
+<ng-template #templateConfirmation>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">¡Felicitaciones!</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Servicio Contratado
+  </div>
+</ng-template>

@@ -66,7 +66,7 @@ export class ServiceComponent {
     this.modalRef?.hide();
   }
 
-  openModal(template: TemplateRef<any>) {
+  openBuyModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template, this.config);
   }
 

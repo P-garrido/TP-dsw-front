@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import { EditServiceEvent, Service } from '../models/classes';
 import { ServicesService } from '../services.service';
 import { FormControl } from '@angular/forms';
 import { LogInService } from '../log-in.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +14,7 @@ import { LogInService } from '../log-in.service';
 })
 export class ServiciosComponent {
 
-  constructor(private servicesService: ServicesService, private loginService: LogInService) {
+  constructor(private servicesService: ServicesService, private loginService: LogInService, private modalService: BsModalService, private router: Router) {
     this.getAllServices();
 
     this.searchForm.valueChanges.subscribe(value => {
@@ -31,6 +33,12 @@ export class ServiciosComponent {
   admin: boolean = false;
 
   searchForm = new FormControl();
+
+  modalRef?: BsModalRef;
+  config = {
+    backdrop: true,
+    ignoreBackdropClick: true
+  };
 
 
 
@@ -67,10 +75,19 @@ export class ServiciosComponent {
     });
   }
 
-  buyService(serv: EditServiceEvent) {
+  buyService(serv: EditServiceEvent, modalLogin: TemplateRef<any>, modalConfirm: TemplateRef<any>) {
     this.servicesService.buyService(serv, this.loginService.user.idUser).subscribe(
-      response => alert("Servivicio contratado"),
-      error => console.error(error)
+      response => this.openModal(modalConfirm),
+      error => this.openModal(modalLogin)
     );
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, this.config);
+  }
+
+  confirm(): void {
+    this.modalRef?.hide();
+    this.router.navigate(['/logIn']);
   }
 }

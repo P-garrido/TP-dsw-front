@@ -10,8 +10,8 @@ export class LogInService {
 
   constructor(private http: HttpClient) {
 
-    const storedData = localStorage.getItem(this.localStorageKey);
-    this.user = storedData ? JSON.parse(storedData) : null;
+    const storedData = sessionStorage.getItem(this.sessionStorageKey);
+    this.user = storedData ? JSON.parse(storedData) : new User(-1, "", "", "", "", "", "", -1, "");
   }
 
 
@@ -22,14 +22,14 @@ export class LogInService {
   user: User = new User(-1, "", "", "", "", "", "", -1, "");
 
 
-  public localStorageKey = 'user_data';
+  public sessionStorageKey = 'user_data';
 
 
 
   setUserData(data: User) {
     this.user = data;
     // Almacenar datos en el almacenamiento local
-    localStorage.setItem(this.localStorageKey, JSON.stringify(data));
+    sessionStorage.setItem(this.sessionStorageKey, JSON.stringify(data));
   }
 
 

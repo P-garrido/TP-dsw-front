@@ -2,19 +2,24 @@
   <div class="logo">
     <img src="./assets/logo.png" alt="Page logo" />
   </div>
-  <nav class="nav-bar">
+  <nav class="nav-bar ">
     <ul class="nav-links">
-      <li routerLink="/orders" *ngIf="loginService.user.type === 1">
-        Ver Pedidos
-      </li>
-      <li *ngIf="loginService.user.type == 1" routerLink="/servicios-contratados">
-        Servicios Contratados
-      </li>
       <li routerLink="/inicio">Inicio</li>
       <li routerLink="/productos">Productos</li>
-      <li *ngIf="loginService.user.type == 1" routerLink="/usuarios">Usuarios</li>
       <li routerLink="/servicios">Mantenimiento</li>
-      <li *ngIf="loginService.user.type == 1" routerLink="/sucursales">Sucursales</li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Admin
+        </a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-item" routerLink="/usuarios">Usuarios</li>
+          <li class="dropdown-item" routerLink="/sucursales">Sucursales</li>
+          <li class="dropdown-item" routerLink="/servicios-contratados">Servicios Contratados</li>
+          <li class="dropdown-item" routerLink="/orders">Ver Pedidos</li>
+
+        </ul>
+      </li>
+
 
       <li routerLink="/logIn" *ngIf="loginService.user.userName === ''">
         <button class="btn-log-in">Log In</button>
@@ -39,6 +44,12 @@
       <a class="cart-icon" routerLink="/cart"><i class="bi bi-cart"></i></a>
     </ul>
   </nav>
+
+
+
+
+
+
 
   <label class="hamburguer-menu">
     <input type="checkbox" />

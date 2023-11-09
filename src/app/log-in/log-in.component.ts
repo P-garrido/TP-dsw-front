@@ -27,12 +27,14 @@ export class LogInComponent {
     this.logInService.getOne(this.logInForm.value.username, this.logInForm.value.password).subscribe(res => {
       if (res.token) {
         this.logInService.token = res.token;
-        this.logInService.user = new User(res.user.id_usuario, res.user.nombre_usuario, res.user.clave, res.user.nombre, res.user.apellido, res.user.direccion, res.user.telefono, res.user.tipo_usuario, res.user.email);
+        this.logInService.setUserData(new User(res.user.id_usuario, res.user.nombre_usuario, res.user.clave, res.user.nombre, res.user.apellido, res.user.direccion, res.user.telefono, res.user.tipo_usuario, res.user.email));
         this.router.navigate(['/inicio']);
       }
     });
     this.logInForm.reset();
   }
+
+
 
 
   togglePassword(pass: HTMLInputElement) {

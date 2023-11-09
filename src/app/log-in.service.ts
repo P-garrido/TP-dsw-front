@@ -8,15 +8,30 @@ import { catchError, throwError } from 'rxjs';
 export class LogInService {
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
 
-  // async 
+    const storedData = localStorage.getItem(this.localStorageKey);
+    this.user = storedData ? JSON.parse(storedData) : null;
+  }
+
+
 
   readonly baseUrl = "http://localhost:1234/login";
 
   token: any = "";
   user: User = new User(-1, "", "", "", "", "", "", -1, "");
-  
+
+
+  public localStorageKey = 'user_data';
+
+
+
+  setUserData(data: User) {
+    this.user = data;
+    // Almacenar datos en el almacenamiento local
+    localStorage.setItem(this.localStorageKey, JSON.stringify(data));
+  }
+
 
 
   getOne(user: string, pass: number) {
@@ -26,7 +41,7 @@ export class LogInService {
     }).pipe(catchError(this.handleError))
   }
 
-    private handleError(error: HttpErrorResponse) {
+  private handleError(error: HttpErrorResponse) {
     if (error.status === 404) {
       alert('Nombre de usuario o contrasena incorrectos');
     } else {

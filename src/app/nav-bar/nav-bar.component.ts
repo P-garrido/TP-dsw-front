@@ -25,7 +25,7 @@ export class NavBarComponent {
     this.modalRef?.hide();
   }
   logOut() {
-    this.loginService.user = new User(-1, "", "", "", "", "", "", -1, "");
+    this.loginService.setUserData(new User(-1, "", "", "", "", "", "", -1, ""));
     this.closeModal();
     this.router.navigate(['/inicio']);
 

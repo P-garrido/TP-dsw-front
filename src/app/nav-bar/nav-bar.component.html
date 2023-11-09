@@ -4,11 +4,12 @@
   </div>
   <nav class="nav-bar ">
     <ul class="nav-links">
-      <li routerLink="/inicio">Inicio</li>
-      <li routerLink="/productos">Productos</li>
-      <li routerLink="/servicios">Mantenimiento</li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <li class="li-link" routerLink="/inicio">Inicio</li>
+      <li class="li-link" routerLink="/productos">Productos</li>
+      <li class="li-link" routerLink="/servicios">Mantenimiento</li>
+      <li *ngIf="loginService.user.type==1" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle li-link" href="#" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
           Admin
         </a>
         <ul class="dropdown-menu">
@@ -21,11 +22,11 @@
       </li>
 
 
-      <li routerLink="/logIn" *ngIf="loginService.user.userName === ''">
+      <li class="li-link" routerLink="/logIn" *ngIf="loginService.user.userName === ''">
         <button class="btn-log-in">Log In</button>
       </li>
       <!-- <li *ngIf="loginService.user.userName != ''">Cerrar Sesion</li> -->
-      <li *ngIf="loginService.user.userName != ''">
+      <li class="li-link" *ngIf="loginService.user.userName != ''">
         <a (click)="openModal(template)">Cerar Sesion</a>
         <ng-template #template>
           <div class="modal-body text-center">

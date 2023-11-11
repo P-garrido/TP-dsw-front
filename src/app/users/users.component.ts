@@ -120,7 +120,7 @@ export class UsersComponent implements  OnInit {
   }
 
   deleteUser(item: any): void{
-    const userId = item.id
+    const userId = item.idUser
     this.service.deleteUser(userId).subscribe(() => this.ngOnInit())
   }
 

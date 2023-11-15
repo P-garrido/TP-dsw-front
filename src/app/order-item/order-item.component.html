@@ -9,9 +9,19 @@
         <b>{{ prod.nombre_producto }}</b
         >, {{ prod.cantidad }} unidades.
       </p>
-      <!-- <p class="user-flex-text">Nombre: {{ order.nombre }}</p> -->
-      <!-- <p class="user-flex-text">Apellido: {{ order.apellido }}</p>
-      <p class="user-flex-text">Telefono: {{ order.telefono }}</p> -->
+      <p class="user-flex-text">
+        Cliente
+        {{ order.Usuario == null ? ": No tiene Cliente" : "" }}
+      </p>
+      <p class="user-flex-text">
+        {{ order.Usuario ? "Nombre: " + order.Usuario.nombre : "" }}
+      </p>
+      <p class="user-flex-text">
+        {{ order.Usuario != null ? "Apellido: " + order.Usuario.apellido : "" }}
+      </p>
+      <p class="user-flex-text">
+        {{ order.Usuario != null ? "Telefono: " + order.Usuario.telefono : "" }}
+      </p>
     </div>
   </accordion-group>
 </accordion>

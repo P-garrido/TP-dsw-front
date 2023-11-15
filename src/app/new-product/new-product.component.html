@@ -18,7 +18,7 @@
   <form
     class="row g-3 form-new-prod"
     [formGroup]="newProductForm"
-    (ngSubmit)="addProduct()"
+    (ngSubmit)="addProduct(imgInput)"
   >
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Producto</label>
@@ -59,9 +59,16 @@
         formControlName="productPrice"
       />
     </div>
-    <div class="col-md-6">
+    <div class="col-md-12">
       <label for="inputZip" class="form-label">Imagen</label>
-      <input type="text" class="form-control" formControlName="productImg" />
+      <!-- <input type="text" class="form-control" formControlName="productImg" /> -->
+      <input
+        class="form-control"
+        accept="image/jpeg"
+        type="file"
+        id="formFile"
+        #imgInput
+      />
     </div>
     <div class="col-12">
       <button type="submit" class="btn btn-primary">Cargar Producto</button>

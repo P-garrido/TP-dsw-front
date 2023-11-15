@@ -51,4 +51,12 @@ export class ProductsService {
   deleteProduct(idProd:number){
     return this.http.delete("http://localhost:1234/products/" + idProd.toString())
   }
+
+  getImage(id: number){
+    return fetch(`http://localhost:1234/images/${id}`);
+  }
+
+  uploadImg(fd: any){
+    return this.http.post('http://localhost:1234/images/upload', fd)
+  }
 }

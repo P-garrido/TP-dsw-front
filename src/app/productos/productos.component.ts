@@ -36,11 +36,31 @@ export class ProductosComponent implements OnInit {
     this.getAllProducts();
   }
 
-  getAllProducts() {
+getAllProducts() {
     this.productService.loadProducts().subscribe((resp: any) => {
+
       this.filteredProducts = resp;
       this.products = resp;
-      console.log(this.products)
+
+      this.filteredProducts.forEach(prod => {
+        this.productService.getImage(prod.id_producto)
+        .then(resp => resp.blob())
+        .then((blob:any) => {
+          const urlImg = URL.createObjectURL(blob);
+          prod.imagen = urlImg;
+        })
+      });
+
+      this.products.forEach(prod => {
+        this.productService.getImage(prod.id_producto)
+        .then(resp => resp.blob())
+        .then((blob:any) => {
+          const urlImg = URL.createObjectURL(blob);
+          prod.imagen = urlImg;
+        })
+      });
+
+      console.log(this.products);
     });
   }
 

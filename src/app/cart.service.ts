@@ -12,19 +12,19 @@ export class CartService {
   constructor(private http:HttpClient) { 
   }
 
-  addProduct(pr:Product){
+  addProduct(productToAdd:Product){
     this.alreadySelected = false;
     for(let prod in this.cartProducts){
-      if (this.cartProducts[prod].nombre_producto == pr.nombre_producto) this.alreadySelected = true;
+      if (this.cartProducts[prod].nombre_producto == productToAdd.nombre_producto) this.alreadySelected = true;
     }
-    if(!this.cartProducts.includes(pr) && this.alreadySelected===false){
-      pr.amount = 1;
-      this.cartProducts.push(pr);
+    if(!this.cartProducts.includes(productToAdd) && this.alreadySelected===false){
+      productToAdd.amount = 1;
+      this.cartProducts.push(productToAdd);
       console.log(this.cartProducts)
     }
   }
-  removeProduct(pr:Product){
-    this.cartProducts = this.cartProducts.filter((p:Product) => p !== pr)
+  removeProduct(productToRemove:Product){
+    this.cartProducts = this.cartProducts.filter((p:Product) => p !== productToRemove)
   }
 
   addToOrder(orderId:number, idProd: number, cant: number){

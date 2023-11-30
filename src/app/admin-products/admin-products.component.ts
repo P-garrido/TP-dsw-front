@@ -9,33 +9,24 @@ import { Product } from '../models/classes';
 })
 export class AdminProductsComponent implements OnInit{
 
-  productsList:any =[];
+  productsList:Product[] =[];
 
   constructor(private prodService: ProductsService){
-    this.prodService.productToEdit = {
-    id_producto: 0,
-    imagen: '',
-    nombre_producto: '',
-    desc_producto: '',
-    precio: 0,
-    amount: 0,
-    stock: 0
-  };
+    this.prodService.productToEdit = new Product('', '', '', 0, 0, 0, 0);
   }
 
- editProduct(prod:Product){
-  this.prodService.productToEdit = prod;
+ editProduct(productToEdit:Product){
+  this.prodService.productToEdit = productToEdit;
  }
 
-  deleteProduct(product:Product){
-    this.prodService.deleteProduct(product.id_producto).subscribe();
-    console.log(product);
+  deleteProduct(productToDelete:Product){
+    this.prodService.deleteProduct(productToDelete.id_producto).subscribe();
     this.getAllProducts();
   }
   ngOnInit(): void {
     this.getAllProducts()
   }
   getAllProducts(){
-    this.prodService.loadProducts().subscribe(resp => this.productsList = resp)
+    this.prodService.loadProducts().subscribe((response:any) => this.productsList = response)
   }
 }

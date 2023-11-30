@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from './models/classes';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +10,7 @@ export class ProductsService {
 
   products:Product []= [];
 
-  productToEdit: Product = {
-    id_producto: 0,
-    imagen: '',
-    nombre_producto: '',
-    desc_producto: '',
-    precio: 0,
-    amount: 0,
-    stock: 0
-  };
+  productToEdit: Product = new Product('', '', '', 0,0 ,0 ,0); 
   constructor(private http: HttpClient) {
   }
 
@@ -33,8 +26,12 @@ export class ProductsService {
     })
   }
 
-  loadProducts(){
-      return this.http.get("http://localhost:1234/products")
+  getProductByDescription(description: string): Observable<Product[]>{
+    return this.http.get<Product[]>(`http://localhost:1234/products/desc_producto/${description}`);
+  }
+
+  loadProducts(): Observable<Product[]>{
+      return this.http.get<Product[]>("http://localhost:1234/products")
   }
 
   createProduct(name:any, desc:string, stock: any, price:any, img:string){

@@ -21,26 +21,21 @@ export class ProductosComponent implements OnInit {
 
   constructor(private cartService: CartService, public productService: ProductsService, private logInService: LogInService) {
 
-    this.searchForm.valueChanges.subscribe(value => {
-      console.log(value);
-      this.filteredProducts = this.products.filter((p: Product) => p.nombre_producto.toLowerCase().includes(value.toLowerCase()))
-    });
-
-
+    // this.searchForm.valueChanges.subscribe(value => {
+    //   this.filteredProducts = this.products.filter((p: Product) => p.nombre_producto.toLowerCase().includes(value.toLowerCase()))
+    // });
     if (logInService.user.type === 1) this.admin = true;
     else this.admin = false;
-
-
   }
   ngOnInit(): void {
     this.getAllProducts();
   }
 
-getAllProducts() {
-    this.productService.loadProducts().subscribe((resp: any) => {
+  getAllProducts() {
+    this.productService.loadProducts().subscribe((response: Product[]) => {
 
-      this.filteredProducts = resp;
-      this.products = resp;
+      this.filteredProducts = response;
+      this.products = response;
 
       this.filteredProducts.forEach(prod => {
         this.productService.getImage(prod.id_producto)
@@ -59,8 +54,6 @@ getAllProducts() {
           prod.imagen = urlImg;
         })
       });
-
-      console.log(this.products);
     });
   }
 
@@ -68,4 +61,17 @@ getAllProducts() {
     this.cartService.addProduct(pr);
   }
 
+  filterProducts(){
+    this.productService.getProductByDescription(this.searchForm.value).subscribe((response: Product[]) => {
+      this.filteredProducts = response;
+      this.filteredProducts.forEach(prod => {
+          this.productService.getImage(prod.id_producto)
+          .then(resp => resp.blob())
+          .then((blob:any) => {
+            const urlImg = URL.createObjectURL(blob);
+            prod.imagen = urlImg;
+          })
+        });
+    });
+  }
 }

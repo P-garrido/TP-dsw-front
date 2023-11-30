@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ServicesService } from '../services.service';
 import { Router } from '@angular/router';
+import { Service } from '../models/classes';
 
 @Component({
   selector: 'app-new-service',
@@ -20,8 +21,13 @@ export class NewServiceComponent {
 
   addService() {
     if (this.newServiceForm.valid) {
-      this.servicesService.addService(this.newServiceForm).subscribe(res => {
-        if (res) {
+      let newService: Service = {
+        description: this.newServiceForm.value.description || "",
+        price: parseInt(this.newServiceForm.value.price || "0"),
+        longDescription: this.newServiceForm.value.longDescription || ""
+      }
+      this.servicesService.addService(newService).subscribe(response => {
+        if (response) {
           this.router.navigate(['servicios']);
         }
       });

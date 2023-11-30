@@ -27,7 +27,7 @@ export class Product {
 
 export class Service {
 
-  id: number;
+  id?: number;
   description: string;
   price: number;
   longDescription: string;
@@ -55,19 +55,19 @@ export class BoughtService {
   user: User;
   serviceDate: Date;
   hourAmmount: number;
-  clientMsj: string;
+  clientMessage: string;
 
   constructor(serv: Service, us: User, servDate: Date, hourAm: number, cliMsj: string) {
     this.service = serv;
     this.user = us;
     this.serviceDate = servDate;
     this.hourAmmount = hourAm;
-    this.clientMsj = cliMsj;
+    this.clientMessage = cliMsj;
   }
 }
 
 export class EditBoughtService {
-  idService: number;
+  idService?: number;
   idUser: number;
   serviceDate: Date;
   hourAmmount: FormControl;

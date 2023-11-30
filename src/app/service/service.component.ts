@@ -32,7 +32,7 @@ export class ServiceComponent {
   editServiceForm = new FormGroup({
     description: new FormControl('', Validators.required),
     price: new FormControl('', Validators.required),
-    longDesc: new FormControl('')
+    longDescription: new FormControl('')
   });
 
   serviceBuyForm = new FormGroup({
@@ -47,22 +47,22 @@ export class ServiceComponent {
     }
     else {
       this.onEdit = true;
-      this.editServiceForm.patchValue({ description: this.service.description, price: `${this.service.price}`, longDesc: this.service.longDescription });
+      this.editServiceForm.patchValue({ description: this.service.description, price: `${this.service.price}`, longDescription: this.service.longDescription });
     }
   }
 
-  deleteService(idServ: number) {
-    this.deleteServiceClick.emit(idServ);
+  deleteService() {
+    this.deleteServiceClick.emit(this.service.id);
   }
 
   sendEdit() {
-    const newServ = new EditServiceEvent(this.service.id, this.editServiceForm);
-    this.editServiceClick.emit(newServ);
+    const newService = new EditServiceEvent(this.service.id!, this.editServiceForm);
+    this.editServiceClick.emit(newService);
   }
 
-  buyService(idServ: number) {
-    const buyServ = new EditServiceEvent(this.service.id, this.serviceBuyForm);
-    this.buyServiceClick.emit(buyServ);
+  buyService() {
+    const buyService = new EditServiceEvent(this.service.id!, this.serviceBuyForm);
+    this.buyServiceClick.emit(buyService);
     this.modalRef?.hide();
   }
 

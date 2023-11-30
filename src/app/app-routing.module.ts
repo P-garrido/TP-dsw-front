@@ -13,6 +13,7 @@ import { NewProductComponent } from './new-product/new-product.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SucursalesComponent } from './sucursales/sucursales.component';
+import { AdminServicesComponent } from './admin-services/admin-services.component';
 
 const routes: Routes = [
 
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'addService', component: NewServiceComponent },
   { path: 'servicios-contratados', component: ServiciosContratadosComponent },
   { path: '', component: InicioComponent },
-  { path: 'sucursales', component: SucursalesComponent},
+  { path: 'sucursales', component: SucursalesComponent },
+  { path: 'adminServices', component: AdminServicesComponent }
 ];
 
 @NgModule({

@@ -7,26 +7,26 @@ import { Product } from '../models/classes';
   templateUrl: './admin-products.component.html',
   styleUrls: ['./admin-products.component.scss']
 })
-export class AdminProductsComponent implements OnInit{
+export class AdminProductsComponent implements OnInit {
 
-  productsList:Product[] =[];
+  productsList: Product[] = [];
 
-  constructor(private prodService: ProductsService){
+  constructor(private prodService: ProductsService) {
     this.prodService.productToEdit = new Product('', '', '', 0, 0, 0, 0);
   }
 
- editProduct(productToEdit:Product){
-  this.prodService.productToEdit = productToEdit;
- }
+  editProduct(productToEdit: Product) {
+    this.prodService.productToEdit = productToEdit;
+  }
 
-  deleteProduct(productToDelete:Product){
+  deleteProduct(productToDelete: Product) {
     this.prodService.deleteProduct(productToDelete.id_producto).subscribe();
     this.getAllProducts();
   }
   ngOnInit(): void {
     this.getAllProducts()
   }
-  getAllProducts(){
-    this.prodService.loadProducts().subscribe((response:any) => this.productsList = response)
+  getAllProducts() {
+    this.prodService.loadProducts().subscribe((response: any) => this.productsList = response)
   }
 }

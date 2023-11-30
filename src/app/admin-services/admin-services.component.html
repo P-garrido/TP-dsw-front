@@ -1,0 +1,8 @@
+<div class="service-container">
+  <a class="btn btn-primary btn-add-serv" routerLink="/addService">
+    Agregar Servicio
+  </a>
+  <app-admin-service-item class="service" *ngFor="let service of servicesList" [service]="service"
+    (edit)="editService($event)" (delete)="deleteService($event)">
+  </app-admin-service-item>
+</div>

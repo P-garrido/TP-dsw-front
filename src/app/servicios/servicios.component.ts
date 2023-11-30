@@ -53,30 +53,20 @@ export class ServiciosComponent {
 
   filterServices() {
     this.services.splice(0, this.services.length);
-    this.servicesService.filterServices(this.searchForm.value).subscribe(response => {
-      response.forEach((serv: any) => {
-        this.services.push(new Service(serv.id_servicio, serv.desc_servicio, serv.precio_por_hora, serv.descripcion))
-      });
-    })
-  }
-
-  deleteService(idService: number) {
-    this.servicesService.deleteService(idService).subscribe(response => {
-      if (response) {
-        this.getAllServices();
-      }
-    });
+    let filter: string = this.searchForm.value;
+    if (filter.length != 0) {
+      this.servicesService.filterServices(filter).subscribe(response => {
+        response.forEach((serv: any) => {
+          this.services.push(new Service(serv.id_servicio, serv.desc_servicio, serv.precio_por_hora, serv.descripcion))
+        });
+      })
+    }
+    else {
+      this.getAllServices();
+    }
 
   }
 
-  editService(service: EditServiceEvent) {
-
-    this.servicesService.editService(service).subscribe(response => {
-      if (response) {
-        this.getAllServices();
-      }
-    });
-  }
 
   buyService(service: EditServiceEvent, modalLogin: TemplateRef<any>, modalConfirm: TemplateRef<any>) {
     this.servicesService.buyService(service, this.loginService.user.idUser).subscribe(

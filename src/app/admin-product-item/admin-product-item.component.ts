@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Product } from '../models/classes';
 
 @Component({
   selector: 'app-admin-product-item',
@@ -7,13 +8,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class AdminProductItemComponent {
   @Input() product: any = {};
-  @Output() edit = new EventEmitter();
-  @Output() delete = new EventEmitter();
+  @Output() edit = new EventEmitter<Product>();
+  @Output() delete = new EventEmitter<Product>();
 
-  editProduct(prod:any){
-    this.edit.emit(prod);
+  editProduct(productToEdit:Product){
+    this.edit.emit(productToEdit);
   }
-  deleteProduct(prod:any){
-    this.delete.emit(prod);
+  deleteProduct(productToDelete:Product){
+    this.delete.emit(productToDelete);
   }
 }

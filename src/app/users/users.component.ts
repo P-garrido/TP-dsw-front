@@ -21,10 +21,10 @@ export class UsersComponent implements  OnInit {
   userForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$")]),
+    email: new FormControl('', [Validators.required, Validators.pattern("^[a-zñÑA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zñÑA-Z0-9-]+)*$")]),
     phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$'), Validators.maxLength(12)]),
-    firstName: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z ]*$")], ),
-    lastName: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z ]*$")] ),
+    firstName: new FormControl('', [Validators.required, Validators.pattern("^[a-zñÑA-Z ]*$")], ),
+    lastName: new FormControl('', [Validators.required, Validators.pattern("^[a-zñÑA-Z ]*$")] ),
     address: new FormControl('', [Validators.required]),
     userType: new FormControl('')
   })
@@ -132,7 +132,7 @@ export class UsersComponent implements  OnInit {
         this.list.push(obj)
         console.log(obj.type)
       })
-      this.list = this.list.filter(user => user.type === 1)
+      this.list = this.list.filter(user => user.type === 0)
     })
   }
 
@@ -144,7 +144,7 @@ export class UsersComponent implements  OnInit {
         this.list.push(obj)
         console.log(obj.type)
       })
-      this.list = this.list.filter(user => user.type === 0)
+      this.list = this.list.filter(user => user.type === 1)
     })
   }
 

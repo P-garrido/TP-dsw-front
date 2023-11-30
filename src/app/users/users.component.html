@@ -53,7 +53,7 @@
   class="fixed-button filter-button-clientes" 
   (click)="showOnlyClients()"
   [class.seleccionado]="clients">Clientes</button>
-<button href="#top" class="fixed-button add-button" (click)="add = true; cleanForm()">Agregar Usuario</button>
+<button  class="fixed-button add-button" (click)="add = true; cleanForm()">Agregar Usuario</button>
 
 <accordion [isAnimated]="true">
   <accordion-group heading="{{item.firstName+ ' ' + item.lastName}}" *ngFor="let item of list" 

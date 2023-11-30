@@ -1,0 +1,22 @@
+<div *ngIf="onEdit==false">
+  <accordion [isAnimated]="true" class="accordion">
+    <accordion-group heading="{{service.description}}" class="accordion-item">
+      <p><b>${{service.price}}</b></p>
+      <p>{{service.longDescription}}</p>
+    </accordion-group>
+  </accordion>
+</div>
+<div *ngIf="onEdit==true" class="edit-serv">
+  <form [formGroup]="editServiceForm" class="row g-3" (ngSubmit)="sendEdit()">
+    <input class="edit" type="text" formControlName="description" placeholder="Nombre">
+    <input class="edit" type="text" formControlName="price" placeholder="Precio">
+    <input class="edit" type="text" formControlName="longDescription" placeholder="Descripción">
+    <button type="submit" class="btn btn-primary btn-aceptar">Aceptar</button>
+  </form>
+</div>
+<div class="btn-container">
+  <button class="btn btn-primary" (click)="openBuyModal(template)">Contactanos Ya</button>
+  <button *ngIf="admin" class="btn btn-secondary" (click)="editService()">{{onEdit?'Cancelar':'Editar
+    Servicio'}}</button>
+  <button *ngIf="admin" class="btn btn-danger" (click)="deleteService()">Eliminar Servicio</button>
+</div>

@@ -60,23 +60,23 @@ export class ServiciosComponent {
     })
   }
 
-  deleteService(idService: number) {
-    this.servicesService.deleteService(idService).subscribe(response => {
-      if (response) {
-        this.getAllServices();
-      }
-    });
+  // deleteService(idService: number) {
+  //   this.servicesService.deleteService(idService).subscribe(response => {
+  //     if (response) {
+  //       this.getAllServices();
+  //     }
+  //   });
 
-  }
+  // }
 
-  editService(service: EditServiceEvent) {
+  // editService(service: EditServiceEvent) {
 
-    this.servicesService.editService(service).subscribe(response => {
-      if (response) {
-        this.getAllServices();
-      }
-    });
-  }
+  //   this.servicesService.editService(service).subscribe(response => {
+  //     if (response) {
+  //       this.getAllServices();
+  //     }
+  //   });
+  // }
 
   buyService(service: EditServiceEvent, modalLogin: TemplateRef<any>, modalConfirm: TemplateRef<any>) {
     this.servicesService.buyService(service, this.loginService.user.idUser).subscribe(

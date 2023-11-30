@@ -8,9 +8,9 @@
 <div class="mb-3 searchbox-container">
   <h2 class="serv-title">Buscar Servicios:</h2>
   <input class="form-control searchbox" id="exampleFormControlInput1" placeholder="Buscar" [formControl]="searchForm" />
-  <button class="btn btn-primary" (click)="filterServices()">Buscar</button>
-  <a *ngIf="admin" class="btn btn-primary btn-addServ" routerLink="/addService">
-    Agregar Servicio
+  <button class="btn btn-primary btn-admin" (click)="filterServices()">Buscar</button>
+  <a *ngIf="admin" class="btn btn-primary btn-admin" routerLink="/addService">
+    Administrar Servicios
   </a>
 </div>
 

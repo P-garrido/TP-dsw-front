@@ -15,6 +15,7 @@ export class ServicesService {
 
   }
 
+  serviceToEdit: Service = new Service(-1, "", 0, "");
 
 
   readonly baseUrl = "http://localhost:1234/services";
@@ -28,7 +29,7 @@ export class ServicesService {
 
 
   filterServices(serviceDescription: String) {
-    let url: string = this.baseUrl + `/${serviceDescription}`;
+    let url: string = this.baseUrl + `/descService/${serviceDescription}`;
     return this.http.get<Service[]>(url);
   }
 
@@ -52,15 +53,11 @@ export class ServicesService {
     return this.http.delete(url, { headers });
   }
 
-  editService(service: EditServiceEvent) {
+  editService(service: Service) {
     const url = this.baseUrl + `/${service.id}`;
     const token = this.loginService.token;
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.patch<any>(url, {
-      description: service.data.value.description,
-      hourValue: parseInt(service.data.value.price),
-      longDescription: service.data.value.longDescription
-    }, { headers });
+    return this.http.patch<Service>(url, { service }, { headers });
   }
 
   buyService(service: EditServiceEvent, idUser: number) {

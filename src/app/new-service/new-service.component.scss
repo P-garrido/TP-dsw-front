@@ -8,11 +8,18 @@
 
 .form-new-serv {
   padding: 30px;
-  width: 500px;
+  width: 90vw;
   border: 2px solid black;
   border-radius: 20px;
 
   .ng-invalid.ng-touched {
     outline: .2rem solid #f00;
+  }
+}
+
+
+@media screen and (min-width:1000px) {
+  .form-new-serv {
+    width: 70vw;
   }
 }

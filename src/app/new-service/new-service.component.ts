@@ -10,7 +10,14 @@ import { Service } from '../models/classes';
   styleUrls: ['./new-service.component.scss']
 })
 export class NewServiceComponent {
-  constructor(private servicesService: ServicesService, private router: Router) { }
+  constructor(private servicesService: ServicesService, private router: Router) {
+
+    if (this.servicesService.serviceToEdit.description != '') {
+      this.newServiceForm.controls.description.patchValue(this.servicesService.serviceToEdit.description);
+      this.newServiceForm.controls.price.patchValue(this.servicesService.serviceToEdit.hourValue.toString());
+      this.newServiceForm.controls.longDescription.patchValue(this.servicesService.serviceToEdit.longDescription);
+    }
+  }
 
 
   newServiceForm = new FormGroup({
@@ -20,18 +27,39 @@ export class NewServiceComponent {
   });
 
   addService() {
-    if (this.newServiceForm.valid) {
+
+    if (this.servicesService.serviceToEdit.description != '') {
       let newService: Service = {
+        id: this.servicesService.serviceToEdit.id,
         description: this.newServiceForm.value.description || "",
-        price: parseInt(this.newServiceForm.value.price || "0"),
+        hourValue: parseInt(this.newServiceForm.value.price || "0"),
         longDescription: this.newServiceForm.value.longDescription || ""
       }
-      this.servicesService.addService(newService).subscribe(response => {
+      this.servicesService.editService(newService).subscribe(response => {
         if (response) {
-          this.router.navigate(['servicios']);
+          this.router.navigate(['adminServices']);
         }
       });
-
     }
+    else {
+
+      if (this.newServiceForm.valid) {
+        let newService: Service = {
+          description: this.newServiceForm.value.description || "",
+          hourValue: parseInt(this.newServiceForm.value.price || "0"),
+          longDescription: this.newServiceForm.value.longDescription || ""
+        }
+
+        this.servicesService.addService(newService).subscribe(response => {
+          if (response) {
+            this.router.navigate(['adminServices']);
+          }
+        });
+
+      }
+    }
+
+
+
   }
 }

@@ -17,6 +17,11 @@ export class AdminServicesComponent {
   servicesList: Service[] = [];
 
 
+  ngOnInit() {
+    this.getAllServices();
+  }
+
+
   getAllServices() {
     this.servicesList.splice(0, this.servicesList.length);
     this.servicesService.getAllServices().subscribe(response => {
@@ -29,8 +34,8 @@ export class AdminServicesComponent {
 
 
 
-  deleteService(idService: number) {
-    this.servicesService.deleteService(idService).subscribe(response => {
+  deleteService(service: Service) {
+    this.servicesService.deleteService(service.id!).subscribe(response => {
       if (response) {
         this.getAllServices();
       }
@@ -38,13 +43,8 @@ export class AdminServicesComponent {
 
   }
 
-  editService(service: EditServiceEvent) {
-
-    this.servicesService.editService(service).subscribe(response => {
-      if (response) {
-        this.getAllServices();
-      }
-    });
+  editService(service: Service) {
+    this.servicesService.serviceToEdit = service;
   }
 
 

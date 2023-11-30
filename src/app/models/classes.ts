@@ -29,13 +29,13 @@ export class Service {
 
   id?: number;
   description: string;
-  price: number;
+  hourValue: number;
   longDescription: string;
 
   constructor(id: number, desc: string, pr: number, longDesc: string) {
     this.id = id;
     this.description = desc;
-    this.price = pr;
+    this.hourValue = pr;
     this.longDescription = longDesc;
   }
 }

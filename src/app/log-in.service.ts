@@ -11,7 +11,8 @@ export class LogInService {
   constructor(private http: HttpClient) {
 
     const storedData = sessionStorage.getItem(this.sessionStorageKey);
-    this.user = storedData ? JSON.parse(storedData) : new User(-1, "", "", "", "", "", "", -1, "");
+    this.user = storedData ? JSON.parse(storedData).data : new User(-1, "", "", "", "", "", "", -1, "");
+    this.token = storedData ? JSON.parse(storedData).token : String;
   }
 
 
@@ -29,7 +30,7 @@ export class LogInService {
   setUserData(data: User) {
     this.user = data;
     // Almacenar datos en el almacenamiento local
-    sessionStorage.setItem(this.sessionStorageKey, JSON.stringify(data));
+    sessionStorage.setItem(this.sessionStorageKey, JSON.stringify({ data, token: this.token }));
   }
 
 

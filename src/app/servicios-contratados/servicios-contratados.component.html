@@ -5,9 +5,9 @@
 </div>
 
 <div class="bought-services-container" *ngIf="admin">
-  <div *ngFor="let boughtServ of filteredBoughtServices" class="bought-service">
+  <div *ngFor="let boughtService of filteredBoughtServices" class="bought-service">
     <app-serv-contratado (editServiceClientClick)="editeServiceCient($event)"
-      (deleteServiceClientClick)="deleteServiceClient($event)" [boughtService]="boughtServ"></app-serv-contratado>
+      (deleteServiceClientClick)="deleteServiceClient($event)" [boughtService]="boughtService"></app-serv-contratado>
     <hr>
   </div>
 

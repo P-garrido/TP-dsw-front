@@ -23,67 +23,71 @@ export class ServicesService {
 
 
   getAllServices() {
-    return this.http.get<any>(this.baseUrl);
+    return this.http.get<Service[]>(this.baseUrl);
   }
+
+
+  filterServices(serviceDescription: String) {
+    let url: string = this.baseUrl + `/${serviceDescription}`;
+    return this.http.get<Service[]>(url);
+  }
+
+
   getAllBoughtServices() {
     const token = this.loginService.token;
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<any>(this.buyBaseUrl, { headers });
+    return this.http.get<BoughtService[]>(this.buyBaseUrl, { headers });
   }
 
-  addService(fg: FormGroup) {
+  addService(service: Service) {
     const token = this.loginService.token;
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.post<any>(this.baseUrl, {
-      description: fg.value.description,
-      hourValue: parseInt(fg.value.price),
-      longDescription: fg.value.longDescription
-    }, { headers });
+    return this.http.post<Service>(this.baseUrl, { service }, { headers });
   }
 
-  deleteService(idServ: number) {
-    const url = this.baseUrl + `/${idServ}`;
+  deleteService(idService: number) {
+    const url = this.baseUrl + `/${idService}`;
     const token = this.loginService.token;
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.delete(url, { headers });
   }
 
-  editService(serv: EditServiceEvent) {
-    const url = this.baseUrl + `/${serv.id}`;
+  editService(service: EditServiceEvent) {
+    const url = this.baseUrl + `/${service.id}`;
     const token = this.loginService.token;
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.patch<any>(url, {
-      description: serv.data.value.description,
-      hourValue: parseInt(serv.data.value.price),
-      longDescription: serv.data.value.longDesc
+      description: service.data.value.description,
+      hourValue: parseInt(service.data.value.price),
+      longDescription: service.data.value.longDescription
     }, { headers });
   }
 
-  buyService(serv: EditServiceEvent, idUser: number) {
+  buyService(service: EditServiceEvent, idUser: number) {
     const url = this.buyBaseUrl;
     const token = this.loginService.token;
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.post<any>(url, {
       idCli: idUser,
-      idServ: serv.id,
-      date: serv.data.value.date,
+      idServ: service.id,
+      date: service.data.value.date,
       hourAmmount: null,
-      clientMsg: serv.data.value.message
+      clientMessage: service.data.value.message
     },
       { headers }).pipe(catchError(this.handleError))
   }
 
-  editServiceClient(servCli: EditBoughtService) {
-    const url = this.buyBaseUrl + `/${servCli.idService}/${servCli.idUser}/${servCli.serviceDate}`;
+  editServiceClient(serviceClient: EditBoughtService) {
+    const url = this.buyBaseUrl + `/${serviceClient.idService}/${serviceClient.idUser}/${serviceClient.serviceDate}`;
     const token = this.loginService.token;
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.patch<any>(url, {
-      hourAmmount: parseInt(servCli.hourAmmount.value)
+      hourAmmount: parseInt(serviceClient.hourAmmount.value)
     }, { headers }).pipe(catchError(this.handleError));
   }
 
-  deleteServiceClient(idServ: number, idCli: number, servDate: Date) {
-    const url = this.buyBaseUrl + `/${idServ}/${idCli}/${servDate}`;
+  deleteServiceClient(idService: number, idClient: number, serviceDate: Date) {
+    const url = this.buyBaseUrl + `/${idService}/${idClient}/${serviceDate}`;
     const token = this.loginService.token;
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.http.delete(url, { headers });

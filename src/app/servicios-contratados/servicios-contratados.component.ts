@@ -26,26 +26,27 @@ export class ServiciosContratadosComponent {
 
   getAllBoughtServices() {
     this.boughtServices.splice(0, this.boughtServices.length);
+    this.filteredBoughtServices.splice(0, this.filteredBoughtServices.length);
     this.serviceService.getAllBoughtServices().subscribe(response => {
-      response.forEach((bs: any) => {
-        this.boughtServices.push(new BoughtService(new Service(bs.Servicio.id_servicio, bs.Servicio.desc_servicio, bs.Servicio.precio_por_hora, bs.Servicio.descripcion), new User(bs.Usuario.id_usuario, bs.Usuario.nombre_usuario, bs.Usuario.clave, bs.Usuario.nombre, bs.Usuario.apellido, bs.Usuario.direccion, bs.Usuario.telefono, bs.Usuario.tipo_usuario, bs.Usuario.email), bs.fecha_servicio, bs.cant_horas, bs.mensaje_cliente));
-        this.filteredBoughtServices.push(new BoughtService(new Service(bs.Servicio.id_servicio, bs.Servicio.desc_servicio, bs.Servicio.precio_por_hora, bs.Servicio.descripcion), new User(bs.Usuario.id_usuario, bs.Usuario.nombre_usuario, bs.Usuario.clave, bs.Usuario.nombre, bs.Usuario.apellido, bs.Usuario.direccion, bs.Usuario.telefono, bs.Usuario.tipo_usuario, bs.Usuario.email), bs.fecha_servicio, bs.cant_horas, bs.mensaje_cliente));
+      response.forEach((boughtService: any) => {
+        this.boughtServices.push(new BoughtService(new Service(boughtService.Servicio.id_servicio, boughtService.Servicio.desc_servicio, boughtService.Servicio.precio_por_hora, boughtService.Servicio.descripcion), new User(boughtService.Usuario.id_usuario, boughtService.Usuario.nombre_usuario, boughtService.Usuario.clave, boughtService.Usuario.nombre, boughtService.Usuario.apellido, boughtService.Usuario.direccion, boughtService.Usuario.telefono, boughtService.Usuario.tipo_usuario, boughtService.Usuario.email), boughtService.fecha_servicio, boughtService.cant_horas, boughtService.mensaje_cliente));
+        this.filteredBoughtServices.push(new BoughtService(new Service(boughtService.Servicio.id_servicio, boughtService.Servicio.desc_servicio, boughtService.Servicio.precio_por_hora, boughtService.Servicio.descripcion), new User(boughtService.Usuario.id_usuario, boughtService.Usuario.nombre_usuario, boughtService.Usuario.clave, boughtService.Usuario.nombre, boughtService.Usuario.apellido, boughtService.Usuario.direccion, boughtService.Usuario.telefono, boughtService.Usuario.tipo_usuario, boughtService.Usuario.email), boughtService.fecha_servicio, boughtService.cant_horas, boughtService.mensaje_cliente));
       });
     }
     )
   }
 
-  editeServiceCient(servCli: EditBoughtService) {
-    this.serviceService.editServiceClient(servCli).subscribe(res => {
-      if (res) {
+  editeServiceCient(serviceClient: EditBoughtService) {
+    this.serviceService.editServiceClient(serviceClient).subscribe(response => {
+      if (response) {
         this.getAllBoughtServices();
       }
     });
   }
 
-  deleteServiceClient(idServCli: any) {
-    this.serviceService.deleteServiceClient(idServCli.idServ, idServCli.idCli, idServCli.servDate).subscribe(res => {
-      if (res) {
+  deleteServiceClient(ServiceClient: any) {
+    this.serviceService.deleteServiceClient(ServiceClient.idService, ServiceClient.idClient, ServiceClient.serviceDate).subscribe(response => {
+      if (response) {
         this.getAllBoughtServices();
       }
     });
@@ -63,11 +64,11 @@ export class ServiciosContratadosComponent {
   }
 
   getMadeServices() {
-    this.filteredBoughtServices = this.boughtServices.filter((bs: BoughtService) => bs.hourAmmount != null);
+    this.filteredBoughtServices = this.boughtServices.filter((boughtService: BoughtService) => boughtService.hourAmmount != null);
   }
 
   getUnmadeServices() {
-    this.filteredBoughtServices = this.boughtServices.filter((bs: BoughtService) => bs.hourAmmount == null);
+    this.filteredBoughtServices = this.boughtServices.filter((boughtService: BoughtService) => boughtService.hourAmmount == null);
   }
 
 

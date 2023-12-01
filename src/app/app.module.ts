@@ -50,36 +50,22 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { OffcanvasCartComponent } from './offcanvas-cart/offcanvas-cart.component';
 import { AdminServicesComponent } from './admin-services/admin-services.component';
 import { AdminServiceItemComponent } from './admin-service-item/admin-service-item.component';
+import { AuthModule } from './auth/auth.module';
+import { AdminModule } from './admin/admin.module';
+import { CartModule } from './cart/cart.module';
 
+
+// let auth: any[] = [LogInComponent, SignUpComponent, UsersComponent];
+// let admin: any[] = [NewProductComponent, AdminProductsComponent, ProductItemComponent, AdminProductItemComponent, NewServiceComponent, ServiciosContratadosComponent, ServContratadoComponent, SucursalesComponent, SucursalModalComponent, AdminServicesComponent, AdminServiceItemComponent];
+// let cart: any[] = [ProductosComponent, CartComponent, CartProductComponent, OrdersComponent, OrderItemComponent, ServiciosComponent, OffcanvasCartComponent];
+// let structure: any[] = [AppComponent, NavBarComponent, InicioComponent, FooterComponent];
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     InicioComponent,
-    ProductosComponent,
-    LogInComponent,
-    CartComponent,
-    UsersComponent,
-    SignUpComponent,
-    NewProductComponent,
-    AdminProductsComponent,
-    ProductItemComponent,
-    CartProductComponent,
-    OrdersComponent,
-    OrderItemComponent,
-    AdminProductItemComponent,
     FooterComponent,
-    ServiciosComponent,
-    NewServiceComponent,
-    ServiceComponent,
-    ServiciosContratadosComponent,
-    ServContratadoComponent,
-    SucursalesComponent,
-    SucursalModalComponent,
-    OffcanvasCartComponent,
-    AdminServicesComponent,
-    AdminServiceItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -106,7 +92,10 @@ import { AdminServiceItemComponent } from './admin-service-item/admin-service-it
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    AuthModule,
+    AdminModule,
+    CartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

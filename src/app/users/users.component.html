@@ -38,22 +38,20 @@
         <label for="1">Cliente</label>
         <input required type="radio" name="userType"  value="0" formControlName="userType" (click)="userType = 0"/>
       </div>
-
-
-      <input type="submit" value="Guardar" [disabled]="!userForm.valid" class="log-in-btn" />
+      <button type="submit" value="Guardar" class="btn btn-primary log-in-btn" [disabled]="!userForm.valid">Guardar</button>
     </div>
   </form>
 </div>
   
 <button 
-  class="fixed-button filter-button-empleados"
+  class="btn btn-primary fixed-button filter-button-empleados"
   (click)="showOnlyEmployees()"
-  [class.seleccionado]="employees">Empleados</button>
+  [class.seleccionado]="showEmployeesFlag">Empleados</button>
 <button 
-  class="fixed-button filter-button-clientes" 
+  class="btn btn-primary fixed-button filter-button-clientes" 
   (click)="showOnlyClients()"
-  [class.seleccionado]="clients">Clientes</button>
-<button  class="fixed-button add-button" (click)="add = true; cleanForm()">Agregar Usuario</button>
+  [class.seleccionado]="showClientsFlag">Clientes</button>
+<button  class="fixed-button add-button btn btn-primary" (click)="add = true; cleanForm()">Agregar Usuario</button>
 
 <accordion [isAnimated]="true">
   <accordion-group heading="{{item.firstName+ ' ' + item.lastName}}" *ngFor="let item of list" 
@@ -64,8 +62,8 @@
       <p class="user-flex-text">Teléfono: {{item.phone}}</p>
       <p class="user-flex-text">Dirección: {{item.adress}}</p>
       <p class="user-flex-text">Tipo de Usuario: {{item.type == 1? "Empleado" : "Cliente" }}</p>
-      <button class="change-button" (click)="allowEditing(item)">Editar Usuario</button>
-      <button class="change-button" (click)="deleteUser(item)">Eliminar Usuario</button>
+      <a class="btn btn-primary" (click)="allowEditing(item)">Editar Usuario</a>
+      <a class="btn btn-danger" (click)="deleteUser(item)">Eliminar Usuario</a>
     </div>
   </accordion-group>
 </accordion>

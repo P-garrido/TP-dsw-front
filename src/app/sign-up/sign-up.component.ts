@@ -22,7 +22,7 @@ export class SignUpComponent {
   })
 
   addUser(){
-    const obj = {
+    const object = {
       nombre_usuario: this.signUpForm.value.username,
       clave: this.signUpForm.value.password, 
       email: this.signUpForm.value.email, 
@@ -30,8 +30,8 @@ export class SignUpComponent {
       nombre: this.signUpForm.value.firstName,
       apellido: this.signUpForm.value.lastName,
       direccion: this.signUpForm.value.address,
-      tipo_usuario: 0 
+      tipo_usuario: 1
     }
-    this.service.addUser(obj).subscribe(() => this.signUpForm.reset())
+    this.service.addUser(object).subscribe(() => this.signUpForm.reset())
   }
 }

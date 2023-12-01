@@ -13,8 +13,8 @@ export class UsersComponent implements  OnInit {
   list: User[] = [];
   edit: boolean = false;
   add: boolean = false;
-  clients: boolean = false;
-  employees: boolean = false;
+  showClientsFlag: boolean = false;
+  showEmployeesFlag: boolean = false;
   editId: number = 0;
   userType: number = 0;
 
@@ -32,10 +32,10 @@ export class UsersComponent implements  OnInit {
   constructor(private service: UsersService) {} 
 
   ngOnInit(): void {
-    if(this.employees){
+    if(this.showEmployeesFlag){
       this.getAllEmployees()
     }
-    else if (this.clients){
+    else if (this.showClientsFlag){
       this.getAllClients()
     }
     else{
@@ -44,39 +44,37 @@ export class UsersComponent implements  OnInit {
   }
 
   showOnlyEmployees(){
-    this.clients = false
-    if(!this.employees){
-      this.employees = true
+    this.showClientsFlag = false
+    if(!this.showEmployeesFlag){
+      this.showEmployeesFlag = true
     }
     else{
-      this.employees = false
+      this.showEmployeesFlag = false
     }
     this.ngOnInit()
   }
 
   showOnlyClients(){
-    this.employees = false
-    if(!this.clients){
-      this.clients = true
+    this.showEmployeesFlag = false
+    if(!this.showClientsFlag){
+      this.showClientsFlag = true
     }
     else{
-      this.clients = false
+      this.showClientsFlag = false
     }
     this.ngOnInit()
   }
 
   allowEditing(item: User){
     this.edit = true
-    console.log(item)
     this.userForm.patchValue({username: item.userName, password: item.password, 
       email: item.email, phoneNumber: item.phone, firstName: item.firstName, lastName: item.lastName,
       address: item.adress, userType: item.type == 1? 'Empleado' : 'Cliente'  }) 
     this.editId = item.idUser
-    //this.userForm.value.username = user.nombre_usuario
   }
 
   editUser(){
-    const obj = {
+    const object = {
       id_usuario: this.editId,
       nombre_usuario: this.userForm.value.username,
       clave: this.userForm.value.password, 
@@ -87,14 +85,14 @@ export class UsersComponent implements  OnInit {
       direccion: this.userForm.value.address,
       tipo_usuario: 0 //este numero corresponde a cliente, un empleado deberia ser registrado desde el componente users
     }
-    this.service.editUser(obj, this.editId).subscribe()
+    this.service.editUser(object, this.editId).subscribe()
     this.userForm.reset()
     this.edit = false
     window.location.reload()
   }
 
   addUser(){
-    const obj = {
+    const object: Object = {
       nombre_usuario: this.userForm.value.username,
       clave: this.userForm.value.password, 
       email: this.userForm.value.email, 
@@ -104,30 +102,30 @@ export class UsersComponent implements  OnInit {
       direccion: this.userForm.value.address,
       tipo_usuario: this.userType 
     }
-    this.service.addUser(obj).subscribe(() => this.userForm.reset())
+    this.service.addUser(object).subscribe(() => this.userForm.reset())
     this.add = false
     window.location.reload()
   }
 
-  getAllUsers(): any{
+  getAllUsers(): void{
     this.list = []
-    this.service.getAllUsers().subscribe((resp: any)=> {
-      resp.forEach((user: any) => {
-        const obj = new User(user.id_usuario, user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
-        this.list.push(obj)
+    this.service.getAllUsers().subscribe((users: User[])=> {
+      users.forEach((user: any) => {
+        const object = new User(user.id_usuario, user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
+        this.list.push(object)
       })
     })
   }
 
-  deleteUser(item: any): void{
+  deleteUser(item: User): void{
     const userId = item.idUser
     this.service.deleteUser(userId).subscribe(() => this.ngOnInit())
   }
 
   getAllClients(){
     this.list = []
-    this.service.getAllUsers().subscribe((resp: any)=> {
-      resp.forEach((user: any) => {
+    this.service.getAllUsers().subscribe((allUsers: User[])=> {
+      allUsers.forEach((user: any) => {
         const obj = new User(user.id_usuario, user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
         this.list.push(obj)
         console.log(obj.type)
@@ -138,11 +136,10 @@ export class UsersComponent implements  OnInit {
 
   getAllEmployees(){
     this.list = []
-    this.service.getAllUsers().subscribe((resp: any)=> {
-      resp.forEach((user: any) => {
-        const obj = new User(user.id_usuario,user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
-        this.list.push(obj)
-        console.log(obj.type)
+    this.service.getAllUsers().subscribe((allUsers: User[])=> {
+      allUsers.forEach((user: any) => {
+        const object= new User(user.id_usuario,user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
+        this.list.push(object)
       })
       this.list = this.list.filter(user => user.type === 1)
     })

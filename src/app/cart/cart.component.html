@@ -1,15 +1,12 @@
 <div class="water-banner">
   <h1 class="header">CARRITO</h1>
-  <button
-    *ngIf="
-      cartService.cartProducts.length > 0 && logInService.user.userName != ''
-    "
-    class="btn btn-success btn-lg btn-checkout"
-    type="button"
-    data-bs-toggle="offcanvas"
-    data-bs-target="#offcanvasWithBothOptions"
-    aria-controls="offcanvasWithBothOptions"
-  >
+
+</div>
+<div class="button-container">
+  <button *ngIf="
+          cartService.cartProducts.length > 0 && logInService.user.userName != ''
+        " class="btn btn-success btn-lg btn-checkout" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
     Check Out
   </button>
 </div>

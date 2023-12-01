@@ -44,11 +44,16 @@
   font-size: x-large;
 }
 .btn-checkout{
-  position: absolute;
+  display: inline;
   background-color:#42aaa2 ;
   border-color: #5dc1b9;
-  margin-top: 200px;
+  margin: 5px auto;
+  z-index: 200;
 }
 .btn-checkout:hover{
   background-color: #5dc1b9;
+}
+
+.button-container{
+  display: flex;
 }

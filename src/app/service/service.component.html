@@ -1,24 +1,12 @@
-<div *ngIf="onEdit==false">
-  <accordion [isAnimated]="true" class="accordion">
-    <accordion-group heading="{{service.description}}" class="accordion-item">
-      <p><b>${{service.price}}</b></p>
-      <p>{{service.longDescription}}</p>
-    </accordion-group>
-  </accordion>
-</div>
-<div *ngIf="onEdit==true" class="edit-serv">
-  <form [formGroup]="editServiceForm" class="row g-3" (ngSubmit)="sendEdit()">
-    <input class="edit" type="text" formControlName="description" placeholder="Nombre">
-    <input class="edit" type="text" formControlName="price" placeholder="Precio">
-    <input class="edit" type="text" formControlName="longDesc" placeholder="Descripción">
-    <button type="submit" class="btn btn-primary btn-aceptar">Aceptar</button>
-  </form>
-</div>
+<accordion [isAnimated]="true" class="accordion">
+  <accordion-group heading="{{service.description}}" class="accordion-item">
+    <p><b>${{service.hourValue}}</b></p>
+    <p>{{service.longDescription}}</p>
+  </accordion-group>
+</accordion>
+
 <div class="btn-container">
   <button class="btn btn-primary" (click)="openBuyModal(template)">Contactanos Ya</button>
-  <button *ngIf="admin" class="btn btn-secondary" (click)="editService()">{{onEdit?'Cancelar':'Editar
-    Servicio'}}</button>
-  <button *ngIf="admin" class="btn btn-danger" (click)="deleteService(service.id)">Eliminar Servicio</button>
 </div>
 
 
@@ -32,7 +20,7 @@
     </button>
   </div>
   <div class="modal-body">
-    <form [formGroup]="serviceBuyForm" (ngSubmit)="buyService(service.id)">
+    <form [formGroup]="serviceBuyForm" (ngSubmit)="buyService()">
       <label>Elegí la fecha y hora en la que se realizará el servicio:</label>
       <div class="row">
         <div class="col-xs-12 col-12 col-md-4 form-group mb-3">

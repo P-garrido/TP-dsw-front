@@ -25,7 +25,7 @@
     align-self: center;
   }
 
-  .btn-addServ {
+  .btn-admin {
     align-self: center;
     width: 80vw;
     margin: 1rem;
@@ -44,7 +44,7 @@
 @media screen and (min-width:1000px) {
   .searchbox-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     margin: .5rem;
 
     .serv-title {
@@ -56,8 +56,7 @@
       grid-column: 1/3;
     }
 
-    .btn-addServ {
-      grid-column: 3;
+    .btn-admin {
       width: 90%;
       margin: 0;
       margin-left: 1rem;

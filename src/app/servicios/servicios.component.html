@@ -8,17 +8,17 @@
 <div class="mb-3 searchbox-container">
   <h2 class="serv-title">Buscar Servicios:</h2>
   <input class="form-control searchbox" id="exampleFormControlInput1" placeholder="Buscar" [formControl]="searchForm" />
-  <a *ngIf="admin" class="btn btn-primary btn-addServ" routerLink="/addService">
-    Agregar Servicio
+  <button class="btn btn-primary btn-admin" (click)="filterServices()">Buscar</button>
+  <a *ngIf="admin" class="btn btn-primary btn-admin" routerLink="/adminServices">
+    Administrar Servicios
   </a>
 </div>
 
 
 
 <div class="service-container">
-  <div *ngFor="let serv of this.filteredServices" class="service">
-    <app-service [admin]="this.admin" [service]="serv" (editServiceClick)="editService($event)"
-      (deleteServiceClick)="deleteService($event)"
+  <div *ngFor="let service of this.services" class="service">
+    <app-service [admin]="this.admin" [service]="service"
       (buyServiceClick)="buyService($event, templateLogin, templateConfirmation)"></app-service>
   </div>
 </div>

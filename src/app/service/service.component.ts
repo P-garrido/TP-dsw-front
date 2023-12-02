@@ -16,7 +16,6 @@ export class ServiceComponent {
   @Output() deleteServiceClick = new EventEmitter<number>();
   @Output() buyServiceClick = new EventEmitter<EditServiceEvent>();
 
-  onEdit: boolean = false;
   minDate: Date = new Date();
   disabledDates: Date[] = [new Date(2023, 11, 5)];
   modalRef?: BsModalRef;
@@ -29,11 +28,11 @@ export class ServiceComponent {
   constructor(private modalService: BsModalService) { }
 
 
-  editServiceForm = new FormGroup({
-    description: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required),
-    longDesc: new FormControl('')
-  });
+  // editServiceForm = new FormGroup({
+  //   description: new FormControl('', Validators.required),
+  //   price: new FormControl('', Validators.required),
+  //   longDescription: new FormControl('')
+  // });
 
   serviceBuyForm = new FormGroup({
     date: new FormControl('', Validators.required),
@@ -41,28 +40,20 @@ export class ServiceComponent {
   });
 
 
-  editService() {
-    if (this.onEdit) {
-      this.onEdit = false;
-    }
-    else {
-      this.onEdit = true;
-      this.editServiceForm.patchValue({ description: this.service.description, price: `${this.service.price}`, longDesc: this.service.longDescription });
-    }
-  }
 
-  deleteService(idServ: number) {
-    this.deleteServiceClick.emit(idServ);
-  }
 
-  sendEdit() {
-    const newServ = new EditServiceEvent(this.service.id, this.editServiceForm);
-    this.editServiceClick.emit(newServ);
-  }
+  // deleteService() {
+  //   this.deleteServiceClick.emit(this.service.id);
+  // }
 
-  buyService(idServ: number) {
-    const buyServ = new EditServiceEvent(this.service.id, this.serviceBuyForm);
-    this.buyServiceClick.emit(buyServ);
+  // sendEdit() {
+  //   const newService = new EditServiceEvent(this.service.id!, this.editServiceForm);
+  //   this.editServiceClick.emit(newService);
+  // }
+
+  buyService() {
+    const buyService = new EditServiceEvent(this.service.id!, this.serviceBuyForm);
+    this.buyServiceClick.emit(buyService);
     this.modalRef?.hide();
   }
 

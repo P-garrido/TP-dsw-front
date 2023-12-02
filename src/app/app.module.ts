@@ -47,6 +47,9 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { OffcanvasCartComponent } from './offcanvas-cart/offcanvas-cart.component';
+import { AdminServicesComponent } from './admin-services/admin-services.component';
+import { AdminServiceItemComponent } from './admin-service-item/admin-service-item.component';
 
 
 @NgModule({
@@ -74,6 +77,9 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
     ServContratadoComponent,
     SucursalesComponent,
     SucursalModalComponent,
+    OffcanvasCartComponent,
+    AdminServicesComponent,
+    AdminServiceItemComponent,
   ],
   imports: [
     BrowserModule,

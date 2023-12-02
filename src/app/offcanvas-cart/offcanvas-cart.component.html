@@ -1,0 +1,50 @@
+<div
+  class="offcanvas offcanvas-start"
+  data-bs-scroll="true"
+  tabindex="-1"
+  id="offcanvasWithBothOptions"
+  aria-labelledby="offcanvasWithBothOptionsLabel"
+>
+  <div class="offcanvas-header">
+    <h1 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+      Carrito de compras
+    </h1>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <div *ngFor="let product of cartService.cartProducts">
+      <ul>
+        <li>{{ product.nombre_producto }}</li>
+        <li>${{ product.precio }}</li>
+        <li>X{{ product.amount }}</li>
+      </ul>
+    </div>
+    <p class="finished-order" *ngIf="finishedOrder">
+      Compra realizada con exito!
+    </p>
+    <h1 class="order-total" *ngIf="!finishedOrder">Total: ${{ total }}</h1>
+    <button
+      *ngIf="!finishedOrder"
+      type="button"
+      class="btn btn-danger"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+      (click)="clearCart()"
+    >
+      Vaciar
+    </button>
+    <button
+      *ngIf="!finishedOrder"
+      type="button"
+      class="btn btn-primary"
+      (click)="checkOut()"
+    >
+      Comprar
+    </button>
+  </div>
+</div>

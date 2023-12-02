@@ -14,8 +14,7 @@ export class ServContratadoComponent {
   @Output() editServiceClientClick = new EventEmitter<EditBoughtService>();
   @Output() deleteServiceClientClick = new EventEmitter<any>();
 
-  servName: string = "";
-  userName: string = "";
+
   onEdit: boolean = false;
 
   hourAmmountEdit = new FormControl('', Validators.min(0));
@@ -32,12 +31,12 @@ export class ServContratadoComponent {
   }
 
   sendEdit() {
-    const newServClli = new EditBoughtService(this.boughtService.service.id, this.boughtService.user.idUser, this.boughtService.serviceDate, this.hourAmmountEdit);
-    this.editServiceClientClick.emit(newServClli);
+    const newServClient = new EditBoughtService(this.boughtService.service.id!, this.boughtService.user.idUser, this.boughtService.serviceDate, this.hourAmmountEdit);
+    this.editServiceClientClick.emit(newServClient);
   }
 
-  deleteServClient(idServ: number, idCli: number, servDate: Date) {
-    this.deleteServiceClientClick.emit({ idServ, idCli, servDate });
+  deleteServClient(idService: number | undefined, idClient: number, serviceDate: Date) {
+    this.deleteServiceClientClick.emit({ idService, idClient, serviceDate });
   }
 
 

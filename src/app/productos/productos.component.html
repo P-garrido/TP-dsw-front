@@ -1,16 +1,4 @@
-<div
-  style="
-    display: flex;
-    height: 30vh;
-    background-image: url(/assets/fondo-agua.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-    justify-content: center;
-    align-items: center;
-    color: #222;
-    font-size: 1.5em;
-  "
->
+<div class="water-banner">
   <h1>PRODUCTOS</h1>
 </div>
 <div class="mb-3 searchbox-container">
@@ -22,6 +10,7 @@
     placeholder="Buscar"
     [formControl]="searchForm"
   />
+  <a class="btn btn-primary" (click)="filterProducts()"> Buscar productos </a>
   <a
     *ngIf="admin"
     class="btn btn-primary btn-add-prod"
@@ -31,23 +20,6 @@
   </a>
 </div>
 <div class="products-container">
-  <!-- <div
-    *ngFor="let product of filteredProducts"
-    class="card product"
-    style="width: 18rem"
-  >
-    <img [src]="product.imagen" class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">{{ product.nombre_producto }}</h5>
-      <p class="card-text">
-        {{ product.desc_producto }}
-      </p>
-      <a (click)="addToCart(product)" class="btn btn-primary" #button>
-        Agregar al carrito
-      </a>
-    </div>
-  </div> -->
-
   <app-product-item
     *ngFor="let product of filteredProducts"
     [product]="product"

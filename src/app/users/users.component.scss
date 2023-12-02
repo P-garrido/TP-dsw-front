@@ -2,31 +2,16 @@ accordion {
   width: 100%;
 }
 
-//styles for fixed buttons
-
-.fixed-button{
-  position: fixed;
-  z-index: 2;
-  border-radius: 20px;
-  padding: 4px 10px;
-  border: none;
-}
-.filter-button-empleados {
-  right: 10px;
-  bottom: 50px;
-  margin-right: 25px;
+// styles for top buttons
+.top-button-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.filter-button-clientes {
-  right: 10px;
-  bottom: 90px;
-  margin-right: 25px;
-}
-
-.add-button {
-  right: 10px;
-  bottom: 10px;
-  margin-right: 25px;
+.top-button{
+  width: fit-content;
+  margin: 5px 0;  
 }
 
 .seleccionado {
@@ -34,19 +19,7 @@ accordion {
   border: solid 1px black;
 }
 
-.filter-button-empleados:active {
-  transform: scale(1.1);
-  background-color: var(--celeste-gris);
-  transition: transform 0.3s;
-}
-
-.filter-button-clientes:active {
-  transform: scale(1.1);
-  background-color: var(--celeste-gris);
-  transition: transform 0.3s;
-}
-
-.add-button:active {
+.top-button:active {
   transform: scale(1.1);
   background-color: var(--celeste-gris);
   transition: transform 0.3s;
@@ -102,35 +75,36 @@ input.ng-invalid {
   border: solid 1px red;
 }
 
-.change-button {
-  display: block;
-  margin: 6px 0;
-}
-
-//styles for user items
-
  //Tablet screens only
- @media only screen and (min-width: 600px) {
-   .fixed-button{
-    padding: 10px 25px;
-    bottom: 20px;
-   }
+ @media only screen and (min-width: 600px) and (max-width: 800px) {
+    .top-button-container {
+      flex-direction: row;
+      justify-content: center;
+    }
 
-   .add-button{
-    right: 40px;
-   }
+    .top-button {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
 
-   .filter-button-empleados{
-    right: 214px;
-   }
-
-   .filter-button-clientes{
-    right: 350px
-   }
+    .change-button{
+      width: min-content;
+      height: min-content;
+    }
  }
 
 // Computer screens only
 @media only screen and (min-width: 800px){
+  .top-button-container {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .top-button {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+  
   .user-flex-text {
       display: inline;
     }
@@ -161,39 +135,7 @@ input.ng-invalid {
       background-color: var(--celeste-gris);
     }
   
-    .add-button {
-      right: 20px;
-      bottom: 40px;
-      padding: 10px 25px;
-    }
-  
-    .add-button:hover {
-      transform: scale(1.1);
-      background-color: var(--celeste-gris);
-      transition: transform 0.3s;
-    }
-
-    .fixed-button{
-      padding: 10px 25px
-    }
-
-    .filter-button-empleados {
-      right: 220px;
-      bottom: 40px;
-    }
-  
-    .filter-button-clientes {
-      right: 365px;
-      bottom: 40px;
-    }
-  
-    .filter-button-empleados:hover {
-      transform: scale(1.1);
-      background-color: var(--celeste-gris);
-      transition: transform 0.3s;
-    }
-  
-    .filter-button-clientes:hover {
+    .top-button:hover {
       transform: scale(1.1);
       background-color: var(--celeste-gris);
       transition: transform 0.3s;

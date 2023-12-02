@@ -26,7 +26,7 @@ export class UsersComponent implements  OnInit {
     firstName: new FormControl('', [Validators.required, Validators.pattern("^[a-zñÑA-Z ]*$")], ),
     lastName: new FormControl('', [Validators.required, Validators.pattern("^[a-zñÑA-Z ]*$")] ),
     address: new FormControl('', [Validators.required]),
-    userType: new FormControl('')
+    userType: new FormControl('', [Validators.required])
   })
 
   constructor(private service: UsersService) {} 
@@ -69,7 +69,8 @@ export class UsersComponent implements  OnInit {
     this.edit = true
     this.userForm.patchValue({username: item.userName, password: item.password, 
       email: item.email, phoneNumber: item.phone, firstName: item.firstName, lastName: item.lastName,
-      address: item.adress, userType: item.type == 1? 'Empleado' : 'Cliente'  }) 
+      address: item.adress})
+    this.userForm.controls.userType.setValue(item.type.toLocaleString()) 
     this.editId = item.idUser
   }
 
@@ -128,7 +129,6 @@ export class UsersComponent implements  OnInit {
       allUsers.forEach((user: any) => {
         const obj = new User(user.id_usuario, user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
         this.list.push(obj)
-        console.log(obj.type)
       })
       this.list = this.list.filter(user => user.type === 0)
     })

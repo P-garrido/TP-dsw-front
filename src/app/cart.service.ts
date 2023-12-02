@@ -20,7 +20,6 @@ export class CartService {
     if(!this.cartProducts.includes(productToAdd) && this.alreadySelected===false){
       productToAdd.amount = 1;
       this.cartProducts.push(productToAdd);
-      console.log(this.cartProducts)
     }
   }
   removeProduct(productToRemove:Product){

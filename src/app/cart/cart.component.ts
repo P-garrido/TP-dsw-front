@@ -21,7 +21,6 @@ export class CartComponent {
 
   addOne(pr: Product) {
     pr.amount++;
-    console.log(pr)
     this.total = 0;
     this.updateTotal();
   }
@@ -31,11 +30,9 @@ export class CartComponent {
       this.total = 0;
       this.updateTotal();
     }
-    console.log(pr)
   }
   removeOne(pr: Product) {
     this.cartService.removeProduct(pr);
-    console.log(this.cartService.cartProducts)
     this.total = 0;
     this.updateTotal();
   }

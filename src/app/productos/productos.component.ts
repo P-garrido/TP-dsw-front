@@ -20,10 +20,6 @@ export class ProductosComponent implements OnInit {
   searchForm = new FormControl();
 
   constructor(private cartService: CartService, public productService: ProductsService, private logInService: LogInService) {
-
-    // this.searchForm.valueChanges.subscribe(value => {
-    //   this.filteredProducts = this.products.filter((p: Product) => p.nombre_producto.toLowerCase().includes(value.toLowerCase()))
-    // });
     if (logInService.user.type === 1) this.admin = true;
     else this.admin = false;
   }

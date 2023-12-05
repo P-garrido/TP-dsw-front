@@ -10,7 +10,12 @@
     placeholder="Buscar"
     [formControl]="searchForm"
   />
-  <a class="btn btn-primary" (click)="filterProducts()"> Buscar productos </a>
+  <a class="btn btn-primary btn-add-prod" (click)="filterProducts()">
+    Buscar productos
+  </a>
+  <a class="btn btn-primary btn-add-prod" (click)="getAllProducts()">
+    Buscar Todos
+  </a>
   <a
     *ngIf="admin"
     class="btn btn-primary btn-add-prod"

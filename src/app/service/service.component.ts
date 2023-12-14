@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
-import { EditServiceEvent, Service } from '../models/classes';
+import { Service } from '../models/service';
+import { EditServiceEvent } from '../models/editServiceEvent';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 

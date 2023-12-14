@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ServicesService } from '../services.service';
 import { Router } from '@angular/router';
-import { Service } from '../models/classes';
+import { Service } from '../models/service';
 
 @Component({
   selector: 'app-new-service',

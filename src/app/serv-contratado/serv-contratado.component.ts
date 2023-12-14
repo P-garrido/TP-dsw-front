@@ -1,5 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { BoughtService, EditBoughtService, Service, User } from '../models/classes';
+import { BoughtService } from '../models/boughtService';
+import { EditBoughtService } from '../models/editBoughtService';
+import { Service } from '../models/service';
+import { User } from '../models/user';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({

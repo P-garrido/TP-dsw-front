@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { EditServiceEvent, Service } from '../models/classes';
+import { Service } from '../models/service';
+import { EditServiceEvent } from '../models/editServiceEvent';
 import { ServicesService } from '../services.service';
 
 @Component({

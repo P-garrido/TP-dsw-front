@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { BranchesService } from '../branches.service';
-import { Branch } from '../models/classes';
+import { Branch } from '../models/branch';
 import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
 import { SucursalModalComponent } from '../sucursal-modal/sucursal-modal.component';
 

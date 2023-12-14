@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
 import { LogInService } from '../log-in.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { User } from '../models/classes';
+import { User } from '../models/user';
 import { Router } from '@angular/router';
 
 @Component({

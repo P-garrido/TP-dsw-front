@@ -1,6 +1,9 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BoughtService, EditBoughtService, EditServiceEvent, Service } from './models/classes';
+import { BoughtService } from './models/boughtService';
+import { EditBoughtService } from './models/editBoughtService';
+import { EditServiceEvent } from './models/editServiceEvent';
+import { Service } from './models/service';
 import { FormGroup } from '@angular/forms';
 import { LogInService } from './log-in.service';
 import { catchError, throwError } from 'rxjs';

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Branch } from './models/classes';
+import { Branch } from './models/branch';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 

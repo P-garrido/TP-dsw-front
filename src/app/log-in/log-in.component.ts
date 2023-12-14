@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Form } from '@angular/forms';
 import { LogInService } from '../log-in.service';
 import { Router } from '@angular/router';
-import { User } from '../models/classes';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-log-in',

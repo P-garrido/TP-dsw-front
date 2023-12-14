@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FormControl } from '@angular/forms';
 import { ProductsService } from '../products.service';
-import { Product } from '../models/classes';
+import { Product } from '../models/product';
 import { LogInService } from '../log-in.service';
 
 @Component({

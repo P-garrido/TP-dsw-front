@@ -2,7 +2,7 @@ import { Component, DoCheck, OnChanges, SimpleChange, SimpleChanges } from '@ang
 import { UsersService } from '../users.service';
 import { OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User } from '../models/classes';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-users',

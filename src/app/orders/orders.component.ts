@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../orders.service';
 import { FormControl } from '@angular/forms';
-import { Order, Product } from '../models/classes';
+import { Order} from '../models/order';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'app-orders',

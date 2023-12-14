@@ -1,5 +1,6 @@
 import { Component, TemplateRef } from '@angular/core';
-import { EditServiceEvent, Service } from '../models/classes';
+import { Service } from '../models/service';
+import { EditServiceEvent } from '../models/editServiceEvent';
 import { ServicesService } from '../services.service';
 import { FormControl } from '@angular/forms';
 import { LogInService } from '../log-in.service';

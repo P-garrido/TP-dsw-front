@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { BoughtService, EditBoughtService, Service, User } from '../models/classes';
+import { EditBoughtService } from '../models/editBoughtService';
+import { BoughtService} from '../models/boughtService'
+import { Service } from '../models/service';
+import { User } from '../models/user';
 import { ServicesService } from '../services.service';
 import { LogInService } from '../log-in.service';
 

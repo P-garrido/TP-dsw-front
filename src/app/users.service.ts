@@ -9,6 +9,7 @@ import { User } from './models/user';
 export class UsersService {
 
   readonly baseUrl = 'http://localhost:1234/users'
+  user: User | null = null
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<User[]>{

@@ -28,29 +28,10 @@ export class ServiceComponent {
 
   constructor(private modalService: BsModalService) { }
 
-
-  // editServiceForm = new FormGroup({
-  //   description: new FormControl('', Validators.required),
-  //   price: new FormControl('', Validators.required),
-  //   longDescription: new FormControl('')
-  // });
-
   serviceBuyForm = new FormGroup({
     date: new FormControl('', Validators.required),
     message: new FormControl('', Validators.maxLength(100))
   });
-
-
-
-
-  // deleteService() {
-  //   this.deleteServiceClick.emit(this.service.id);
-  // }
-
-  // sendEdit() {
-  //   const newService = new EditServiceEvent(this.service.id!, this.editServiceForm);
-  //   this.editServiceClick.emit(newService);
-  // }
 
   buyService() {
     const buyService = new EditServiceEvent(this.service.id!, this.serviceBuyForm);

@@ -1,0 +1,190 @@
+25f228c2e55c531fc2108ab4f61ec614
+"use strict";
+
+/* istanbul ignore next */
+function cov_1jhy2oz2xa() {
+  var path = "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\models\\boughtService.ts";
+  var hash = "43a254edf706ad42bcb433e39c9ff634bc5aa80b";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\models\\boughtService.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 31
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 8
+        },
+        end: {
+          line: 6,
+          column: 28
+        }
+      },
+      "3": {
+        start: {
+          line: 7,
+          column: 8
+        },
+        end: {
+          line: 7,
+          column: 23
+        }
+      },
+      "4": {
+        start: {
+          line: 8,
+          column: 8
+        },
+        end: {
+          line: 8,
+          column: 36
+        }
+      },
+      "5": {
+        start: {
+          line: 9,
+          column: 8
+        },
+        end: {
+          line: 9,
+          column: 34
+        }
+      },
+      "6": {
+        start: {
+          line: 10,
+          column: 8
+        },
+        end: {
+          line: 10,
+          column: 36
+        }
+      },
+      "7": {
+        start: {
+          line: 13,
+          column: 0
+        },
+        end: {
+          line: 13,
+          column: 38
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 5,
+            column: 4
+          },
+          end: {
+            line: 5,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 5,
+            column: 52
+          },
+          end: {
+            line: 11,
+            column: 5
+          }
+        },
+        line: 5
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\models\\boughtService.ts",
+      mappings: ";;;AAGA,MAAa,aAAa;IAOxB,YAAY,IAAa,EAAE,EAAQ,EAAE,QAAc,EAAE,MAAc,EAAE,MAAc;QACjF,IAAI,CAAC,OAAO,GAAG,IAAI,CAAC;QACpB,IAAI,CAAC,IAAI,GAAG,EAAE,CAAC;QACf,IAAI,CAAC,WAAW,GAAG,QAAQ,CAAC;QAC5B,IAAI,CAAC,WAAW,GAAG,MAAM,CAAC;QAC1B,IAAI,CAAC,aAAa,GAAG,MAAM,CAAC;IAC9B,CAAC;CACF;AAdD,sCAcC",
+      names: [],
+      sources: ["C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\models\\boughtService.ts"],
+      sourcesContent: ["import {Service} from './service'\r\nimport {User} from './user'\r\n\r\nexport class BoughtService {\r\n  service: Service\r\n  user: User;\r\n  serviceDate: Date;\r\n  hourAmmount: number;\r\n  clientMessage: string;\r\n\r\n  constructor(serv: Service, us: User, servDate: Date, hourAm: number, cliMsj: string) {\r\n    this.service = serv;\r\n    this.user = us;\r\n    this.serviceDate = servDate;\r\n    this.hourAmmount = hourAm;\r\n    this.clientMessage = cliMsj;\r\n  }\r\n}"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "43a254edf706ad42bcb433e39c9ff634bc5aa80b"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1jhy2oz2xa = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_1jhy2oz2xa();
+cov_1jhy2oz2xa().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_1jhy2oz2xa().s[1]++;
+exports.BoughtService = void 0;
+class BoughtService {
+  constructor(serv, us, servDate, hourAm, cliMsj) {
+    /* istanbul ignore next */
+    cov_1jhy2oz2xa().f[0]++;
+    cov_1jhy2oz2xa().s[2]++;
+    this.service = serv;
+    /* istanbul ignore next */
+    cov_1jhy2oz2xa().s[3]++;
+    this.user = us;
+    /* istanbul ignore next */
+    cov_1jhy2oz2xa().s[4]++;
+    this.serviceDate = servDate;
+    /* istanbul ignore next */
+    cov_1jhy2oz2xa().s[5]++;
+    this.hourAmmount = hourAm;
+    /* istanbul ignore next */
+    cov_1jhy2oz2xa().s[6]++;
+    this.clientMessage = cliMsj;
+  }
+}
+/* istanbul ignore next */
+cov_1jhy2oz2xa().s[7]++;
+exports.BoughtService = BoughtService;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJCb3VnaHRTZXJ2aWNlIiwiY29uc3RydWN0b3IiLCJzZXJ2IiwidXMiLCJzZXJ2RGF0ZSIsImhvdXJBbSIsImNsaU1zaiIsImNvdl8xamh5Mm96MnhhIiwiZiIsInMiLCJzZXJ2aWNlIiwidXNlciIsInNlcnZpY2VEYXRlIiwiaG91ckFtbW91bnQiLCJjbGllbnRNZXNzYWdlIiwiZXhwb3J0cyJdLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcVXN1YXJpb1xccmVwb3MoRGVzYXJyb2xsbylcXFRQLWRzdy1mcm9udFxcc3JjXFxhcHBcXG1vZGVsc1xcYm91Z2h0U2VydmljZS50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge1NlcnZpY2V9IGZyb20gJy4vc2VydmljZSdcclxuaW1wb3J0IHtVc2VyfSBmcm9tICcuL3VzZXInXHJcblxyXG5leHBvcnQgY2xhc3MgQm91Z2h0U2VydmljZSB7XHJcbiAgc2VydmljZTogU2VydmljZVxyXG4gIHVzZXI6IFVzZXI7XHJcbiAgc2VydmljZURhdGU6IERhdGU7XHJcbiAgaG91ckFtbW91bnQ6IG51bWJlcjtcclxuICBjbGllbnRNZXNzYWdlOiBzdHJpbmc7XHJcblxyXG4gIGNvbnN0cnVjdG9yKHNlcnY6IFNlcnZpY2UsIHVzOiBVc2VyLCBzZXJ2RGF0ZTogRGF0ZSwgaG91ckFtOiBudW1iZXIsIGNsaU1zajogc3RyaW5nKSB7XHJcbiAgICB0aGlzLnNlcnZpY2UgPSBzZXJ2O1xyXG4gICAgdGhpcy51c2VyID0gdXM7XHJcbiAgICB0aGlzLnNlcnZpY2VEYXRlID0gc2VydkRhdGU7XHJcbiAgICB0aGlzLmhvdXJBbW1vdW50ID0gaG91ckFtO1xyXG4gICAgdGhpcy5jbGllbnRNZXNzYWdlID0gY2xpTXNqO1xyXG4gIH1cclxufSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBR0EsTUFBYUEsYUFBYTtFQU94QkMsWUFBWUMsSUFBYSxFQUFFQyxFQUFRLEVBQUVDLFFBQWMsRUFBRUMsTUFBYyxFQUFFQyxNQUFjO0lBQUE7SUFBQUMsY0FBQSxHQUFBQyxDQUFBO0lBQUFELGNBQUEsR0FBQUUsQ0FBQTtJQUNqRixJQUFJLENBQUNDLE9BQU8sR0FBR1IsSUFBSTtJQUFDO0lBQUFLLGNBQUEsR0FBQUUsQ0FBQTtJQUNwQixJQUFJLENBQUNFLElBQUksR0FBR1IsRUFBRTtJQUFDO0lBQUFJLGNBQUEsR0FBQUUsQ0FBQTtJQUNmLElBQUksQ0FBQ0csV0FBVyxHQUFHUixRQUFRO0lBQUM7SUFBQUcsY0FBQSxHQUFBRSxDQUFBO0lBQzVCLElBQUksQ0FBQ0ksV0FBVyxHQUFHUixNQUFNO0lBQUM7SUFBQUUsY0FBQSxHQUFBRSxDQUFBO0lBQzFCLElBQUksQ0FBQ0ssYUFBYSxHQUFHUixNQUFNO0VBQzdCOztBQUNEO0FBQUFDLGNBQUEsR0FBQUUsQ0FBQTtBQWRETSxPQUFBLENBQUFmLGFBQUEsR0FBQUEsYUFBQSJ9

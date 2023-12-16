@@ -1,0 +1,47 @@
+5e50f754ca07be7f6315710d88dc8fe1
+/* istanbul ignore next */
+function cov_ws5py8pg4() {
+  var path = "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\servicios-contratados\\servicios-contratados.component.html";
+  var hash = "2e704759f6429c36a39bc77884b245d588111f16";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\servicios-contratados\\servicios-contratados.component.html",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 751
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0
+    },
+    f: {},
+    b: {},
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "2e704759f6429c36a39bc77884b245d588111f16"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_ws5py8pg4 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_ws5py8pg4();
+cov_ws5py8pg4().s[0]++;
+module.exports = "<div class=\"btn-container\" *ngIf=\"admin\">\r\n  <button class=\"btn btn-primary\" (click)=\"getMadeServices()\">Realizados</button>\r\n  <button class=\"btn btn-primary\" (click)=\"getUnmadeServices()\">No Realizados</button>\r\n  <button class=\"btn btn-primary\" (click)=\"getJustBoughtServices()\">Ver Todos</button>\r\n</div>\r\n\r\n<div class=\"bought-services-container\" *ngIf=\"admin\">\r\n  <div *ngFor=\"let boughtService of filteredBoughtServices\" class=\"bought-service\">\r\n    <app-serv-contratado (editServiceClientClick)=\"editeServiceCient($event)\"\r\n      (deleteServiceClientClick)=\"deleteServiceClient($event)\" [boughtService]=\"boughtService\"></app-serv-contratado>\r\n    <hr>\r\n  </div>\r\n\r\n</div>";

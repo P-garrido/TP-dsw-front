@@ -1,7 +1,7 @@
 <div class="top-button-container">
   <button class="btn btn-primary top-button" (click)="showOnlyEmployees()" [class.seleccionado]="showEmployeesFlag">Empleados</button>
   <button class="btn btn-primary top-button" (click)="showOnlyClients()" [class.seleccionado]="showClientsFlag">Clientes</button>
-  <button class="btn btn-primary top-button" (click)="add = true; cleanForm()">Agregar Usuario</button>
+  <button class="btn btn-primary top-button" (click)="add = true ">Agregar Usuario</button> 
 </div>
 <div class="form-container">
   <form *ngIf="edit == true || add == true" [formGroup]="userForm" (ngSubmit)="edit == true? editUser() : addUser()" class="form-group">

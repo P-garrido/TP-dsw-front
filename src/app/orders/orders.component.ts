@@ -23,7 +23,9 @@ export class OrdersComponent implements OnInit {
     this.ordersService.loadAllOrders().subscribe((response: Order[]) => {
       this.orders = response;
       this.filteredOrders = response;
+      console.log(response)
     });
+    console.log(this.orders)
   }
   getOrderByProduct(){
     this.ordersService.getProductByName(this.searchForm.value).subscribe((response:Product) => {
@@ -35,3 +37,5 @@ export class OrdersComponent implements OnInit {
     });
   }
 }
+
+

@@ -54,12 +54,6 @@ import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
 import { CartModule } from './cart/cart.module';
 
-
-// let auth: any[] = [LogInComponent, SignUpComponent, UsersComponent];
-// let admin: any[] = [NewProductComponent, AdminProductsComponent, ProductItemComponent, AdminProductItemComponent, NewServiceComponent, ServiciosContratadosComponent, ServContratadoComponent, SucursalesComponent, SucursalModalComponent, AdminServicesComponent, AdminServiceItemComponent];
-// let cart: any[] = [ProductosComponent, CartComponent, CartProductComponent, OrdersComponent, OrderItemComponent, ServiciosComponent, OffcanvasCartComponent];
-// let structure: any[] = [AppComponent, NavBarComponent, InicioComponent, FooterComponent];
-
 @NgModule({
   declarations: [
     AppComponent,

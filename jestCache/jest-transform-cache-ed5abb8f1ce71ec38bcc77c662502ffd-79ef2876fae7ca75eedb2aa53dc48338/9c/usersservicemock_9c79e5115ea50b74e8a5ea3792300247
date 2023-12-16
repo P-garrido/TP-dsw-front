@@ -1,0 +1,279 @@
+7bf4ca5ef0b912e8e68eca27a87bfe68
+"use strict";
+
+/* istanbul ignore next */
+function cov_219useizms() {
+  var path = "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\mocks\\users.service.mock.ts";
+  var hash = "378a06e76b3060954e37fa4a99d2e13316fff89d";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\mocks\\users.service.mock.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 33
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 8
+        },
+        end: {
+          line: 6,
+          column: 25
+        }
+      },
+      "3": {
+        start: {
+          line: 14,
+          column: 0
+        },
+        end: {
+          line: 14,
+          column: 42
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 5,
+            column: 4
+          },
+          end: {
+            line: 5,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 5,
+            column: 18
+          },
+          end: {
+            line: 7,
+            column: 5
+          }
+        },
+        line: 5
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 8,
+            column: 4
+          },
+          end: {
+            line: 8,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 8,
+            column: 18
+          },
+          end: {
+            line: 8,
+            column: 21
+          }
+        },
+        line: 8
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 9,
+            column: 4
+          },
+          end: {
+            line: 9,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 9,
+            column: 17
+          },
+          end: {
+            line: 9,
+            column: 20
+          }
+        },
+        line: 9
+      },
+      "3": {
+        name: "(anonymous_3)",
+        decl: {
+          start: {
+            line: 10,
+            column: 4
+          },
+          end: {
+            line: 10,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 10,
+            column: 14
+          },
+          end: {
+            line: 10,
+            column: 17
+          }
+        },
+        line: 10
+      },
+      "4": {
+        name: "(anonymous_4)",
+        decl: {
+          start: {
+            line: 11,
+            column: 4
+          },
+          end: {
+            line: 11,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 11,
+            column: 14
+          },
+          end: {
+            line: 11,
+            column: 17
+          }
+        },
+        line: 11
+      },
+      "5": {
+        name: "(anonymous_5)",
+        decl: {
+          start: {
+            line: 12,
+            column: 4
+          },
+          end: {
+            line: 12,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 12,
+            column: 15
+          },
+          end: {
+            line: 12,
+            column: 18
+          }
+        },
+        line: 12
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\mocks\\users.service.mock.ts",
+      mappings: ";;;AAEA,MAAa,eAAe;IAA5B;QACE,SAAI,GAAgB,IAAI,CAAA;IAW1B,CAAC;IATC,WAAW,KAAS,CAAC;IAErB,UAAU,KAAU,CAAC;IAErB,OAAO,KAAU,CAAC;IAElB,OAAO,KAAU,CAAC;IAElB,QAAQ,KAAU,CAAC;CACpB;AAZD,0CAYC",
+      names: [],
+      sources: ["C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\mocks\\users.service.mock.ts"],
+      sourcesContent: ["import { User } from \"../models/user\";\r\n\r\nexport class userServiceMock {\r\n  user: User | null = null\r\n  \r\n  getAllUsers(): void{}\r\n\r\n  deleteUser(): void{ }\r\n\r\n  addUser(): void{ }\r\n\r\n  getUser(): void{ }\r\n\r\n  editUser(): void{ }\r\n}\r\n\r\nexport interface usersResponse{\r\n  users: User[]\r\n}"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "378a06e76b3060954e37fa4a99d2e13316fff89d"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_219useizms = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_219useizms();
+cov_219useizms().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_219useizms().s[1]++;
+exports.userServiceMock = void 0;
+class userServiceMock {
+  constructor() {
+    /* istanbul ignore next */
+    cov_219useizms().f[0]++;
+    cov_219useizms().s[2]++;
+    this.user = null;
+  }
+  getAllUsers() {
+    /* istanbul ignore next */
+    cov_219useizms().f[1]++;
+  }
+  deleteUser() {
+    /* istanbul ignore next */
+    cov_219useizms().f[2]++;
+  }
+  addUser() {
+    /* istanbul ignore next */
+    cov_219useizms().f[3]++;
+  }
+  getUser() {
+    /* istanbul ignore next */
+    cov_219useizms().f[4]++;
+  }
+  editUser() {
+    /* istanbul ignore next */
+    cov_219useizms().f[5]++;
+  }
+}
+/* istanbul ignore next */
+cov_219useizms().s[3]++;
+exports.userServiceMock = userServiceMock;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJ1c2VyU2VydmljZU1vY2siLCJjb25zdHJ1Y3RvciIsImNvdl8yMTl1c2Vpem1zIiwiZiIsInMiLCJ1c2VyIiwiZ2V0QWxsVXNlcnMiLCJkZWxldGVVc2VyIiwiYWRkVXNlciIsImdldFVzZXIiLCJlZGl0VXNlciIsImV4cG9ydHMiXSwic291cmNlcyI6WyJDOlxcVXNlcnNcXFVzdWFyaW9cXHJlcG9zKERlc2Fycm9sbG8pXFxUUC1kc3ctZnJvbnRcXHNyY1xcYXBwXFxtb2Nrc1xcdXNlcnMuc2VydmljZS5tb2NrLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFVzZXIgfSBmcm9tIFwiLi4vbW9kZWxzL3VzZXJcIjtcclxuXHJcbmV4cG9ydCBjbGFzcyB1c2VyU2VydmljZU1vY2sge1xyXG4gIHVzZXI6IFVzZXIgfCBudWxsID0gbnVsbFxyXG4gIFxyXG4gIGdldEFsbFVzZXJzKCk6IHZvaWR7fVxyXG5cclxuICBkZWxldGVVc2VyKCk6IHZvaWR7IH1cclxuXHJcbiAgYWRkVXNlcigpOiB2b2lkeyB9XHJcblxyXG4gIGdldFVzZXIoKTogdm9pZHsgfVxyXG5cclxuICBlZGl0VXNlcigpOiB2b2lkeyB9XHJcbn1cclxuXHJcbmV4cG9ydCBpbnRlcmZhY2UgdXNlcnNSZXNwb25zZXtcclxuICB1c2VyczogVXNlcltdXHJcbn0iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUVBLE1BQWFBLGVBQWU7RUFBNUJDLFlBQUE7SUFBQTtJQUFBQyxjQUFBLEdBQUFDLENBQUE7SUFBQUQsY0FBQSxHQUFBRSxDQUFBO0lBQ0UsS0FBQUMsSUFBSSxHQUFnQixJQUFJO0VBVzFCO0VBVEVDLFdBQVdBLENBQUE7SUFBQTtJQUFBSixjQUFBLEdBQUFDLENBQUE7RUFBUztFQUVwQkksVUFBVUEsQ0FBQTtJQUFBO0lBQUFMLGNBQUEsR0FBQUMsQ0FBQTtFQUFVO0VBRXBCSyxPQUFPQSxDQUFBO0lBQUE7SUFBQU4sY0FBQSxHQUFBQyxDQUFBO0VBQVU7RUFFakJNLE9BQU9BLENBQUE7SUFBQTtJQUFBUCxjQUFBLEdBQUFDLENBQUE7RUFBVTtFQUVqQk8sUUFBUUEsQ0FBQTtJQUFBO0lBQUFSLGNBQUEsR0FBQUMsQ0FBQTtFQUFVOztBQUNuQjtBQUFBRCxjQUFBLEdBQUFFLENBQUE7QUFaRE8sT0FBQSxDQUFBWCxlQUFBLEdBQUFBLGVBQUEifQ==

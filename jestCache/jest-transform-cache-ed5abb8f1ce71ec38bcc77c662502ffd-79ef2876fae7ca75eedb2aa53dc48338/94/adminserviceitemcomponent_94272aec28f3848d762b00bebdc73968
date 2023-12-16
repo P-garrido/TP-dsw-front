@@ -1,0 +1,344 @@
+ae53d621537f3495796855210bf4542e
+"use strict";
+
+/* istanbul ignore next */
+function cov_2pbzp9piz8() {
+  var path = "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\admin-service-item\\admin-service-item.component.ts";
+  var hash = "ad7caa13fe8a968a537c82940c5358b4e86ca0a3";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\admin-service-item\\admin-service-item.component.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 43
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 4,
+          column: 32
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 15
+        },
+        end: {
+          line: 5,
+          column: 39
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 18
+        },
+        end: {
+          line: 6,
+          column: 46
+        }
+      },
+      "5": {
+        start: {
+          line: 7,
+          column: 32
+        },
+        end: {
+          line: 24,
+          column: 1
+        }
+      },
+      "6": {
+        start: {
+          line: 9,
+          column: 8
+        },
+        end: {
+          line: 9,
+          column: 87
+        }
+      },
+      "7": {
+        start: {
+          line: 10,
+          column: 8
+        },
+        end: {
+          line: 10,
+          column: 46
+        }
+      },
+      "8": {
+        start: {
+          line: 11,
+          column: 8
+        },
+        end: {
+          line: 11,
+          column: 48
+        }
+      },
+      "9": {
+        start: {
+          line: 14,
+          column: 8
+        },
+        end: {
+          line: 14,
+          column: 37
+        }
+      },
+      "10": {
+        start: {
+          line: 17,
+          column: 8
+        },
+        end: {
+          line: 17,
+          column: 39
+        }
+      },
+      "11": {
+        start: {
+          line: 19,
+          column: 13
+        },
+        end: {
+          line: 23,
+          column: 6
+        }
+      },
+      "12": {
+        start: {
+          line: 25,
+          column: 0
+        },
+        end: {
+          line: 30,
+          column: 30
+        }
+      },
+      "13": {
+        start: {
+          line: 31,
+          column: 0
+        },
+        end: {
+          line: 31,
+          column: 62
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 8,
+            column: 4
+          },
+          end: {
+            line: 8,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 8,
+            column: 18
+          },
+          end: {
+            line: 12,
+            column: 5
+          }
+        },
+        line: 8
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 13,
+            column: 4
+          },
+          end: {
+            line: 13,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 13,
+            column: 18
+          },
+          end: {
+            line: 15,
+            column: 5
+          }
+        },
+        line: 13
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 16,
+            column: 4
+          },
+          end: {
+            line: 16,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 16,
+            column: 20
+          },
+          end: {
+            line: 18,
+            column: 5
+          }
+        },
+        line: 16
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\admin-service-item\\admin-service-item.component.ts",
+      mappings: ";;;;AAAA,wCAAuE;AACvE,+CAA4C;AAO5C,IAAa,yBAAyB,GAAtC,MAAa,yBAAyB;IAAtC;QAGW,YAAO,GAAY,IAAI,iBAAO,CAAC,CAAC,CAAC,EAAE,eAAe,EAAE,CAAC,EAAE,gBAAgB,CAAC;QACvE,SAAI,GAAG,IAAI,mBAAY,EAAW;QAClC,WAAM,GAAG,IAAI,mBAAY,EAAW;IAShD,CAAC;IAPC,WAAW;QACT,IAAI,CAAC,IAAI,CAAC,IAAI,CAAC,IAAI,CAAC,OAAO,CAAC,CAAC;IAC/B,CAAC;IACD,aAAa;QACX,IAAI,CAAC,MAAM,CAAC,IAAI,CAAC,IAAI,CAAC,OAAO,CAAC,CAAC;IACjC,CAAC;;0BATA,YAAK;uBACL,aAAM;yBACN,aAAM;;;AALI,yBAAyB;IALrC,IAAA,gBAAS,EAAC;QACT,QAAQ,EAAE,wBAAwB;QAClC,wDAAkD;KAEnD,CAAC;GACW,yBAAyB,CAcrC;AAdY,8DAAyB",
+      names: [],
+      sources: ["C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\admin-service-item\\admin-service-item.component.ts"],
+      sourcesContent: ["import { Component, EventEmitter, Input, Output } from '@angular/core';\r\nimport { Service } from '../models/service';\r\n\r\n@Component({\r\n  selector: 'app-admin-service-item',\r\n  templateUrl: './admin-service-item.component.html',\r\n  styleUrls: ['./admin-service-item.component.scss']\r\n})\r\nexport class AdminServiceItemComponent {\r\n\r\n\r\n  @Input() service: Service = new Service(-1, \"No disponible\", 0, \"No dispponible\");\r\n  @Output() edit = new EventEmitter<Service>();\r\n  @Output() delete = new EventEmitter<Service>();\r\n\r\n  editService() {\r\n    this.edit.emit(this.service);\r\n  }\r\n  deleteService() {\r\n    this.delete.emit(this.service);\r\n  }\r\n\r\n}\r\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "ad7caa13fe8a968a537c82940c5358b4e86ca0a3"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_2pbzp9piz8 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_2pbzp9piz8();
+cov_2pbzp9piz8().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_2pbzp9piz8().s[1]++;
+exports.AdminServiceItemComponent = void 0;
+const tslib_1 =
+/* istanbul ignore next */
+(cov_2pbzp9piz8().s[2]++, require("tslib"));
+const core_1 =
+/* istanbul ignore next */
+(cov_2pbzp9piz8().s[3]++, require("@angular/core"));
+const service_1 =
+/* istanbul ignore next */
+(cov_2pbzp9piz8().s[4]++, require("../models/service"));
+/* istanbul ignore next */
+cov_2pbzp9piz8().s[5]++;
+let AdminServiceItemComponent = class AdminServiceItemComponent {
+  constructor() {
+    /* istanbul ignore next */
+    cov_2pbzp9piz8().f[0]++;
+    cov_2pbzp9piz8().s[6]++;
+    this.service = new service_1.Service(-1, "No disponible", 0, "No dispponible");
+    /* istanbul ignore next */
+    cov_2pbzp9piz8().s[7]++;
+    this.edit = new core_1.EventEmitter();
+    /* istanbul ignore next */
+    cov_2pbzp9piz8().s[8]++;
+    this.delete = new core_1.EventEmitter();
+  }
+  editService() {
+    /* istanbul ignore next */
+    cov_2pbzp9piz8().f[1]++;
+    cov_2pbzp9piz8().s[9]++;
+    this.edit.emit(this.service);
+  }
+  deleteService() {
+    /* istanbul ignore next */
+    cov_2pbzp9piz8().f[2]++;
+    cov_2pbzp9piz8().s[10]++;
+    this.delete.emit(this.service);
+  }
+  static {
+    /* istanbul ignore next */
+    cov_2pbzp9piz8().s[11]++;
+    this.propDecorators = {
+      service: [{
+        type: core_1.Input
+      }],
+      edit: [{
+        type: core_1.Output
+      }],
+      delete: [{
+        type: core_1.Output
+      }]
+    };
+  }
+};
+/* istanbul ignore next */
+cov_2pbzp9piz8().s[12]++;
+AdminServiceItemComponent = tslib_1.__decorate([(0, core_1.Component)({
+  selector: 'app-admin-service-item',
+  template: require("./admin-service-item.component.html")
+})], AdminServiceItemComponent);
+/* istanbul ignore next */
+cov_2pbzp9piz8().s[13]++;
+exports.AdminServiceItemComponent = AdminServiceItemComponent;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3ZfMnBienA5cGl6OCIsImFjdHVhbENvdmVyYWdlIiwicyIsImNvcmVfMSIsInJlcXVpcmUiLCJzZXJ2aWNlXzEiLCJBZG1pblNlcnZpY2VJdGVtQ29tcG9uZW50IiwiY29uc3RydWN0b3IiLCJmIiwic2VydmljZSIsIlNlcnZpY2UiLCJlZGl0IiwiRXZlbnRFbWl0dGVyIiwiZGVsZXRlIiwiZWRpdFNlcnZpY2UiLCJlbWl0IiwiZGVsZXRlU2VydmljZSIsIklucHV0IiwiT3V0cHV0IiwidHNsaWJfMSIsIl9fZGVjb3JhdGUiLCJDb21wb25lbnQiLCJzZWxlY3RvciIsInRlbXBsYXRlIiwiZXhwb3J0cyJdLCJzb3VyY2VzIjpbIkM6XFxVc2Vyc1xcVXN1YXJpb1xccmVwb3MoRGVzYXJyb2xsbylcXFRQLWRzdy1mcm9udFxcc3JjXFxhcHBcXGFkbWluLXNlcnZpY2UtaXRlbVxcYWRtaW4tc2VydmljZS1pdGVtLmNvbXBvbmVudC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIEV2ZW50RW1pdHRlciwgSW5wdXQsIE91dHB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5pbXBvcnQgeyBTZXJ2aWNlIH0gZnJvbSAnLi4vbW9kZWxzL3NlcnZpY2UnO1xyXG5cclxuQENvbXBvbmVudCh7XHJcbiAgc2VsZWN0b3I6ICdhcHAtYWRtaW4tc2VydmljZS1pdGVtJyxcclxuICB0ZW1wbGF0ZVVybDogJy4vYWRtaW4tc2VydmljZS1pdGVtLmNvbXBvbmVudC5odG1sJyxcclxuICBzdHlsZVVybHM6IFsnLi9hZG1pbi1zZXJ2aWNlLWl0ZW0uY29tcG9uZW50LnNjc3MnXVxyXG59KVxyXG5leHBvcnQgY2xhc3MgQWRtaW5TZXJ2aWNlSXRlbUNvbXBvbmVudCB7XHJcblxyXG5cclxuICBASW5wdXQoKSBzZXJ2aWNlOiBTZXJ2aWNlID0gbmV3IFNlcnZpY2UoLTEsIFwiTm8gZGlzcG9uaWJsZVwiLCAwLCBcIk5vIGRpc3Bwb25pYmxlXCIpO1xyXG4gIEBPdXRwdXQoKSBlZGl0ID0gbmV3IEV2ZW50RW1pdHRlcjxTZXJ2aWNlPigpO1xyXG4gIEBPdXRwdXQoKSBkZWxldGUgPSBuZXcgRXZlbnRFbWl0dGVyPFNlcnZpY2U+KCk7XHJcblxyXG4gIGVkaXRTZXJ2aWNlKCkge1xyXG4gICAgdGhpcy5lZGl0LmVtaXQodGhpcy5zZXJ2aWNlKTtcclxuICB9XHJcbiAgZGVsZXRlU2VydmljZSgpIHtcclxuICAgIHRoaXMuZGVsZXRlLmVtaXQodGhpcy5zZXJ2aWNlKTtcclxuICB9XHJcblxyXG59XHJcbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7SUFrQkU7SUFBQUEsY0FBQSxZQUFBQSxDQUFBO01BQUEsT0FBQUMsY0FBQTtJQUFBO0VBQUE7RUFBQSxPQUFBQSxjQUFBO0FBQUE7QUFBQUQsY0FBQTtBQUFBQSxjQUFBLEdBQUFFLENBQUE7Ozs7Ozs7Ozs7QUFsQkYsTUFBQUMsTUFBQTtBQUFBO0FBQUEsQ0FBQUgsY0FBQSxHQUFBRSxDQUFBLE9BQUFFLE9BQUE7QUFDQSxNQUFBQyxTQUFBO0FBQUE7QUFBQSxDQUFBTCxjQUFBLEdBQUFFLENBQUEsT0FBQUUsT0FBQTtBQUE0QztBQUFBSixjQUFBLEdBQUFFLENBQUE7QUFPNUMsSUFBYUkseUJBQXlCLEdBQXRDLE1BQWFBLHlCQUF5QjtFQUF0Q0MsWUFBQTtJQUFBO0lBQUFQLGNBQUEsR0FBQVEsQ0FBQTtJQUFBUixjQUFBLEdBQUFFLENBQUE7SUFHVyxLQUFBTyxPQUFPLEdBQVksSUFBSUosU0FBQSxDQUFBSyxPQUFPLENBQUMsQ0FBQyxDQUFDLEVBQUUsZUFBZSxFQUFFLENBQUMsRUFBRSxnQkFBZ0IsQ0FBQztJQUFBO0lBQUFWLGNBQUEsR0FBQUUsQ0FBQTtJQUN2RSxLQUFBUyxJQUFJLEdBQUcsSUFBSVIsTUFBQSxDQUFBUyxZQUFZLEVBQVc7SUFBQTtJQUFBWixjQUFBLEdBQUFFLENBQUE7SUFDbEMsS0FBQVcsTUFBTSxHQUFHLElBQUlWLE1BQUEsQ0FBQVMsWUFBWSxFQUFXO0VBU2hEO0VBUEVFLFdBQVdBLENBQUE7SUFBQTtJQUFBZCxjQUFBLEdBQUFRLENBQUE7SUFBQVIsY0FBQSxHQUFBRSxDQUFBO0lBQ1QsSUFBSSxDQUFDUyxJQUFJLENBQUNJLElBQUksQ0FBQyxJQUFJLENBQUNOLE9BQU8sQ0FBQztFQUM5QjtFQUNBTyxhQUFhQSxDQUFBO0lBQUE7SUFBQWhCLGNBQUEsR0FBQVEsQ0FBQTtJQUFBUixjQUFBLEdBQUFFLENBQUE7SUFDWCxJQUFJLENBQUNXLE1BQU0sQ0FBQ0UsSUFBSSxDQUFDLElBQUksQ0FBQ04sT0FBTyxDQUFDO0VBQ2hDOzs7Ozs7Y0FUQ04sTUFBQSxDQUFBYztNQUFLOztjQUNMZCxNQUFBLENBQUFlO01BQU07O2NBQ05mLE1BQUEsQ0FBQWU7TUFBTTs7Ozs7O0FBTElaLHlCQUF5QixHQUFBYSxPQUFBLENBQUFDLFVBQUEsRUFMckMsSUFBQWpCLE1BQUEsQ0FBQWtCLFNBQVMsRUFBQztFQUNUQyxRQUFRLEVBQUUsd0JBQXdCO0VBQ2xDQyxRQUFBLEVBQUFuQixPQUFBO0NBRUQsQ0FBQyxDLEVBQ1dFLHlCQUF5QixDQWNyQztBQUFBO0FBQUFOLGNBQUEsR0FBQUUsQ0FBQTtBQWRZc0IsT0FBQSxDQUFBbEIseUJBQUEsR0FBQUEseUJBQUEifQ==

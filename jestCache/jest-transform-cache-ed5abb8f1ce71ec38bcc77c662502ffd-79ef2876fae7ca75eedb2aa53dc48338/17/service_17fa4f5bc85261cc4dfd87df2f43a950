@@ -1,0 +1,176 @@
+fac3776d681cd657eded77543048d2e1
+"use strict";
+
+/* istanbul ignore next */
+function cov_vi76smwgr() {
+  var path = "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\models\\service.ts";
+  var hash = "b02726b2e1c4840319ab65e50f20b9f7b48b88a2";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\models\\service.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 25
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 8
+        },
+        end: {
+          line: 6,
+          column: 21
+        }
+      },
+      "3": {
+        start: {
+          line: 7,
+          column: 8
+        },
+        end: {
+          line: 7,
+          column: 32
+        }
+      },
+      "4": {
+        start: {
+          line: 8,
+          column: 8
+        },
+        end: {
+          line: 8,
+          column: 28
+        }
+      },
+      "5": {
+        start: {
+          line: 9,
+          column: 8
+        },
+        end: {
+          line: 9,
+          column: 40
+        }
+      },
+      "6": {
+        start: {
+          line: 12,
+          column: 0
+        },
+        end: {
+          line: 12,
+          column: 26
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 5,
+            column: 4
+          },
+          end: {
+            line: 5,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 5,
+            column: 40
+          },
+          end: {
+            line: 10,
+            column: 5
+          }
+        },
+        line: 5
+      }
+    },
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {},
+    inputSourceMap: {
+      file: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\models\\service.ts",
+      mappings: ";;;AAAA,MAAa,OAAO;IAOlB,YAAY,EAAU,EAAE,IAAY,EAAE,EAAU,EAAE,QAAgB;QAChE,IAAI,CAAC,EAAE,GAAG,EAAE,CAAC;QACb,IAAI,CAAC,WAAW,GAAG,IAAI,CAAC;QACxB,IAAI,CAAC,SAAS,GAAG,EAAE,CAAC;QACpB,IAAI,CAAC,eAAe,GAAG,QAAQ,CAAC;IAClC,CAAC;CACF;AAbD,0BAaC",
+      names: [],
+      sources: ["C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\models\\service.ts"],
+      sourcesContent: ["export class Service {\r\n\r\n  id?: number;\r\n  description: string;\r\n  hourValue: number;\r\n  longDescription: string;\r\n\r\n  constructor(id: number, desc: string, pr: number, longDesc: string) {\r\n    this.id = id;\r\n    this.description = desc;\r\n    this.hourValue = pr;\r\n    this.longDescription = longDesc;\r\n  }\r\n}"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "b02726b2e1c4840319ab65e50f20b9f7b48b88a2"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_vi76smwgr = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_vi76smwgr();
+cov_vi76smwgr().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_vi76smwgr().s[1]++;
+exports.Service = void 0;
+class Service {
+  constructor(id, desc, pr, longDesc) {
+    /* istanbul ignore next */
+    cov_vi76smwgr().f[0]++;
+    cov_vi76smwgr().s[2]++;
+    this.id = id;
+    /* istanbul ignore next */
+    cov_vi76smwgr().s[3]++;
+    this.description = desc;
+    /* istanbul ignore next */
+    cov_vi76smwgr().s[4]++;
+    this.hourValue = pr;
+    /* istanbul ignore next */
+    cov_vi76smwgr().s[5]++;
+    this.longDescription = longDesc;
+  }
+}
+/* istanbul ignore next */
+cov_vi76smwgr().s[6]++;
+exports.Service = Service;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJTZXJ2aWNlIiwiY29uc3RydWN0b3IiLCJpZCIsImRlc2MiLCJwciIsImxvbmdEZXNjIiwiY292X3ZpNzZzbXdnciIsImYiLCJzIiwiZGVzY3JpcHRpb24iLCJob3VyVmFsdWUiLCJsb25nRGVzY3JpcHRpb24iLCJleHBvcnRzIl0sInNvdXJjZXMiOlsiQzpcXFVzZXJzXFxVc3VhcmlvXFxyZXBvcyhEZXNhcnJvbGxvKVxcVFAtZHN3LWZyb250XFxzcmNcXGFwcFxcbW9kZWxzXFxzZXJ2aWNlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjbGFzcyBTZXJ2aWNlIHtcclxuXHJcbiAgaWQ/OiBudW1iZXI7XHJcbiAgZGVzY3JpcHRpb246IHN0cmluZztcclxuICBob3VyVmFsdWU6IG51bWJlcjtcclxuICBsb25nRGVzY3JpcHRpb246IHN0cmluZztcclxuXHJcbiAgY29uc3RydWN0b3IoaWQ6IG51bWJlciwgZGVzYzogc3RyaW5nLCBwcjogbnVtYmVyLCBsb25nRGVzYzogc3RyaW5nKSB7XHJcbiAgICB0aGlzLmlkID0gaWQ7XHJcbiAgICB0aGlzLmRlc2NyaXB0aW9uID0gZGVzYztcclxuICAgIHRoaXMuaG91clZhbHVlID0gcHI7XHJcbiAgICB0aGlzLmxvbmdEZXNjcmlwdGlvbiA9IGxvbmdEZXNjO1xyXG4gIH1cclxufSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLE1BQWFBLE9BQU87RUFPbEJDLFlBQVlDLEVBQVUsRUFBRUMsSUFBWSxFQUFFQyxFQUFVLEVBQUVDLFFBQWdCO0lBQUE7SUFBQUMsYUFBQSxHQUFBQyxDQUFBO0lBQUFELGFBQUEsR0FBQUUsQ0FBQTtJQUNoRSxJQUFJLENBQUNOLEVBQUUsR0FBR0EsRUFBRTtJQUFDO0lBQUFJLGFBQUEsR0FBQUUsQ0FBQTtJQUNiLElBQUksQ0FBQ0MsV0FBVyxHQUFHTixJQUFJO0lBQUM7SUFBQUcsYUFBQSxHQUFBRSxDQUFBO0lBQ3hCLElBQUksQ0FBQ0UsU0FBUyxHQUFHTixFQUFFO0lBQUM7SUFBQUUsYUFBQSxHQUFBRSxDQUFBO0lBQ3BCLElBQUksQ0FBQ0csZUFBZSxHQUFHTixRQUFRO0VBQ2pDOztBQUNEO0FBQUFDLGFBQUEsR0FBQUUsQ0FBQTtBQWJESSxPQUFBLENBQUFaLE9BQUEsR0FBQUEsT0FBQSJ9

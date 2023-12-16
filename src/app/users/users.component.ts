@@ -17,6 +17,8 @@ export class UsersComponent implements  OnInit {
   showEmployeesFlag: boolean = false;
   editId: number = 0;
   userType: number = 0;
+  lastUserAdded: User | null = null;
+  lastEditedUser: User | undefined = undefined;
 
   userForm = new FormGroup({
     username: new FormControl('', [Validators.required]),
@@ -86,14 +88,16 @@ export class UsersComponent implements  OnInit {
       direccion: this.userForm.value.address,
       tipo_usuario: 0 //este numero corresponde a cliente, un empleado deberia ser registrado desde el componente users
     }
-    this.service.editUser(object, this.editId).subscribe()
+    this.service.editUser(object, this.editId)?.subscribe()
+    this.list.push(new User(this.editId, this.userForm.value.username as string, this.userForm.value.password as string, this.userForm.value.firstName as string, this.userForm.value.lastName as string, this.userForm.value.address as string, this.userForm.value.phoneNumber as string, this.userForm.value.userType as unknown as number, this.userForm.value.email as string));
     this.userForm.reset()
     this.edit = false
-    window.location.reload()
+    this.lastEditedUser = this.list.find(user => user.idUser === this.editId)
+    window.location.reload();
   }
 
   addUser(){
-    const object: Object = {
+    const object: any = {
       nombre_usuario: this.userForm.value.username,
       clave: this.userForm.value.password, 
       email: this.userForm.value.email, 
@@ -103,14 +107,16 @@ export class UsersComponent implements  OnInit {
       direccion: this.userForm.value.address,
       tipo_usuario: this.userType 
     }
-    this.service.addUser(object).subscribe(() => this.userForm.reset())
+    this.service.addUser(object)?.subscribe()
+    this.userForm.reset()
     this.add = false
+    this.lastUserAdded = new User(-1, object.nombre_usuario, object.contraseña, object.nombre, object.apellido, object.direccion, object.telefono, object.tipo_usuario, object.email)
     window.location.reload()
   }
 
   getAllUsers(): void{
     this.list = []
-    this.service.getAllUsers().subscribe((users: User[])=> {
+    this.service.getAllUsers()?.subscribe((users: User[])=> {
       users.forEach((user: any) => {
         const object = new User(user.id_usuario, user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
         this.list.push(object)
@@ -120,12 +126,13 @@ export class UsersComponent implements  OnInit {
 
   deleteUser(item: User): void{
     const userId = item.idUser
-    this.service.deleteUser(userId).subscribe(() => this.ngOnInit())
+    this.service.deleteUser(userId)?.subscribe()
+    window.location.reload()
   }
 
   getAllClients(){
     this.list = []
-    this.service.getAllUsers().subscribe((allUsers: User[])=> {
+    this.service.getAllUsers()?.subscribe((allUsers: User[])=> {
       allUsers.forEach((user: any) => {
         const obj = new User(user.id_usuario, user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
         this.list.push(obj)
@@ -136,18 +143,12 @@ export class UsersComponent implements  OnInit {
 
   getAllEmployees(){
     this.list = []
-    this.service.getAllUsers().subscribe((allUsers: User[])=> {
+    this.service.getAllUsers()?.subscribe((allUsers: User[])=> {
       allUsers.forEach((user: any) => {
         const object= new User(user.id_usuario,user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
         this.list.push(object)
       })
       this.list = this.list.filter(user => user.type === 1)
     })
-  }
-
-  cleanForm(){
-    this.userForm.patchValue({username: '', password: '', 
-      email: '', phoneNumber: '', firstName: '', lastName: '',
-      address: '', userType: ''})
   }
 }

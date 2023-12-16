@@ -62,9 +62,9 @@ export class BranchesService {
   update(branch: Branch): void {
     if (branch.id_sucursal) {
       let update_url = `${this.url_get_all_branches}/${branch.id_sucursal}/`;
-      this.http.patch<Branch>(update_url, branch, {observe: 'response'}).subscribe(
+      this.http.patch<any>(update_url, branch, {observe: 'response'}).subscribe(
         (response) => {
-            let i = this.branches.findIndex(o => o.id_sucursal == branch.id_sucursal);
+            const i = this.branches.findIndex(o => o.id_sucursal == branch.id_sucursal);
             this.branches[i] = response.body as Branch
         }
       );

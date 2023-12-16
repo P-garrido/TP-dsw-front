@@ -1,0 +1,234 @@
+17a52ff42ae28e919d4fa5ada2c77acb
+var __create = Object.create;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __getProtoOf = Object.getPrototypeOf;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+  // If the importer is in node compatibility mode or this is not an ESM
+  // file that has been converted to a CommonJS file using a Babel-
+  // compatible transform (i.e. "__esModule" has not been set), then set
+  // "default" to the CommonJS "module.exports" for node compatibility.
+  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+  mod
+));
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var ngx_bootstrap_accordion_exports = {};
+__export(ngx_bootstrap_accordion_exports, {
+  AccordionComponent: () => AccordionComponent,
+  AccordionConfig: () => AccordionConfig,
+  AccordionModule: () => AccordionModule,
+  AccordionPanelComponent: () => AccordionPanelComponent
+});
+module.exports = __toCommonJS(ngx_bootstrap_accordion_exports);
+var i0 = __toESM(require("@angular/core"), 1);
+var import_core = require("@angular/core");
+var i1 = __toESM(require("@angular/common"), 1);
+var import_common = require("@angular/common");
+var i2 = __toESM(require("ngx-bootstrap/collapse"), 1);
+var import_collapse = require("ngx-bootstrap/collapse");
+const _AccordionConfig = class _AccordionConfig {
+  constructor() {
+    this.closeOthers = false;
+    this.isAnimated = false;
+  }
+};
+_AccordionConfig.\u0275fac = i0.\u0275\u0275ngDeclareFactory({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: _AccordionConfig, deps: [], target: i0.\u0275\u0275FactoryTarget.Injectable });
+_AccordionConfig.\u0275prov = i0.\u0275\u0275ngDeclareInjectable({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: _AccordionConfig, providedIn: "root" });
+let AccordionConfig = _AccordionConfig;
+i0.\u0275\u0275ngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: AccordionConfig, decorators: [{
+  type: import_core.Injectable,
+  args: [{
+    providedIn: "root"
+  }]
+}] });
+const _AccordionComponent = class _AccordionComponent {
+  constructor(config) {
+    this.isAnimated = false;
+    this.closeOthers = false;
+    this.groups = [];
+    Object.assign(this, config);
+  }
+  closeOtherPanels(openGroup) {
+    if (!this.closeOthers) {
+      return;
+    }
+    this.groups.forEach((group) => {
+      if (group !== openGroup) {
+        group.isOpen = false;
+      }
+    });
+  }
+  addGroup(group) {
+    group.isAnimated = this.isAnimated;
+    this.groups.push(group);
+  }
+  removeGroup(group) {
+    const index = this.groups.indexOf(group);
+    if (index !== -1) {
+      this.groups.splice(index, 1);
+    }
+  }
+};
+_AccordionComponent.\u0275fac = i0.\u0275\u0275ngDeclareFactory({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: _AccordionComponent, deps: [{ token: AccordionConfig }], target: i0.\u0275\u0275FactoryTarget.Component });
+_AccordionComponent.\u0275cmp = i0.\u0275\u0275ngDeclareComponent({ minVersion: "14.0.0", version: "16.1.4", type: _AccordionComponent, selector: "accordion", inputs: { isAnimated: "isAnimated", closeOthers: "closeOthers" }, host: { attributes: { "role": "tablist" }, properties: { "attr.aria-multiselectable": "closeOthers" }, styleAttribute: "display: block", classAttribute: "panel-group" }, ngImport: i0, template: `<ng-content></ng-content>`, isInline: true });
+let AccordionComponent = _AccordionComponent;
+i0.\u0275\u0275ngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: AccordionComponent, decorators: [{
+  type: import_core.Component,
+  args: [{
+    selector: "accordion",
+    template: `<ng-content></ng-content>`,
+    // eslint-disable-next-line @angular-eslint/no-host-metadata-property
+    host: {
+      "[attr.aria-multiselectable]": "closeOthers",
+      role: "tablist",
+      class: "panel-group",
+      style: "display: block"
+    }
+  }]
+}], ctorParameters: function() {
+  return [{ type: AccordionConfig }];
+}, propDecorators: { isAnimated: [{
+  type: import_core.Input
+}], closeOthers: [{
+  type: import_core.Input
+}] } });
+const _AccordionPanelComponent = class _AccordionPanelComponent {
+  // Questionable, maybe .panel-open should be on child div.panel element?
+  /** Is accordion group open or closed. This property supports two-way binding */
+  get isOpen() {
+    return this._isOpen;
+  }
+  set isOpen(value) {
+    if (value !== this.isOpen) {
+      if (value) {
+        this.accordion.closeOtherPanels(this);
+      }
+      this._isOpen = value;
+      Promise.resolve(null).then(() => {
+        this.isOpenChange.emit(value);
+      });
+    }
+  }
+  constructor(accordion) {
+    this.isAnimated = false;
+    this.panelClass = "panel-default";
+    this.isDisabled = false;
+    this.isOpenChange = new import_core.EventEmitter();
+    this._isOpen = false;
+    this.accordion = accordion;
+  }
+  ngOnInit() {
+    this.accordion.addGroup(this);
+  }
+  ngOnDestroy() {
+    this.accordion.removeGroup(this);
+  }
+  toggleOpen() {
+    if (!this.isDisabled) {
+      this.isOpen = !this.isOpen;
+    }
+  }
+};
+_AccordionPanelComponent.\u0275fac = i0.\u0275\u0275ngDeclareFactory({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: _AccordionPanelComponent, deps: [{ token: AccordionComponent }], target: i0.\u0275\u0275FactoryTarget.Component });
+_AccordionPanelComponent.\u0275cmp = i0.\u0275\u0275ngDeclareComponent({ minVersion: "14.0.0", version: "16.1.4", type: _AccordionPanelComponent, selector: "accordion-group, accordion-panel", inputs: { heading: "heading", panelClass: "panelClass", isDisabled: "isDisabled", isOpen: "isOpen" }, outputs: { isOpenChange: "isOpenChange" }, host: { properties: { "class.panel-open": "this.isOpen" }, styleAttribute: "display: block", classAttribute: "panel" }, ngImport: i0, template: `<div class="panel card" [ngClass]="panelClass">
+  <div
+    class="panel-heading card-header"
+    role="tab"
+    (click)="toggleOpen()"
+    [ngClass]="isDisabled ? 'panel-disabled' : 'panel-enabled'"
+  >
+    <div class="panel-title">
+      <div role="button" class="accordion-toggle" [attr.aria-expanded]="isOpen">
+        <button class="btn btn-link" *ngIf="heading" [ngClass]="{ 'text-muted': isDisabled }" type="button">
+          {{ heading }}
+        </button>
+        <ng-content select="[accordion-heading]"></ng-content>
+      </div>
+    </div>
+  </div>
+  <div class="panel-collapse collapse" role="tabpanel" [collapse]="!isOpen" [isAnimated]="isAnimated">
+    <div class="panel-body card-block card-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+`, styles: [":host .card-header.panel-enabled{cursor:pointer}:host .card-header.panel-disabled .btn.btn-link{cursor:default;text-decoration:none}\n"], dependencies: [{ kind: "directive", type: i1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "directive", type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "directive", type: i2.CollapseDirective, selector: "[collapse]", inputs: ["display", "isAnimated", "collapse"], outputs: ["collapsed", "collapses", "expanded", "expands"], exportAs: ["bs-collapse"] }] });
+let AccordionPanelComponent = _AccordionPanelComponent;
+i0.\u0275\u0275ngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: AccordionPanelComponent, decorators: [{
+  type: import_core.Component,
+  args: [{ selector: "accordion-group, accordion-panel", host: {
+    class: "panel",
+    style: "display: block"
+  }, template: `<div class="panel card" [ngClass]="panelClass">
+  <div
+    class="panel-heading card-header"
+    role="tab"
+    (click)="toggleOpen()"
+    [ngClass]="isDisabled ? 'panel-disabled' : 'panel-enabled'"
+  >
+    <div class="panel-title">
+      <div role="button" class="accordion-toggle" [attr.aria-expanded]="isOpen">
+        <button class="btn btn-link" *ngIf="heading" [ngClass]="{ 'text-muted': isDisabled }" type="button">
+          {{ heading }}
+        </button>
+        <ng-content select="[accordion-heading]"></ng-content>
+      </div>
+    </div>
+  </div>
+  <div class="panel-collapse collapse" role="tabpanel" [collapse]="!isOpen" [isAnimated]="isAnimated">
+    <div class="panel-body card-block card-body">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+`, styles: [":host .card-header.panel-enabled{cursor:pointer}:host .card-header.panel-disabled .btn.btn-link{cursor:default;text-decoration:none}\n"] }]
+}], ctorParameters: function() {
+  return [{ type: AccordionComponent, decorators: [{
+    type: import_core.Inject,
+    args: [AccordionComponent]
+  }] }];
+}, propDecorators: { heading: [{
+  type: import_core.Input
+}], panelClass: [{
+  type: import_core.Input
+}], isDisabled: [{
+  type: import_core.Input
+}], isOpenChange: [{
+  type: import_core.Output
+}], isOpen: [{
+  type: import_core.HostBinding,
+  args: ["class.panel-open"]
+}, {
+  type: import_core.Input
+}] } });
+const _AccordionModule = class _AccordionModule {
+  static forRoot() {
+    return { ngModule: _AccordionModule, providers: [] };
+  }
+};
+_AccordionModule.\u0275fac = i0.\u0275\u0275ngDeclareFactory({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: _AccordionModule, deps: [], target: i0.\u0275\u0275FactoryTarget.NgModule });
+_AccordionModule.\u0275mod = i0.\u0275\u0275ngDeclareNgModule({ minVersion: "14.0.0", version: "16.1.4", ngImport: i0, type: _AccordionModule, declarations: [AccordionComponent, AccordionPanelComponent], imports: [import_common.CommonModule, import_collapse.CollapseModule], exports: [AccordionComponent, AccordionPanelComponent] });
+_AccordionModule.\u0275inj = i0.\u0275\u0275ngDeclareInjector({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: _AccordionModule, imports: [import_common.CommonModule, import_collapse.CollapseModule] });
+let AccordionModule = _AccordionModule;
+i0.\u0275\u0275ngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.1.4", ngImport: i0, type: AccordionModule, decorators: [{
+  type: import_core.NgModule,
+  args: [{
+    imports: [import_common.CommonModule, import_collapse.CollapseModule],
+    declarations: [AccordionComponent, AccordionPanelComponent],
+    exports: [AccordionComponent, AccordionPanelComponent]
+  }]
+}] });

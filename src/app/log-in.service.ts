@@ -31,6 +31,7 @@ export class LogInService {
     this.user = data;
     // Almacenar datos en el almacenamiento local
     sessionStorage.setItem(this.sessionStorageKey, JSON.stringify({ data, token: this.token }));
+    console.log(this.user)
   }
 
 

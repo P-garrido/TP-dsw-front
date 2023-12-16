@@ -1,0 +1,147 @@
+80e6ca8bd25db7d151401e5df3ec6c05
+"use strict";
+
+/* istanbul ignore next */
+function cov_4ui7gbuk8() {
+  var path = "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\inicio\\inicio.component.ts";
+  var hash = "7a22b3cfc8b705a0b6f8546a5b4c185242c38145";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\inicio\\inicio.component.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 33
+        }
+      },
+      "2": {
+        start: {
+          line: 4,
+          column: 16
+        },
+        end: {
+          line: 4,
+          column: 32
+        }
+      },
+      "3": {
+        start: {
+          line: 5,
+          column: 15
+        },
+        end: {
+          line: 5,
+          column: 39
+        }
+      },
+      "4": {
+        start: {
+          line: 6,
+          column: 22
+        },
+        end: {
+          line: 7,
+          column: 1
+        }
+      },
+      "5": {
+        start: {
+          line: 8,
+          column: 0
+        },
+        end: {
+          line: 13,
+          column: 20
+        }
+      },
+      "6": {
+        start: {
+          line: 14,
+          column: 0
+        },
+        end: {
+          line: 14,
+          column: 42
+        }
+      }
+    },
+    fnMap: {},
+    branchMap: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0
+    },
+    f: {},
+    b: {},
+    inputSourceMap: {
+      file: "C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\inicio\\inicio.component.ts",
+      mappings: ";;;;AAAA,wCAA0C;AAQ1C,IAAa,eAAe,GAA5B,MAAa,eAAe;CAE3B,CAAA;AAFY,eAAe;IAL3B,IAAA,gBAAS,EAAC;QACT,QAAQ,EAAE,YAAY;QACtB,4CAAsC;KAEvC,CAAC;GACW,eAAe,CAE3B;AAFY,0CAAe",
+      names: [],
+      sources: ["C:\\Users\\Usuario\\repos(Desarrollo)\\TP-dsw-front\\src\\app\\inicio\\inicio.component.ts"],
+      sourcesContent: ["import { Component } from '@angular/core';\r\n\r\n\r\n@Component({\r\n  selector: 'app-inicio',\r\n  templateUrl: './inicio.component.html',\r\n  styleUrls: ['./inicio.component.scss']\r\n})\r\nexport class InicioComponent {\r\n\r\n}\r\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "7a22b3cfc8b705a0b6f8546a5b4c185242c38145"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_4ui7gbuk8 = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+cov_4ui7gbuk8();
+cov_4ui7gbuk8().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/* istanbul ignore next */
+cov_4ui7gbuk8().s[1]++;
+exports.InicioComponent = void 0;
+const tslib_1 =
+/* istanbul ignore next */
+(cov_4ui7gbuk8().s[2]++, require("tslib"));
+const core_1 =
+/* istanbul ignore next */
+(cov_4ui7gbuk8().s[3]++, require("@angular/core"));
+/* istanbul ignore next */
+cov_4ui7gbuk8().s[4]++;
+let InicioComponent = class InicioComponent {};
+/* istanbul ignore next */
+cov_4ui7gbuk8().s[5]++;
+InicioComponent = tslib_1.__decorate([(0, core_1.Component)({
+  selector: 'app-inicio',
+  template: require("./inicio.component.html")
+})], InicioComponent);
+/* istanbul ignore next */
+cov_4ui7gbuk8().s[6]++;
+exports.InicioComponent = InicioComponent;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3JlXzEiLCJjb3ZfNHVpN2didWs4IiwicyIsInJlcXVpcmUiLCJJbmljaW9Db21wb25lbnQiLCJ0c2xpYl8xIiwiX19kZWNvcmF0ZSIsIkNvbXBvbmVudCIsInNlbGVjdG9yIiwidGVtcGxhdGUiLCJleHBvcnRzIl0sInNvdXJjZXMiOlsiQzpcXFVzZXJzXFxVc3VhcmlvXFxyZXBvcyhEZXNhcnJvbGxvKVxcVFAtZHN3LWZyb250XFxzcmNcXGFwcFxcaW5pY2lvXFxpbmljaW8uY29tcG9uZW50LnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xyXG5cclxuXHJcbkBDb21wb25lbnQoe1xyXG4gIHNlbGVjdG9yOiAnYXBwLWluaWNpbycsXHJcbiAgdGVtcGxhdGVVcmw6ICcuL2luaWNpby5jb21wb25lbnQuaHRtbCcsXHJcbiAgc3R5bGVVcmxzOiBbJy4vaW5pY2lvLmNvbXBvbmVudC5zY3NzJ11cclxufSlcclxuZXhwb3J0IGNsYXNzIEluaWNpb0NvbXBvbmVudCB7XHJcblxyXG59XHJcbiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLE1BQUFBLE1BQUE7QUFBQTtBQUFBLENBQUFDLGFBQUEsR0FBQUMsQ0FBQSxPQUFBQyxPQUFBO0FBQTBDO0FBQUFGLGFBQUEsR0FBQUMsQ0FBQTtBQVExQyxJQUFhRSxlQUFlLEdBQTVCLE1BQWFBLGVBQWUsR0FFM0I7QUFBQTtBQUFBSCxhQUFBLEdBQUFDLENBQUE7QUFGWUUsZUFBZSxHQUFBQyxPQUFBLENBQUFDLFVBQUEsRUFMM0IsSUFBQU4sTUFBQSxDQUFBTyxTQUFTLEVBQUM7RUFDVEMsUUFBUSxFQUFFLFlBQVk7RUFDdEJDLFFBQUEsRUFBQU4sT0FBQTtDQUVELENBQUMsQyxFQUNXQyxlQUFlLENBRTNCO0FBQUE7QUFBQUgsYUFBQSxHQUFBQyxDQUFBO0FBRllRLE9BQUEsQ0FBQU4sZUFBQSxHQUFBQSxlQUFBIn0=

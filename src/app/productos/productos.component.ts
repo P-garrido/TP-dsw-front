@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { ProductsService } from '../products.service';
 import { Product } from '../models/product';
 import { LogInService } from '../log-in.service';
+import { delay, finalize } from 'rxjs';
 
 @Component({
   selector: 'app-productos',
@@ -14,7 +15,7 @@ export class ProductosComponent implements OnInit {
 
   filteredProducts: Product[] = [];
   products: Product[] = [];
-
+  loading: boolean = true;
   admin: boolean | undefined;
 
   searchForm = new FormControl();
@@ -28,7 +29,8 @@ export class ProductosComponent implements OnInit {
   }
 
   getAllProducts() {
-    this.productService.loadProducts().subscribe((response: Product[]) => {
+    this.loading = true;
+    this.productService.loadProducts().pipe( delay(1000),finalize(()=> this.loading=false)).subscribe((response: Product[]) => {
 
       this.filteredProducts = response;
       this.products = response;

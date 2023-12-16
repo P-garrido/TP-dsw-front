@@ -1,16 +1,4 @@
-<div
-  style="
-    display: flex;
-    height: 30vh;
-    background-image: url(/assets/fondo-agua.jpeg);
-    background-size: cover;
-    background-attachment: fixed;
-    justify-content: center;
-    align-items: center;
-    color: #222;
-    font-size: 1.5em;
-  "
->
+<div class="header">
   <h1>Agregar Producto</h1>
 </div>
 
@@ -75,4 +63,6 @@
     </div>
   </form>
 </div>
-<a class="btn btn-primary" routerLink="/adminProducts"> Volver Atras. </a>
+<a class="btn btn-primary" routerLink="/adminProducts" (click)="redirect()">
+  Volver Atras.
+</a>

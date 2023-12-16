@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProductsService } from '../products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-product',
@@ -19,7 +20,7 @@ export class NewProductComponent {
     productImg:  new FormControl()
 });
 
-  constructor(private productService: ProductsService){
+  constructor(private productService: ProductsService, private router: Router){
     if(this.productService.productToEdit.nombre_producto != ''){
       this.newProductForm.controls.productName.patchValue(this.productService.productToEdit.nombre_producto);
       this.newProductForm.controls.productDesc.patchValue(this.productService.productToEdit.desc_producto);
@@ -50,5 +51,8 @@ export class NewProductComponent {
       this.productService.uploadImg(imgData).subscribe(resp => console.log(resp));
       this.newProductForm.reset();
     }
+  }
+  redirect(){
+    this.router.navigate(['/adminProducts'])
   }
 }

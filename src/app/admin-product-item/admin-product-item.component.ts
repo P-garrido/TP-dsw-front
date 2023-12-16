@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../models/product';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-product-item',
@@ -10,11 +11,14 @@ export class AdminProductItemComponent {
   @Input() product: any = {};
   @Output() edit = new EventEmitter<Product>();
   @Output() delete = new EventEmitter<Product>();
-
+  constructor(private router: Router){}
   editProduct(productToEdit:Product){
     this.edit.emit(productToEdit);
   }
   deleteProduct(productToDelete:Product){
     this.delete.emit(productToDelete);
+  }
+  redirect(){
+    this.router.navigate(['/addProduct'])
   }
 }

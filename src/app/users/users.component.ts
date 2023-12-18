@@ -2,7 +2,7 @@ import { Component, DoCheck, OnChanges, SimpleChange, SimpleChanges } from '@ang
 import { UsersService } from '../users.service';
 import { OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User } from '../models/user';
+import { User, userObject } from '../models/user';
 
 @Component({
   selector: 'app-users',
@@ -77,7 +77,7 @@ export class UsersComponent implements  OnInit {
   }
 
   editUser(){
-    const object = {
+    const editedUser = {
       id_usuario: this.editId,
       nombre_usuario: this.userForm.value.username,
       clave: this.userForm.value.password, 
@@ -88,29 +88,28 @@ export class UsersComponent implements  OnInit {
       direccion: this.userForm.value.address,
       tipo_usuario: 0 //este numero corresponde a cliente, un empleado deberia ser registrado desde el componente users
     }
-    this.service.editUser(object, this.editId)?.subscribe()
+    this.service.editUser(editedUser, this.editId)?.subscribe(() => this.ngOnInit())
     this.list.push(new User(this.editId, this.userForm.value.username as string, this.userForm.value.password as string, this.userForm.value.firstName as string, this.userForm.value.lastName as string, this.userForm.value.address as string, this.userForm.value.phoneNumber as string, this.userForm.value.userType as unknown as number, this.userForm.value.email as string));
     this.userForm.reset()
     this.edit = false
     this.lastEditedUser = this.list.find(user => user.idUser === this.editId)
-    window.location.reload();
   }
 
   addUser(){
-    const object: any = {
-      nombre_usuario: this.userForm.value.username,
-      clave: this.userForm.value.password, 
-      email: this.userForm.value.email, 
-      telefono: this.userForm.value.phoneNumber,
-      nombre: this.userForm.value.firstName,
-      apellido: this.userForm.value.lastName,
-      direccion: this.userForm.value.address,
+    const user: userObject = {
+      nombre_usuario: this.userForm.value.username as string,
+      clave: this.userForm.value.password as string, 
+      email: this.userForm.value.email as string, 
+      telefono: this.userForm.value.phoneNumber as string,
+      nombre: this.userForm.value.firstName as string,
+      apellido: this.userForm.value.lastName as string,
+      direccion: this.userForm.value.address as string,
       tipo_usuario: this.userType 
     }
-    this.service.addUser(object)?.subscribe()
+    this.service.addUser(user)?.subscribe()
     this.userForm.reset()
     this.add = false
-    this.lastUserAdded = new User(-1, object.nombre_usuario, object.contraseña, object.nombre, object.apellido, object.direccion, object.telefono, object.tipo_usuario, object.email)
+    this.lastUserAdded = new User(-1, user.nombre_usuario, user.clave, user.nombre, user.apellido, user.direccion, user.telefono, user.tipo_usuario, user.email)
     window.location.reload()
   }
 

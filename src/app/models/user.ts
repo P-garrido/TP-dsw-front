@@ -23,3 +23,14 @@ export class User {
   }
 
 }
+
+export interface userObject {
+      nombre_usuario: string,
+      clave: string, 
+      email: string, 
+      telefono: string,
+      nombre: string,
+      apellido: string,
+      direccion: string,
+      tipo_usuario: number 
+    }

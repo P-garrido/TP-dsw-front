@@ -8,11 +8,11 @@ export class BoughtService {
   hourAmmount: number;
   clientMessage: string;
 
-  constructor(serv: Service, us: User, servDate: Date, hourAm: number, cliMsj: string) {
-    this.service = serv;
-    this.user = us;
-    this.serviceDate = servDate;
-    this.hourAmmount = hourAm;
-    this.clientMessage = cliMsj;
+  constructor(service: Service, user: User, serviceDate: Date, hourAmount: number, clientMessage: string) {
+    this.service = service;
+    this.user = user;
+    this.serviceDate = serviceDate;
+    this.hourAmmount = hourAmount;
+    this.clientMessage = clientMessage;
   }
 }

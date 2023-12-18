@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Service } from '../models/service';
 import { EditServiceEvent } from '../models/editServiceEvent';
 import { ServicesService } from '../services.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-services',
@@ -11,7 +12,7 @@ import { ServicesService } from '../services.service';
 export class AdminServicesComponent {
 
 
-  constructor(private servicesService: ServicesService) {
+  constructor(private servicesService: ServicesService, private router: Router) {
 
   }
 
@@ -48,7 +49,9 @@ export class AdminServicesComponent {
     this.servicesService.serviceToEdit = service;
   }
 
-
+  redirect(){
+    this.router.navigate(['/addService'])
+  }
 
 
 }

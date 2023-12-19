@@ -18,6 +18,8 @@ export class AdminProductsComponent implements OnInit {
 
   editProduct(productToEdit: Product) {
     this.prodService.productToEdit = productToEdit;
+    this.redirect();
+    
   }
 
   deleteProduct(productToDelete: Product) {

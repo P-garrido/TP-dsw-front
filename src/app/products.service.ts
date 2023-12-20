@@ -35,7 +35,7 @@ export class ProductsService {
 
   loadProducts(): Observable<Product[]>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
-      return this.http.get<Product[]>("http://localhost:1234/products", {headers}).pipe(catchError(this.handleError))
+      return this.http.get<Product[]>("http://localhost:1234/products", {headers})
   }
 
   createProduct(name:any, desc:string, stock: any, price:any, img:string){

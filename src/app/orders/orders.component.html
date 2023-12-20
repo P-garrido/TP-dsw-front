@@ -18,4 +18,5 @@
     *ngFor="let order of filteredOrders"
     [order]="order"
   ></app-order-item>
+  <div *ngIf="loading">Cargando Pedidos...</div>
 </div>

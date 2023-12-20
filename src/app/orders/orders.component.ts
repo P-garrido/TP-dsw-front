@@ -3,6 +3,7 @@ import { OrdersService } from '../orders.service';
 import { FormControl } from '@angular/forms';
 import { Order} from '../models/order';
 import { Product } from '../models/product';
+import { delay, finalize } from 'rxjs';
 
 @Component({
   selector: 'app-orders',
@@ -11,6 +12,7 @@ import { Product } from '../models/product';
 })
 export class OrdersComponent implements OnInit {
 
+  loading: boolean = true;
   orders: Order[] = []
   filteredOrders: Order[] = [];
   searchForm = new FormControl();
@@ -20,7 +22,7 @@ export class OrdersComponent implements OnInit {
     this.getAllOrders();
   }
   getAllOrders(){
-    this.ordersService.loadAllOrders().subscribe((response: Order[]) => {
+    this.ordersService.loadAllOrders().pipe( delay(1000),finalize(()=> this.loading=false)).subscribe((response: Order[]) => {
       this.orders = response;
       this.filteredOrders = response;
       console.log(response)

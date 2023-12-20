@@ -11,8 +11,8 @@ import { LogInService } from './log-in.service';
 export class OrdersService {
 
   constructor(private http: HttpClient, private logInService: LogInService) { }
-
   token = this.logInService.token;
+  
   loadAllOrders(): Observable<Order[]>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
     return this.http.get<Order[]>('http://localhost:1234/orders', {headers})
@@ -20,6 +20,12 @@ export class OrdersService {
   getProductById(idProd:number): Observable<Product>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
     return this.http.get<Product>(`http://localhost:1234/products/${idProd}`, {headers})
+  }
+  getProductsByIds(ids: number[]): Observable<Product[]>{
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
+    return this.http.post<Product[]>(`http://localhost:1234/products/get_products`,{
+      products: ids
+    } ,{headers})
   }
   getProductByName(prodName:string): Observable<Product>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);

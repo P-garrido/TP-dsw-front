@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { OrdersService } from '../orders.service';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'app-order-item',
@@ -14,15 +15,9 @@ export class OrderItemComponent implements OnInit {
   constructor(private orderService: OrdersService){}
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-   for (let prod of this.order.productos_pedidos){
-    this.orderService.getProductById(prod.id_producto).subscribe((resp:any) => {
-      this.products.push({
-        nombre_producto: resp.nombre_producto,
-        cantidad: prod.cantidad
-      });
-    });
-   } 
+
+  this.orderService.getProductsByIds(this.order.productos_pedidos).subscribe((resp:Product[]) => {
+    this.products = resp;
+  })
   }
 }

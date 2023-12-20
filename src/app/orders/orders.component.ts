@@ -25,9 +25,7 @@ export class OrdersComponent implements OnInit {
     this.ordersService.loadAllOrders().pipe( delay(1000),finalize(()=> this.loading=false)).subscribe((response: Order[]) => {
       this.orders = response;
       this.filteredOrders = response;
-      console.log(response)
     });
-    console.log(this.orders)
   }
   getOrderByProduct(){
     this.ordersService.getProductByName(this.searchForm.value).subscribe((response:Product) => {

@@ -39,16 +39,16 @@ export class NewProductComponent {
       this.newProductForm.value.productDesc, 
       this.newProductForm.value.productStock,  
       this.newProductForm.value.productPrice, 
-      this.newProductForm.value.productImg).subscribe(resp => console.log(resp));
-      this.productService.uploadImg(imgData).subscribe(resp => console.log(resp));
+      this.newProductForm.value.productImg).subscribe();
+      this.productService.uploadImg(imgData).subscribe();
 
     }else{
     this.productService.createProduct(this.newProductForm.value.productName, 
       this.newProductForm.value.productDesc, 
       this.newProductForm.value.productStock,  
       this.newProductForm.value.productPrice, 
-      this.newProductForm.value.productImg).subscribe(resp => console.log(resp));
-      this.productService.uploadImg(imgData).subscribe(resp => console.log(resp));
+      this.newProductForm.value.productImg).subscribe();
+      this.productService.uploadImg(imgData).subscribe();
       this.newProductForm.reset();
     }
   }

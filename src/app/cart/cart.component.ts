@@ -59,8 +59,8 @@ export class CartComponent {
           this.total = 0;
           this.cartService.cartProducts = [];
         });
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error);
     }
     this.finishedOrder = true;
   }

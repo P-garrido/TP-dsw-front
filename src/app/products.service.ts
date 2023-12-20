@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from './models/product';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Observable, catchError, throwError } from 'rxjs';
 import { LogInService } from './log-in.service';
 
 @Injectable({
@@ -25,17 +25,17 @@ export class ProductsService {
       stock: stock,
       precio: price,
       imagen: img
-    }, {headers})
+    }, {headers}).pipe(catchError(this.handleError))
   }
 
   getProductByDescription(description: string): Observable<Product[]>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
-    return this.http.get<Product[]>(`http://localhost:1234/products/desc_producto/${description}`, {headers});
+    return this.http.get<Product[]>(`http://localhost:1234/products/desc_producto/${description}`, {headers}).pipe(catchError(this.handleError));
   }
 
   loadProducts(): Observable<Product[]>{
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
-      return this.http.get<Product[]>("http://localhost:1234/products", {headers})
+      return this.http.get<Product[]>("http://localhost:1234/products", {headers}).pipe(catchError(this.handleError))
   }
 
   createProduct(name:any, desc:string, stock: any, price:any, img:string){
@@ -62,5 +62,15 @@ export class ProductsService {
   uploadImg(fd: any){
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
     return this.http.post('http://localhost:1234/images/upload', fd, {headers})
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.status === 404) {
+      alert('No se encontraron los productos');
+    } else {
+      console.error('Ocurrió un error inesperado:', error.message);
+    }
+
+    return throwError(() => new Error('Ocurrio un error'));
   }
 }

@@ -13,7 +13,6 @@ import { delay, finalize } from 'rxjs';
 })
 export class ProductosComponent implements OnInit {
 
-  filteredProducts: Product[] = [];
   products: Product[] = [];
   loading: boolean = true;
   admin: boolean | undefined;
@@ -32,17 +31,7 @@ export class ProductosComponent implements OnInit {
     this.loading = true;
     this.productService.loadProducts().pipe( delay(1000),finalize(()=> this.loading=false)).subscribe((response: Product[]) => {
 
-      this.filteredProducts = response;
       this.products = response;
-
-      this.filteredProducts.forEach(prod => {
-        this.productService.getImage(prod.id_producto)
-        .then(resp => resp.blob())
-        .then((blob:any) => {
-          const urlImg = URL.createObjectURL(blob);
-          prod.imagen = urlImg;
-        })
-      });
 
       this.products.forEach(prod => {
         this.productService.getImage(prod.id_producto)
@@ -61,8 +50,8 @@ export class ProductosComponent implements OnInit {
 
   filterProducts(){
     this.productService.getProductByDescription(this.searchForm.value).subscribe((response: Product[]) => {
-      this.filteredProducts = response;
-      this.filteredProducts.forEach(prod => {
+      this.products = response;
+      this.products.forEach(prod => {
           this.productService.getImage(prod.id_producto)
           .then(resp => resp.blob())
           .then((blob:any) => {

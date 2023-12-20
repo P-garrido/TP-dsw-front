@@ -26,7 +26,7 @@
 </div>
 <div class="products-container">
   <app-product-item
-    *ngFor="let product of filteredProducts"
+    *ngFor="let product of products"
     [product]="product"
     (addToCart)="addToCart($event)"
   >

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { EditBoughtService } from '../models/editBoughtService';
-import { BoughtService} from '../models/boughtService'
+import { BoughtService } from '../models/boughtService'
 import { Service } from '../models/service';
 import { User } from '../models/user';
 import { ServicesService } from '../services.service';
@@ -56,15 +56,6 @@ export class ServiciosContratadosComponent {
   }
 
 
-  compareByAt(a: BoughtService, b: BoughtService) {
-    if (a.hourAmmount === null && b.hourAmmount !== null) {
-      return -1; // pone a antes que b
-    } else if (a.hourAmmount !== null && b.hourAmmount === null) {
-      return 1; // pone b antes que a
-    } else {
-      return 0; // Mantiene el orden original
-    }
-  }
 
   getMadeServices() {
     this.filteredBoughtServices = this.boughtServices.filter((boughtService: BoughtService) => boughtService.hourAmmount != null);

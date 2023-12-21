@@ -1,0 +1,35 @@
+<div class="water-banner">
+  <h1>PRODUCTOS</h1>
+</div>
+<div class="mb-3 searchbox-container">
+  <h2>Buscar Productos:</h2>
+  <input
+    type="email"
+    class="form-control searchbox"
+    id="exampleFormControlInput1"
+    placeholder="Buscar"
+    [formControl]="searchForm"
+  />
+  <a class="btn btn-primary btn-add-prod" (click)="filterProducts()">
+    Buscar productos
+  </a>
+  <a class="btn btn-primary btn-add-prod" (click)="getAllProducts()">
+    Buscar Todos
+  </a>
+  <a
+    *ngIf="admin"
+    class="btn btn-primary btn-add-prod"
+    routerLink="/adminProducts"
+  >
+    Administrar Productos
+  </a>
+</div>
+<div class="products-container">
+  <app-product-item
+    *ngFor="let product of products"
+    [product]="product"
+    (addToCart)="addToCart($event)"
+  >
+  </app-product-item>
+  <div *ngIf="loading">Cargando Productos...</div>
+</div>

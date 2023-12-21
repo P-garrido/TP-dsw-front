@@ -1,0 +1,45 @@
+.header{
+  display: flex;
+    height: 30vh;
+    background-image: url(/assets/fondo-agua.jpeg);
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    color: #222;
+    font-size: 1.5em;
+}
+
+.new-prduct-form-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+.form-new-prod {
+    padding: 30px;
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 20px;
+  }
+
+@media (min-width:768px) {
+  .new-prduct-form-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .form-new-prod {
+      padding: 30px;
+      width: 500px;
+      border: 2px solid black;
+      border-radius: 20px;
+    }
+    .cant-container{
+      margin-right: 30px;
+    }
+}

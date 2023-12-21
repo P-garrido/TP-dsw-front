@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --base-color: #5dc1b9;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+:root {
+  --celeste-gris: #5dc1da;
+}
+

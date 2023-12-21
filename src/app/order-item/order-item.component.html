@@ -1,0 +1,27 @@
+<accordion [isAnimated]="true">
+  <accordion-group heading="{{ order.id_pedido }}" class="user-flex-container">
+    <div class="user-flex-item">
+      <p class="user-flex-text">Numero de pedido: {{ order.id_pedido }}</p>
+      <p class="user-flex-text">Fecha: {{ order.fecha }}</p>
+      <p class="user-flex-text">Total: ${{ order.total }}</p>
+      Productos:
+      <p *ngFor="let prod of products" class="producto">
+        <b>{{ prod.nombre_producto }}</b
+        >, {{ prod.cantidad }} unidades.
+      </p>
+      <p class="user-flex-text">
+        Cliente
+        {{ order.Usuario == null ? ": No tiene Cliente" : "" }}
+      </p>
+      <p class="user-flex-text">
+        {{ order.Usuario ? "Nombre: " + order.Usuario.nombre : "" }}
+      </p>
+      <p class="user-flex-text">
+        {{ order.Usuario != null ? "Apellido: " + order.Usuario.apellido : "" }}
+      </p>
+      <p class="user-flex-text">
+        {{ order.Usuario != null ? "Telefono: " + order.Usuario.telefono : "" }}
+      </p>
+    </div>
+  </accordion-group>
+</accordion>

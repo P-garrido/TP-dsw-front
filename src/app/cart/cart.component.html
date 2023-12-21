@@ -1,0 +1,43 @@
+<div class="water-banner">
+  <h1 class="header">CARRITO</h1>
+
+</div>
+<div class="button-container">
+  <button *ngIf="
+          cartService.cartProducts.length > 0 && logInService.user.userName != ''
+        " class="btn btn-success btn-lg btn-checkout" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+    Check Out
+  </button>
+</div>
+<div class="message-container">
+  <a class="notLogged" *ngIf="logInService.user.userName === ''"
+    >Debe iniciar sesion para comprar productos</a
+  >
+  <a
+    class="empty-cart"
+    *ngIf="
+      cartService.cartProducts.length === 0 && logInService.user.userName != ''
+    "
+    >Carrito Vacio</a
+  >
+</div>
+
+<app-offcanvas-cart
+  [total]="total"
+  [finishedOrder]="finishedOrder"
+  (clear)="clearCart()"
+  (completePurchase)="checkOut()"
+></app-offcanvas-cart>
+<div>
+  <div class="products-container">
+    <app-cart-product
+      *ngFor="let product of cartService.cartProducts"
+      [product]="product"
+      (remove)="removeOne($event)"
+      (add)="addOne($event)"
+      (substract)="substractOne($event)"
+    >
+    </app-cart-product>
+  </div>
+</div>

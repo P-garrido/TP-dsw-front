@@ -1,0 +1,14 @@
+<div class="btn-container" *ngIf="admin">
+  <button class="btn btn-primary" (click)="getMadeServices()">Realizados</button>
+  <button class="btn btn-primary" (click)="getUnmadeServices()">No Realizados</button>
+  <button class="btn btn-primary" (click)="getJustBoughtServices()">Ver Todos</button>
+</div>
+
+<div class="bought-services-container" *ngIf="admin">
+  <div *ngFor="let boughtService of filteredBoughtServices" class="bought-service">
+    <app-serv-contratado (editServiceClientClick)="editeServiceCient($event)"
+      (deleteServiceClientClick)="deleteServiceClient($event)" [boughtService]="boughtService"></app-serv-contratado>
+    <hr>
+  </div>
+
+</div>

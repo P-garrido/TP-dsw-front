@@ -1,0 +1,42 @@
+<div *ngIf="onEdit==false" [ngClass]="{'no-contratado': boughtService.hourAmmount === null}">
+
+
+  <accordion [isAnimated]="true" class="accordion">
+    <accordion-group
+      heading="{{boughtService.user.userName}} contrató {{boughtService.service.description }} el {{boughtService.serviceDate | date: 'dd/MM/yyy HH:mm'}}"
+      class="accordion-item">
+      <p>Cantidad de Horas:<b>{{boughtService.hourAmmount || 'A realizar'}}</b></p>
+      <p>Dirección: {{boughtService.user.adress}}</p>
+      <p>Teléfono: {{boughtService.user.phone}}</p>
+      <p>Mensaje del cliente: {{boughtService.clientMessage}}</p>
+    </accordion-group>
+  </accordion>
+
+</div>
+
+
+<div *ngIf="onEdit==true" class="edit-container">
+  <p>Fecha: {{boughtService.serviceDate | date: 'dd/MM/yyy HH:mm'}}</p>
+  <p>Servicio: {{boughtService.service.description}}</p>
+  <p class="editInput">Cantidad de Horas: </p><input class="editInput" type="number" pattern="[0-9]"
+    [formControl]="hourAmmountEdit">
+  <p>Cliente: {{boughtService.user.userName}}</p>
+  <p>Dirección: {{boughtService.user.adress}}</p>
+  <p>Teléfono: {{boughtService.user.phone}}</p>
+  <p>Mensaje del cliente: {{boughtService.clientMessage}}</p>
+</div>
+
+
+
+
+
+<div class="btn-container">
+  <div>
+    <button class="btn btn-secondary" (click)="edit()">{{onEdit?'Cancelar':'Editar'}}</button>
+    <button class="btn btn-danger"
+      (click)="deleteServClient(boughtService.service.id, boughtService.user.idUser, boughtService.serviceDate)">Eliminar</button>
+  </div>
+
+  <button *ngIf="onEdit==true" class="btn btn-primary btn-aceptar" (click)="sendEdit()">Aceptar</button>
+
+</div>

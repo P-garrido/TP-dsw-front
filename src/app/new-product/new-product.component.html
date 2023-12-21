@@ -1,0 +1,68 @@
+<div class="header">
+  <h1>Agregar Producto</h1>
+</div>
+
+<div class="new-prduct-form-container">
+  <form
+    class="row g-3 form-new-prod"
+    [formGroup]="newProductForm"
+    (ngSubmit)="addProduct(imgInput)"
+  >
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Producto</label>
+      <input
+        type="email"
+        class="form-control"
+        id="inputEmail4"
+        formControlName="productName"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="textareaDescription" class="form-label">Descripcion</label>
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="2"
+        class="form-control"
+        id="textareaDescription"
+        formControlName="productDesc"
+      ></textarea>
+    </div>
+    <div class="col-3 cant-container">
+      <label for="inputAddress" class="form-label">Cantidad</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="1"
+        formControlName="productStock"
+      />
+    </div>
+    <div class="col-md-4">
+      <label for="inputCity" class="form-label">Precio</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputCity"
+        formControlName="productPrice"
+      />
+    </div>
+    <div class="col-md-12">
+      <label for="inputZip" class="form-label">Imagen</label>
+      <!-- <input type="text" class="form-control" formControlName="productImg" /> -->
+      <input
+        class="form-control"
+        accept="image/jpeg"
+        type="file"
+        id="formFile"
+        #imgInput
+      />
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Cargar Producto</button>
+    </div>
+  </form>
+</div>
+<a class="btn btn-primary" routerLink="/adminProducts" (click)="redirect()">
+  Volver Atras.
+</a>

@@ -1,0 +1,31 @@
+<accordion [isAnimated]="true">
+  <accordion-group
+    heading="{{
+      product.nombre_producto.toUpperCase() + '. ' + product.desc_producto
+    }}"
+    class="user-flex-container"
+  >
+    <div class="user-flex-item">
+      <p class="user-flex-text">
+        Nombre de Producto: {{ product.nombre_producto }}
+      </p>
+      <p class="user-flex-text">Descripcion: {{ product.desc_producto }}</p>
+      <p class="user-flex-text">Cantidad en stock: {{ product.stock }}</p>
+      <p class="user-flex-text">Precio: ${{ product.precio }}</p>
+      <a [href]="product.imagen"> Imagen</a>
+      <div class="btn-container">
+        <a
+          class="btn btn-primary btn-editProd"
+          routerLink="/addProduct"
+          (click)="[editProduct(product), redirect()]"
+          >Editar Producto</a
+        >
+        <a
+          class="btn btn-danger btn-deleteProd"
+          (click)="deleteProduct(product)"
+          >Eliminar Producto</a
+        >
+      </div>
+    </div>
+  </accordion-group>
+</accordion>

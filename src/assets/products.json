@@ -1,0 +1,26 @@
+[
+  {
+  "image": "",
+  "name": "Cloro Granulado",
+  "description":"Cloro granulado precio x kg",
+  "price":"1000"
+  },
+  {
+  "image": "",
+  "name": "Cloro Liquido",
+  "description":"Cloro liquido precio por unidad",
+  "price":"2500"
+  },
+  {
+  "image": "",
+  "name": "",
+  "description":"",
+  "price":""
+  },
+  {
+  "image": "",
+  "name": "",
+  "description":"",
+  "price":""
+  }
+]

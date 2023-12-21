@@ -1,0 +1,59 @@
+.water-banner{
+  display: flex;
+  height: 30vh;
+  background-image: url("/assets/fondo-agua.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+  font-size: 1.5em;
+}
+
+.product{
+  margin: 10px;
+}
+
+.btn-add-subs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-success, .btn-primary{
+  margin: 10px;
+}
+.header, .offcanvas-title, .order-total {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.products-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.notLogged, .empty-cart{
+  color: red;
+  text-decoration: none;
+  font-size: x-large;
+}
+.message-container{
+  text-align: center;
+}
+.finished-order{
+  color: green;
+  font-size: x-large;
+}
+.btn-checkout{
+  display: inline;
+  background-color:#42aaa2 ;
+  border-color: #5dc1b9;
+  margin: 5px auto;
+  z-index: 200;
+}
+.btn-checkout:hover{
+  background-color: #5dc1b9;
+}
+
+.button-container{
+  display: flex;
+}

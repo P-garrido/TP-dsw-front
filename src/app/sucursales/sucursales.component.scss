@@ -1,0 +1,22 @@
+.title {
+  text-align: center;
+}
+
+.stylish-table {
+  margin: 0 auto;
+  border: 1px solid #ddd;
+}
+
+.stylish-table th,
+.stylish-table td {
+  padding: 15px;
+  text-align: left;
+}
+
+.stylish-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.stylish-table tr:hover {
+  background-color: #ddd;
+}

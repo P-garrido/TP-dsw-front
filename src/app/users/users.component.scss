@@ -1,0 +1,147 @@
+accordion {
+  width: 100%;
+}
+
+// styles for top buttons
+.top-button-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-button{
+  width: fit-content;
+  margin: 5px 0;  
+}
+
+.seleccionado {
+  background-color: aqua;
+  border: solid 1px black;
+}
+
+.top-button:active {
+  transform: scale(1.1);
+  background-color: var(--celeste-gris);
+  transition: transform 0.3s;
+}
+
+//styles for add/edit user form
+
+.form-container {
+  display: flex;
+}
+
+form {
+  margin: 6px auto;
+  background-color: var(--celeste-gris);
+  padding: 20px 10px;
+  border-radius: 15px;
+  display: flex;
+}
+
+form .form-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 5px;
+  font-size: 0.82em;
+}
+
+form .form-item input {
+  margin: 2px;
+}
+
+.log-in-btn {
+  float: right;
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+
+.close-button {
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  border: none;
+  position: relative;
+  left: 93%;
+  top: -2%;
+}
+
+.log-in-btn:active {
+  transform: scale(1.02);
+  background-color: var(--celeste-gris);
+}
+
+input.ng-invalid {
+  border: solid 1px red;
+}
+
+ //Tablet screens only
+ @media only screen and (min-width: 600px) and (max-width: 800px) {
+    .top-button-container {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .top-button {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+    .change-button{
+      width: min-content;
+      height: min-content;
+    }
+ }
+
+// Computer screens only
+@media only screen and (min-width: 800px){
+  .top-button-container {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .top-button {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+  
+  .user-flex-text {
+      display: inline;
+    }
+
+   .user-flex-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 0;
+    min-width: min-content;
+    max-width: 100%;
+    width: 100vw;
+   }
+
+    .user-flex-container {
+      padding: 2px 10px;
+    }
+  
+    form {
+      margin: 10px auto;
+    }
+  
+    form .form-item {
+      font-size: 1em;
+    }
+  
+    .log-in-btn:hover {
+      transform: scale(1.02);
+      background-color: var(--celeste-gris);
+    }
+  
+    .top-button:hover {
+      transform: scale(1.1);
+      background-color: var(--celeste-gris);
+      transition: transform 0.3s;
+    }
+  
+    h4 {
+      text-align: center;
+    }
+}

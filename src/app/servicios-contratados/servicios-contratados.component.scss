@@ -1,0 +1,19 @@
+.bought-services-container {
+  padding: 1rem;
+
+  .bought-service {
+    color: black;
+  }
+}
+
+.btn-container {
+  margin-top: 1rem;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+
+  .btn {
+    margin-right: 1rem;
+    border-radius: 1rem;
+  }
+}
